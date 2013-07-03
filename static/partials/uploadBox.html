@@ -1,0 +1,10 @@
+<span class="copy-upload">Upload your photo to join the hunt!</span><br>
+<span class="copy-drag">Drag your photo here, and we'll do the rest.</span>
+<div id="preview" ng-show="uploadStarted">
+  <span class="imageHolder">
+    <img width="30px" height="30px" ng-src="{{imagePreview}}"/>
+  </span>
+  <progress max="100" value="{{uploadProgress}}">
+    Progress: {{uploadProgress}}% done.
+  </progress>
+</div>

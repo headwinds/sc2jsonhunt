@@ -1,0 +1,25 @@
+<span>
+<div class="imageContainer">
+  <img ng-src="{{item.thumbnailUrl}}" alt="My photo for {{item.themeDisplayName}}"/>
+</div>
+<div class="toolbar">
+  <div class="authorInfo">
+    <a target="_blank" href="{{item.ownerProfileUrl}}">
+      <img ng-src="{{item.ownerProfilePhoto|profilePicture:24}}"
+          alt="{{item.ownerDisplayName}}"
+          width="24" height="24"/>
+      <span>{{item.ownerDisplayName}}</span>
+    </a>
+  </div>
+  <button class="button">Promote</button>
+  <button class="button icon danger remove" ng-show="item.canDelete">
+    Delete
+  </button>
+</div>
+<div class="vote">
+  <div class="count">{{item.numVotes}}</div>
+  <button class="voteButton" ng-class="item.voteClass" ng-show="item.canVote">
+    Vote
+  </button>
+</div>
+</span>

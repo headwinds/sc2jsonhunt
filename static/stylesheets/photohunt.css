@@ -1,0 +1,411 @@
+body {
+  background: url('../images/body-bg.png') repeat;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+#container {
+  position:relative;
+  width: 960px;
+  margin: 0 auto;
+  background: #dedede;
+  border: solid #999;
+  border-width: 0 1px 1px 1px;
+  -webkit-box-shadow: 0 5px 3px 10px rgba(60, 60, 60, .3);
+  -moz-box-shadow: 0 5px 3px 10px rgba(60, 60, 60, .3);
+  box-shadow: 0 5px 10px 3px rgba(60, 60, 60, .3);
+}
+
+.lens {
+  position:absolute;
+  top:-20px;
+  left:20px;
+  z-index:100;	
+}
+
+header, footer {
+  width: 100%;
+  clear: both;
+}
+
+header a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+header a span:hover {
+  text-decoration: underline;
+  color: #fbfbfb;
+}
+
+#topHeader h1, #bottomHeader h2, #photoList {
+
+}
+
+#topHeader h1, #bottomHeader h2 {
+  width: 500px;
+  float: left;
+  margin: 0 0 0 20px;
+}
+
+#bottomHeader h2 {
+  width: 400px;
+}
+
+#topHeader div {
+  width: 250px;
+  float: right;
+  margin: 10px 20px 0 0;
+}
+
+#bottomHeader div {
+  float: right;
+  margin: 10px 20px 0 0;
+}
+
+#container > nav {
+  width: 220px;
+  float: right;
+  margin: 0px 20px 0 0;
+}
+
+#topHeader {
+  background: #454545  url('../images/bg-ph.png') repeat-x;  
+  border-bottom: 1px solid black;
+  height: 45px;
+  color: #fff;
+}
+
+#topHeader h1 {
+  float: left;
+  padding-left:110px;
+  color: #fff;
+  font-size: 24px;
+}
+
+#topHeader h1 img, #topHeader h1 div {
+  float: left;
+  margin-right: 20px;
+}
+
+#profileInfo {
+  text-align: right;
+  margin-top: 7px !important;
+}
+
+#profileInfo .name {
+  position: relative;
+  top: -12px;
+  left: -2px;
+}
+
+#profileInfo .disconnect {
+  float: right;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+#myGsignin {
+  float: right !important;
+}
+
+#bottomHeader {
+  color: #000;
+  height: 60px;
+}
+
+#bottomHeader h2 {
+  height: 100%;
+  margin-left: 165px;
+  padding-top: 15px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+#bottomHeader div {
+  height: 50%;
+  margin-top: 0;
+  padding-top: 20px;
+  font-size: 18px;
+}
+
+#bottomHeader h2 span {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+#bottomHeader div button {
+  position: relative;
+  top: -6px;
+}
+
+#notification {
+  background: rgb(255, 255, 184);
+  width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 6px;
+  clear: both;
+  display: none;
+}
+
+#friendList, #recentThemes {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#friendList li, #recentThemes li {	
+  padding: 8px;
+  margin-left: 0px;
+}
+
+#recentThemes div {
+  margin-top: 4px;
+}
+
+.previous-dates {
+	float:right; padding-right:20px;font-size:12px; color:#666666;
+}
+
+#photoList {
+  width: 680px;
+  float: left;
+  margin: 0 0 0 20px;
+  border-color: #d0d4d8;
+  border-width: 1px !important;
+/*  border-top-left-radius: 4px;
+  -khtml-top-left-radius: 4px;
+  -webkit-top-left-radius: 4px;
+  -moz-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  -khtml-top-right-radius: 4px;
+  -webkit-top-right-radius: 4px;
+  -moz-top-right-radius: 4px;*/
+}
+
+
+.sort {
+  float: right;
+}
+
+.ui-buttonset {
+  float:right;
+  margin-right: 0 !important;
+}
+
+#uploadContainer {
+  background: #fff;
+  padding-bottom: 10px;
+}
+
+#upload {
+  width: 621px;
+  border:1px lightsteelblue dashed;
+  line-height:30px;
+  padding:10px 0;
+  margin: 10px 0 0 30px;
+  font-weight: bold;
+  font-size:18px;
+  color:grey;
+  text-shadow: 1px 1px #ccc;
+  background:#eee;
+}
+
+#progressBar {
+  width: 50px;
+}
+
+.btnupload {
+   margin-top:-5px;
+   border: 1px solid lightgrey;
+   background: #fff;
+   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#cccccc));
+   background: -webkit-linear-gradient(top, #fff, #cccccc);
+   background: -moz-linear-gradient(top, #fff, #cccccc);
+   padding: 3px 10px 5px;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   border-radius: 3px;
+   -webkit-box-shadow: 0 1px 0 rgba(255,255,255,1);
+   -moz-box-shadow: 0 1px 0 rgba(255,255,255,1);
+   box-shadow: 0 1px 0 rgba(255,255,255,.9);
+   text-shadow: 1px 1px 0 rgba(255,255,255,.8);
+   color: grey;
+   text-decoration: none;
+   vertical-align: top;
+   }
+   
+.btnupload:hover {
+   border-top-color: lightgrey;
+   background: lightgrey;
+   color: grey;
+   }
+   
+.btnupload:active {
+   border-top-color: lightgrey;
+   background: #ccc;
+   }
+   
+.copy-upload {
+	color: #666
+}
+.copy-drag {
+	font-size:14px
+}
+
+.contentGroup, nav div {
+  margin-bottom: 40px;
+}
+
+nav ul {
+  background: #ffffff;
+  list-style-type: none;
+  border: 1px solid #c6cbd0;
+  padding: 10px 10px 5px;
+  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav .date {
+  color: #999;
+  font-size: 10px;
+  padding-left:10px;
+}
+
+.contentGroup h3, nav h3 {
+  padding: 5px 10px 5px 10px;
+  border: 1px solid #c6cbd0;
+  border-bottom: 0px;
+  margin: 10px 0 0 0;
+  background-color:#ddd;
+}
+
+.contentGroup ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.contentGroup li {
+  background: #ffffff;
+  list-style-type: none;
+  border: 1px solid #c6cbd0;
+  padding: 10px 10px 5px;
+  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1), inset 0px -47px 0px 0px #ebebeb;
+  -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1), inset 0px -47px 0px 0px #ebebeb;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1), inset 0px -47px 0px 0px #ebebeb;
+}
+
+.imageContainer {
+  width: 400px;
+  min-height: 300px;
+  background: #f4f4f4;
+  margin: 0 auto;
+  border: 1px solid #dbdddf;
+  text-align: center;
+  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.delete {
+  position: absolute;
+  z-index: 400;
+  top: 0;
+  right: 0;
+  background: url('../images/bg-delete.png') repeat;
+  color: white;
+  padding: 8px;
+  font-size: 12px;
+}
+
+
+.toolbar {
+  width: 635px;
+  height: 29px;
+  margin: 10px auto;
+  padding-top:3px;
+  color:#474749;
+}
+
+.toolbar .name {
+  position: relative;
+  top: -3px;
+}
+
+.toolbar a {
+  color: #000;
+}
+
+.toolbar .authorInfo {
+  float: left;
+  margin-top: 8px;
+}
+
+.toolbar .authorInfo span {
+  position: relative;
+  top: -6px;
+}
+
+.toolbar button {
+  float: right;
+  position: relative;
+  left: 2px;
+  margin-top: 6px;
+  margin-left: 10px;
+}
+
+.vote {
+  float: right;
+  position: relative;
+  top: -200px;
+  width: 73px;
+}
+
+.vote .count {
+  padding-top:4px;
+  height:28px;
+  width: 59px;
+  margin: 0 0 0 2px;
+  color: #ab0303;
+  text-align: center;
+  background: url('../images/vote-count.png') 0 0 no-repeat;
+  background-size: 58px 27px;
+}
+
+.vote .danger {
+  left: -6px;
+}
+
+footer {
+  text-align: center;
+  height: 30px;
+  padding: 20px 0 0 0;
+  background: #454545 url('../images/bg-ph.png') repeat-x;
+  color: #fff;
+}
+
+footer a {
+  color: #000;
+}
+
+
+#friendList li a {
+  line-height: 50px;
+  color: grey;   
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#friendList li a img{
+  padding-right: 10px;
+  vertical-align: middle;
+}
