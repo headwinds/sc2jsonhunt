@@ -256,46 +256,52 @@ class ConnectHandler(JsonRestHandler, SessionEnabledHandler):
   def post(self):
     """Exposed as `POST /api/connect`.
 
-    Takes the following payload in the request body.  The payload represents all
-    of the parameters that are required to authorize and connect the user to the
-    app
+    Takes the following payload in the request body.  The payload represents
+    all of the parameters that are required to authorize and connect the user
+    to the app.
     {
-      "state":"",
-      "access_token":"",
-      "token_type":"",
-      "expires_in":"",
-      "code":"",
-      "id_token":"",
-      "authuser":"",
-      "session_state":"",
-      "prompt":"",
-      "client_id":"",
-      "scope":"",
-      "g_user_cookie_policy":"",
-      "cookie_policy":"",
-      "issued_at":"",
-      "expires_at":"",
-      "g-oauth-window":""
+      'state':'',
+      'access_token':'',
+      'token_type':'',
+      'expires_in':'',
+      'code':'',
+      'id_token':'',
+      'authuser':'',
+      'session_state':'',
+      'prompt':'',
+      'client_id':'',
+      'scope':'',
+      'g_user_cookie_policy':'',
+      'cookie_policy':'',
+      'issued_at':'',
+      'expires_at':'',
+      'g-oauth-window':''
     }
 
     Returns the following JSON response representing the User that was
     connected:
     {
-      "id":0,
-      "googleUserId":"",
-      "googleDisplayName":"",
-      "googlePublicProfileUrl":"",
-      "googlePublicProfilePhotoUrl":"",
-      "googleExpiresAt":0
+      'id':0,
+      'googleUserId':'',
+      'googleDisplayName':'',
+      'googlePublicProfileUrl':'',
+      'googlePublicProfilePhotoUrl':'',
+      'googleExpiresAt':0
     }
 
     Issues the following errors along with corresponding HTTP response codes:
-    401: error from token verification end-point.
-    500: "Failed to upgrade the authorization code." (for code exchange flows)
-    500: "Failed to read token data from Google."
-         + error from reading token verification response.
-    500: "Failed to query the Google+ API: " + error from client library.
-    500: IOException occurred (several ways this could happen).
+    401: The error from the Google token verification end point.
+    500: 'Failed to upgrade the authorization code.' This can happen during
+         OAuth v2 code exchange flows.
+    500: 'Failed to read token data from Google.'
+         This response also sends the error from the token verification
+         response concatenated to the error message.
+    500: 'Failed to query the Google+ API: '
+         This error also includes the error from the client library
+         concatenated to the error response.
+    500: 'IOException occurred.' The IOException could happen when any
+         IO-related errors occur such as network connectivity loss or local
+         file-related errors.
     """
     # Only connect a user that is not already connected.
     if self.session.get(self.CURRENT_USER_SESSION_KEY) is not None:
@@ -392,11 +398,11 @@ class DisconnectHandler(JsonRestHandler, SessionEnabledHandler):
     Returns the following JSON response representing the User that was
     connected:
 
-      "Successfully disconnected."
+      'Successfully disconnected.'
 
     Issues the following errors along with corresponding HTTP response codes:
-    401: "Unauthorized request".  No user was connected to disconnect.
-    500: "Failed to revoke token for given user: "
+    401: 'Unauthorized request'.  No user was connected to disconnect.
+    500: 'Failed to revoke token for given user: '
          + error from failed connection to revoke end-point.
     """
     try:
@@ -440,18 +446,18 @@ class FriendsHandler(JsonRestHandler, SessionEnabledHandler):
     connected to the currently signed in user:
     [
       {
-        "id":0,
-        "googleUserId":"",
-        "googleDisplayName":"",
-        "googlePublicProfileUrl":"",
-        "googlePublicProfilePhotoUrl":"",
-        "googleExpiresAt":0
+        'id':0,
+        'googleUserId':'',
+        'googleDisplayName':'',
+        'googlePublicProfileUrl':'',
+        'googlePublicProfilePhotoUrl':'',
+        'googleExpiresAt':0
       },
          ...
     ]
 
     Issues the following errors along with corresponding HTTP response codes:
-    401: "Unauthorized request"
+    401: 'Unauthorized request'
     """
     try:
       user = self.get_user_from_session()
@@ -480,10 +486,10 @@ class ImageHandler(JsonRestHandler, SessionEnabledHandler):
 
     Returns the following JSON response representing an upload URL:
 
-    "http://appid.appspot.com/_ah/upload/upload-key"
+    'http://appid.appspot.com/_ah/upload/upload-key'
 
     Issues the following errors along with corresponding HTTP response codes:
-    401: "Unauthorized request"
+    401: 'Unauthorized request'
     """
     user = self.get_user_from_session()
     upload_url = blobstore.create_upload_url('/api/photos')
@@ -531,20 +537,20 @@ class PhotosHandler(JsonRestHandler, SessionEnabledHandler,
 
     [
       {
-        "id":0,
-        "ownerUserId":0,
-        "ownerDisplayName":"",
-        "ownerProfileUrl":"",
-        "ownerProfilePhoto":"",
-        "themeId":0,
-        "themeDisplayName":"",
-        "numVotes":0,
-        "voted":false, // Whether or not the current user has voted on this.
-        "created":0,
-        "fullsizeUrl":"",
-        "thumbnailUrl":"",
-        "voteCtaUrl":"", // URL for Vote interactive post button.
-        "photoContentUrl":"" // URL for Google crawler to hit to get info.
+        'id':0,
+        'ownerUserId':0,
+        'ownerDisplayName':'',
+        'ownerProfileUrl':'',
+        'ownerProfilePhoto':'',
+        'themeId':0,
+        'themeDisplayName':'',
+        'numVotes':0,
+        'voted':false, // Whether or not the current user has voted on this.
+        'created':0,
+        'fullsizeUrl':'',
+        'thumbnailUrl':'',
+        'voteCtaUrl':'', // URL for Vote interactive post button.
+        'photoContentUrl':'' // URL for Google crawler to hit to get info.
       },
       ...
     ]
@@ -609,48 +615,48 @@ class PhotosHandler(JsonRestHandler, SessionEnabledHandler,
     Takes the following payload in the request body.  Payload represents a
     Photo that should be created.
     {
-      "id":0,
-      "ownerUserId":0,
-      "ownerDisplayName":"",
-      "ownerProfileUrl":"",
-      "ownerProfilePhoto":"",
-      "themeId":0,
-      "themeDisplayName":"",
-      "numVotes":0,
-      "voted":false, // Whether or not the current user has voted on this.
-      "created":0,
-      "fullsizeUrl":"",
-      "thumbnailUrl":"",
-      "voteCtaUrl":"", // URL for Vote interactive post button.
-      "photoContentUrl":"" // URL for Google crawler to hit to get info.
+      'id':0,
+      'ownerUserId':0,
+      'ownerDisplayName':'',
+      'ownerProfileUrl':'',
+      'ownerProfilePhoto':'',
+      'themeId':0,
+      'themeDisplayName':'',
+      'numVotes':0,
+      'voted':false, // Whether or not the current user has voted on this.
+      'created':0,
+      'fullsizeUrl':'',
+      'thumbnailUrl':'',
+      'voteCtaUrl':'', // URL for Vote interactive post button.
+      'photoContentUrl':'' // URL for Google crawler to hit to get info.
     }
 
     Returns the following JSON response representing the created Photo.
     {
-      "id":0,
-      "ownerUserId":0,
-      "ownerDisplayName":"",
-      "ownerProfileUrl":"",
-      "ownerProfilePhoto":"",
-      "themeId":0,
-      "themeDisplayName":"",
-      "numVotes":0,
-      "voted":false, // Whether or not the current user has voted on this.
-      "created":0,
-      "fullsizeUrl":"",
-      "thumbnailUrl":"",
-      "voteCtaUrl":"", // URL for Vote interactive post button.
-      "photoContentUrl":"" // URL for Google crawler to hit to get info.
+      'id':0,
+      'ownerUserId':0,
+      'ownerDisplayName':'',
+      'ownerProfileUrl':'',
+      'ownerProfilePhoto':'',
+      'themeId':0,
+      'themeDisplayName':'',
+      'numVotes':0,
+      'voted':false, // Whether or not the current user has voted on this.
+      'created':0,
+      'fullsizeUrl':'',
+      'thumbnailUrl':'',
+      'voteCtaUrl':'', // URL for Vote interactive post button.
+      'photoContentUrl':'' // URL for Google crawler to hit to get info.
     }
 
     Issues the following errors along with corresponding HTTP response codes:
-    400: "Bad Request" if the request is missing image data.
-    401: "Unauthorized request" (if certain parameters are present in the
+    400: 'Bad Request' if the request is missing image data.
+    401: 'Unauthorized request' (if certain parameters are present in the
          request)
-    401: "Access token expired" (there is a logged in user, but he doesn't
+    401: 'Access token expired' (there is a logged in user, but he doesn't
          have a refresh token and his access token is expiring in less than
          100 seconds, get a new token and retry)
-    500: "Error while writing app activity: " + error from client library.
+    500: 'Error while writing app activity: ' + error from client library.
     """
     try:
       user = self.get_user_from_session()
@@ -683,12 +689,12 @@ class PhotosHandler(JsonRestHandler, SessionEnabledHandler,
     'photoId': id of the photo to delete.
 
     Returns the following JSON response representing success.
-    "Photo successfully deleted."
+    'Photo successfully deleted.'
 
     Issues the following errors along with corresponding HTTP response codes:
-    401: "Unauthorized request" (if certain parameters are present in the
+    401: 'Unauthorized request' (if certain parameters are present in the
          request)
-    404: "Photo with given ID does not exist."
+    404: 'Photo with given ID does not exist.'
     """
     try:
       user = self.get_user_from_session()
@@ -743,8 +749,8 @@ class ThemesHandler(JsonRestHandler):
     """Exposed as `GET /api/themes`.
 
     When requested, if no theme exists for the current day, then a theme with
-    the name of "Beautiful" is created for today.  This leads to multiple
-    themes with the name "Beautiful" if you use the app over multiple days
+    the name of 'Beautiful' is created for today.  This leads to multiple
+    themes with the name 'Beautiful' if you use the app over multiple days
     without changing this logic.  This behavior is purposeful so that the app
     is easier to get up and running.
 
@@ -752,10 +758,10 @@ class ThemesHandler(JsonRestHandler):
 
     [
       {
-        "id":0,
-        "displayName":"",
-        "created":0,
-        "start":0
+        'id':0,
+        'displayName':'',
+        'created':0,
+        'start':0
       },
       ...
     ]
@@ -782,33 +788,33 @@ class VotesHandler(JsonRestHandler, SessionEnabledHandler):
        for which the currently logged in user is voting.
 
        {
-         "photoId":0
+         'photoId':0
        }
 
        Returns the following JSON response representing the Photo for which the
        User voted.
 
        {
-         "id":0,
-         "ownerUserId":0,
-         "ownerDisplayName":"",
-         "ownerProfileUrl":"",
-         "ownerProfilePhoto":"",
-         "themeId":0,
-         "themeDisplayName":"",
-         "numVotes":1,
-         "voted":true,
-         "created":0,
-         "fullsizeUrl":"",
-         "thumbnailUrl":"",
-         "voteCtaUrl":"",
-         "photoContentUrl":""
+         'id':0,
+         'ownerUserId':0,
+         'ownerDisplayName':'',
+         'ownerProfileUrl':'',
+         'ownerProfilePhoto':'',
+         'themeId':0,
+         'themeDisplayName':'',
+         'numVotes':1,
+         'voted':true,
+         'created':0,
+         'fullsizeUrl':'',
+         'thumbnailUrl':'',
+         'voteCtaUrl':'',
+         'photoContentUrl':''
        }
 
        Issues the following errors along with corresponding HTTP response codes:
-       401: "Unauthorized request".  No user was connected to disconnect.
-       401: "Access token expired".  Retry with a new access token.
-       500: "Error writing app activity: " + error from client library
+       401: 'Unauthorized request'.  No user was connected to disconnect.
+       401: 'Access token expired'.  Retry with a new access token.
+       500: 'Error writing app activity: ' + error from client library
     """
     try:
       user = self.get_user_from_session()
@@ -861,7 +867,7 @@ class SchemaHandler(JsonRestHandler, SessionEnabledHandler):
     """Returns the template at templates/${request.path}.
 
        Issues the following errors along with corresponding HTTP response codes:
-       404: "Not Found". No template was found for the specified path.
+       404: 'Not Found'. No template was found for the specified path.
     """
     try:
       photo_id = self.request.get('photoId')
