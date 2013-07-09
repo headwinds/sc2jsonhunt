@@ -256,8 +256,9 @@ class ConnectHandler(JsonRestHandler, SessionEnabledHandler):
   def post(self):
     """Exposed as `POST /api/connect`.
 
-    Takes the following payload in the request body.  Payload represents all
-    parameters required to authorize and/or connect.
+    Takes the following payload in the request body.  The payload represents all
+    of the parameters that are required to authorize and connect the user to the
+    app
     {
       "state":"",
       "access_token":"",
