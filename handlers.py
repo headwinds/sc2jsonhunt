@@ -23,6 +23,7 @@ import json
 import os
 import random
 import string
+import apiclient
 import webapp2
 import datetime
 import jinja2
@@ -486,14 +487,16 @@ class ImageHandler(JsonRestHandler, SessionEnabledHandler):
 
     Returns the following JSON response representing an upload URL:
 
-    'http://appid.appspot.com/_ah/upload/upload-key'
+    {
+      "url": "http://appid.appspot.com/_ah/upload/upload-key"
+    }
 
     Issues the following errors along with corresponding HTTP response codes:
     401: 'Unauthorized request'
     """
     user = self.get_user_from_session()
-    upload_url = blobstore.create_upload_url('/api/photos')
-    self.send_success(upload_url)
+    upload_url_string = blobstore.create_upload_url('/api/photos')
+    self.send_success(model.UploadUrl(url = upload_url_string))
 
   def get(self):
     """Serve an image."""
@@ -674,7 +677,11 @@ class PhotosHandler(JsonRestHandler, SessionEnabledHandler,
             num_votes=0,
             image_blob_key=blob_info.key())
         photo.put()
-        self.add_photo_to_google_plus_activity(user, photo)
+        try:
+          result = self.add_photo_to_google_plus_activity(user, photo)
+          print("test: %s", result)
+        except apiclient.errors.HttpError as e:
+          logging.error("Error while writing app activity: %s", str(e))
         self.send_success(photo)
       else:
         self.send_error(404, 'No current theme.')
