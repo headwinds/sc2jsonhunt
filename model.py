@@ -233,3 +233,11 @@ class Message(Jsonifiable):
 
   def __init__(self, message):
     self.message = message
+
+class UploadUrl(Jsonifiable):
+  """Represents a PhotoHunt Upload URL."""
+  jsonkind = 'photohunt#uploadurl'
+  url = ""
+
+  def __init__(self, url):
+    self.url = url

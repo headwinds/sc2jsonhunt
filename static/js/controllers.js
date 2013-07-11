@@ -131,7 +131,7 @@ function PhotoHuntCtrl($scope, $location, Conf, PhotoHuntApi) {
   
   $scope.getUploadUrl = function(params) {
     PhotoHuntApi.getUploadUrl().then(function(response) {
-      $scope.uploadUrl = response.data;
+      $scope.uploadUrl = response.data.url;
     });
   }
   
