@@ -679,7 +679,6 @@ class PhotosHandler(JsonRestHandler, SessionEnabledHandler,
         photo.put()
         try:
           result = self.add_photo_to_google_plus_activity(user, photo)
-          print("test: %s", result)
         except apiclient.errors.HttpError as e:
           logging.error("Error while writing app activity: %s", str(e))
         self.send_success(photo)
