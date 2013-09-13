@@ -314,7 +314,7 @@ class ConnectHandler(JsonRestHandler, SessionEnabledHandler):
     try:
       connect_credentials = json.loads(self.request.body)
       if 'error' in connect_credentials:
-        self.send_error(401, connect_credientials.error)
+        self.send_error(401, connect_credentials.error)
         return
       if connect_credentials.get('code'):
         credentials = ConnectHandler.exchange_code(
