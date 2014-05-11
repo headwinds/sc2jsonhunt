@@ -14,8 +14,29 @@
 
 'use strict';
 
-angular.module('photoHunt.directives', ['photoHunt.services'])
-    .directive('photo', function(Conf, PhotoHuntApi) {
+angular.module('photohunt.directives', ['photohunt.services'])
+    .directive('replay', function(Conf, ReplayHuntApi) {
+      return {
+        restrict: 'E',
+        replace: true,
+        scope: {
+          replayReady: '&replayReady',
+          replayFileName: '&replayFileName',
+          replayData: '&replayData'
+        },
+        templateUrl: 'partials/replay.html',
+        link: function (scope, element, attrs) {
+
+          console.log("directives - replay - init")
+
+          element.find('.nextButton')
+              .click(function(evt) {
+                // console.log("directives - replay nextbutton - click")
+              });
+        }
+      }
+    })
+    .directive('photo', function(Conf, ReplayHuntApi) {
       return {
         restrict: 'E',
         replace: true,
@@ -36,7 +57,7 @@ angular.module('photoHunt.directives', ['photoHunt.services'])
                     voteButton.focus();
                     scope.item.voteClass.push('disable');
                   });
-                  PhotoHuntApi.votePhoto(scope.item.id)
+                  ReplayHuntApi.votePhoto(scope.item.id)
                       .then(function(response) {});
                 }
               });

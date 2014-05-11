@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-"""Persistent datamodel for PhotoHunt."""
+"""Persistent datamodel for sc2jsonhunt."""
 
 import json
 import logging
@@ -30,6 +30,8 @@ from google.appengine.api import images
 from google.appengine.ext import db
 from google.appengine.ext import blobstore
 from oauth2client.appengine import CredentialsProperty
+
+from sc2reader.scripts import sc2json
 
 class JsonifiableEncoder(json.JSONEncoder):
   """JSON encoder which provides a convenient extension point for custom JSON
@@ -120,7 +122,7 @@ class Jsonifiable:
 
 
 class DirectedUserToUserEdge(db.Model, Jsonifiable):
-  """Represents friend links between PhotoHunt users."""
+  """Represents friend links between photohunt users."""
   owner_user_id = db.IntegerProperty()
   friend_user_id = db.IntegerProperty()
 
@@ -181,7 +183,7 @@ class Photo(db.Model, Jsonifiable):
     return images.get_serving_url(self.image_blob_key, size=size)
 
 class Theme(db.Model, Jsonifiable):
-  """Represents a PhotoHunt theme."""
+  """Represents a photohunt theme."""
   jsonkind = 'photohunt#theme'
   display_name = db.StringProperty()
   created = db.DateTimeProperty(auto_now_add=True)
@@ -198,7 +200,7 @@ class Theme(db.Model, Jsonifiable):
         'start <', end).order('-start').get()
 
 class User(db.Model, Jsonifiable):
-  """Represents a PhotoHunt user."""
+  """Represents a photohunt user."""
   jsonkind = 'photohunt#user'
   email = db.EmailProperty()
   google_user_id = db.StringProperty()
@@ -221,7 +223,7 @@ class User(db.Model, Jsonifiable):
                    edges])
 
 class Vote(db.Model, Jsonifiable):
-  """Represents a vote case by a PhotoHunt user."""
+  """Represents a vote case by a photohunt user."""
   jsonkind = 'photohunt#vote'
   owner_user_id = db.IntegerProperty()
   photo_id = db.IntegerProperty()
@@ -235,9 +237,19 @@ class Message(Jsonifiable):
     self.message = message
 
 class UploadUrl(Jsonifiable):
-  """Represents a PhotoHunt Upload URL."""
+  """Represents a photohunt Upload URL."""
   jsonkind = 'photohunt#uploadurl'
   url = ""
 
   def __init__(self, url):
     self.url = url
+
+class Replay(db.Model, Jsonifiable):
+  """Represents the sc2 json feed of replay game events."""
+  jsonkind = 'photohunt#replay'
+  default_replay = 'swarms.SC2Replay'
+  """
+  replays_events = sc2reader.load_replay('static/replays/swarms.SC2Replay', load_level=4)
+  """
+  replays_events = sc2reader.load_replay('static/replays/swarms.SC2Replay', load_level=4)
+

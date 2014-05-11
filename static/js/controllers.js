@@ -14,7 +14,7 @@
 
 'use strict';
 
-function PhotoHuntCtrl($scope, $location, Conf, PhotoHuntApi) {
+function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
   // signIn
   $scope.userProfile = undefined;
   $scope.hasUserProfile = false;
@@ -35,9 +35,14 @@ function PhotoHuntCtrl($scope, $location, Conf, PhotoHuntApi) {
   $scope.friends = [];
   // uploads
   $scope.uploadUrl;
-  
+
+  // replay
+  $scope.replayFileName = "default";
+  $scope.replayReady = false;
+  $scope.replayData = {};
+
   $scope.disconnect = function() {
-    PhotoHuntApi.disconnect().then(function() {
+    ReplayHuntApi.disconnect().then(function() {
       $scope.userProfile = undefined;
       $scope.hasUserProfile = false;
       $scope.isSignedIn = false;
@@ -90,7 +95,7 @@ function PhotoHuntCtrl($scope, $location, Conf, PhotoHuntApi) {
   }
   
   $scope.deletePhoto = function(photoId) {
-    PhotoHuntApi.deletePhoto(photoId);
+    ReplayHuntApi.deletePhoto(photoId);
     $scope.userPhotos = $scope.removePhotoFromArray($scope.userPhotos, photoId);
     $scope.friendsPhotos = $scope.removePhotoFromArray($scope.friendsPhotos, photoId);
     $scope.allPhotos = $scope.removePhotoFromArray($scope.allPhotos, photoId);
@@ -108,7 +113,7 @@ function PhotoHuntCtrl($scope, $location, Conf, PhotoHuntApi) {
   
   $scope.getUserPhotos = function() {
     if ($scope.hasUserProfile && ($scope.themes.length > 0)) {
-      PhotoHuntApi.getUserPhotosByTheme($scope.selectedTheme.id)
+      ReplayHuntApi.getUserPhotosByTheme($scope.selectedTheme.id)
       	  .then(function(response) {
         $scope.userPhotos = $scope.adaptPhotos(response.data);
       });
@@ -116,28 +121,28 @@ function PhotoHuntCtrl($scope, $location, Conf, PhotoHuntApi) {
   }
   
   $scope.getAllPhotos = function() {
-    PhotoHuntApi.getAllPhotosByTheme($scope.selectedTheme.id)
+    ReplayHuntApi.getAllPhotosByTheme($scope.selectedTheme.id)
     	.then(function(response) {
       $scope.allPhotos = $scope.adaptPhotos(response.data);
     });
   }
   
   $scope.getFriendsPhotos = function() {
-    PhotoHuntApi.getFriendsPhotosByTheme($scope.selectedTheme.id)
+    ReplayHuntApi.getFriendsPhotosByTheme($scope.selectedTheme.id)
         .then(function(response) {
       $scope.friendsPhotos = $scope.adaptPhotos(response.data);
     });
   }
   
   $scope.getUploadUrl = function(params) {
-    PhotoHuntApi.getUploadUrl().then(function(response) {
+    ReplayHuntApi.getUploadUrl().then(function(response) {
       $scope.uploadUrl = response.data.url;
     });
   }
   
   $scope.checkIfVoteActionRequested = function() {
     if($location.search()['action'] == 'VOTE') {
-      PhotoHuntApi.votePhoto($location.search()['photoId'])
+      ReplayHuntApi.votePhoto($location.search()['photoId'])
           .then(function(response) {
         var photo = response.data;
         $scope.highlightedPhoto = photo;
@@ -147,9 +152,28 @@ function PhotoHuntCtrl($scope, $location, Conf, PhotoHuntApi) {
   }
   
   $scope.getFriends = function() {
-    PhotoHuntApi.getFriends().then(function(response) {
+    ReplayHuntApi.getFriends().then(function(response) {
       $scope.friends = response.data;
       $scope.getFriendsPhotos();
+    })
+  }
+
+  $scope.getReplay = function() {
+    ReplayHuntApi.getReplay().then(function(response) {
+    
+      $scope.replayFileName = response.data;
+      $scope.replayReady = true;
+      $scope.replayData = response;
+
+      console.log($scope.replayData, "controllers - getReplay - response - replayFileName: " + $scope.replayFileName );
+
+      //
+      var timeoutHandler = function(){
+         console.log("controllers - getReplay - response - timeout finished" );
+        $scope.$apply();
+      }
+
+      $timeout(timeoutHandler, 500);
     })
   }
   
@@ -196,7 +220,7 @@ function PhotoHuntCtrl($scope, $location, Conf, PhotoHuntApi) {
   
   $scope.checkForHighlightedPhoto = function() {
     if($location.search()['photoId']) {
-      PhotoHuntApi.getPhoto($location.search()['photoId'])
+      ReplayHuntApi.getPhoto($location.search()['photoId'])
           .then(function(response) {
         $scope.highlightedPhoto = response.data;
       })
@@ -217,7 +241,7 @@ function PhotoHuntCtrl($scope, $location, Conf, PhotoHuntApi) {
     if (authResult['access_token']) {
       $scope.immediateFailed = false;
       // Successfully authorized, create session
-      PhotoHuntApi.signIn(authResult).then(function(response) {
+      ReplayHuntApi.signIn(authResult).then(function(response) {
         $scope.signedIn(response.data);
       });
     } else if (authResult['error']) {
@@ -245,7 +269,9 @@ function PhotoHuntCtrl($scope, $location, Conf, PhotoHuntApi) {
   $scope.start = function() {
     $scope.renderSignIn();
     $scope.checkForHighlightedPhoto();
-    PhotoHuntApi.getThemes().then(function(response) {
+    
+    ReplayHuntApi.getThemes().then(function(response) {
+      
       $scope.themes = response.data;
       $scope.selectedTheme = $scope.themes[0];
       $scope.orderBy('recent');
@@ -264,8 +290,14 @@ function PhotoHuntCtrl($scope, $location, Conf, PhotoHuntApi) {
         'scope': Conf.scopes,
         'cookiepolicy': Conf.cookiepolicy
       };
+
       gapi.interactivepost.render('invite', options);
-      $scope.getAllPhotos();
+      //$scope.getAllPhotos();
+
+      console.log("controllers - start - getThemes response - now get replays");
+
+      $scope.getReplay();
+
     });
   }
   

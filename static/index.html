@@ -22,7 +22,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8" />
-  <title>PhotoHunt</title>
+  <title>photohunt</title>
   <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css"/>
   <link rel="stylesheet" href="stylesheets/photohunt.css"/>
   <link rel="stylesheet" href="stylesheets/gh-buttons.css"/>
@@ -41,7 +41,7 @@
   <script src="js/directives.js"></script>
   <script type='text/javascript'>
   function startApp() {
-    angular.bootstrap(document, ['photoHunt']);  
+    angular.bootstrap(document, ['photohunt']);  
   }
   </script>
 </head>
@@ -51,7 +51,7 @@
   <header>
     <div id="topHeader">
       <h1>
-        <img src="images/title-photohunt.jpg" alt="PhotoHunt"
+        <img src="images/title-photohunt.jpg" alt="photohunt"
             width="160" height="45" />
       </h1>
       <div id="profileInfo" >
@@ -70,7 +70,7 @@
       </div>
     </div>
     <div id="bottomHeader">
-      <h2>Hunting for photos of
+      <h2>Hunting for SC2 game events of
         <span id="todayTheme">{{selectedTheme.displayName}}</span>!
       </h2>
       <div>
@@ -91,6 +91,16 @@
   
   <section id="notification">{{notification}}</section>
 
+  <section id="replays">
+    <div class="contentGroup" ng-show="isSignedIn">
+      <h3>My Game</h3>
+      <div><p>game data here...</div>
+
+      <replay></replay> <!-- that's neat my first directive ;-D -->
+
+    </div>
+  </section>
+
   <section id="photoList">
    <ng-switch on="highlightedPhoto">
       <span ng-switch-when="undefined"></span>
@@ -103,6 +113,7 @@
         </ul>
       </div>
     </ng-switch>
+    
     <div class="contentGroup" ng-show="isSignedIn">
       <h3>My Photos</h3>
       <div id="uploadContainer" ng-show="canUpload()">
@@ -146,7 +157,7 @@
       </ul>
     </div>
     <div ng-show="friends">
-      <h3>Friends using PhotoHunt</h4>
+      <h3>Friends using photohunt</h4>
       <ul id="friendList">
         <li ng-repeat="friend in friends | orderBy:'displayName'">
           <a href="{{friend.googlePublicProfileUrl}}"><img ng-src="{{friend.googlePublicProfilePhotoUrl|profilePicture:50}}"

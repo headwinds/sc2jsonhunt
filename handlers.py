@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-"""All request handlers of PhotoHunt, including its built-in API."""
+"""All request handlers of photohunt, including its built-in API."""
 
 import httplib2
 import model
@@ -118,7 +118,7 @@ class JsonRestHandler(webapp2.RequestHandler):
     return
 
   def send_success(self, obj=None, jsonkind='photohunt#unknown'):
-    """Convenience method to format a PhotoHunt JSON HTTP response in a standard
+    """Convenience method to format a photohunt JSON HTTP response in a standard
     format.
     """
     self.response.headers["Content-Type"] = self.JSON_MIMETYPE
@@ -130,7 +130,7 @@ class JsonRestHandler(webapp2.RequestHandler):
 
 
 class ConnectHandler(JsonRestHandler, SessionEnabledHandler):
-  """Provides an API to connect users to Photohunt.
+  """Provides an API to connect users to photohunt.
 
   This handler provides the api/connect end-point, and exposes the following
   operations:
@@ -360,7 +360,7 @@ class ConnectHandler(JsonRestHandler, SessionEnabledHandler):
 
 
 class DisconnectHandler(JsonRestHandler, SessionEnabledHandler):
-  """Provides an API to disconnect users from Photohunt.
+  """Provides an API to disconnect users from photohunt.
 
   This handler provides the /api/disconnect endpoint, and exposes the following
   operations:
@@ -780,6 +780,37 @@ class ThemesHandler(JsonRestHandler):
       themes = [default_theme]
     self.send_success(themes, jsonkind="photohunt#themes")
 
+class ReplayHandler(JsonRestHandler, SessionEnabledHandler):
+  """Provides an API for working with Replays.
+
+  This handler provides the /api/replays end-point, and exposes the following
+  operations:
+    GET /api/replays
+  """
+
+  def get(self):
+    """Exposed as `GET /api/replays`.
+
+    When requested, send the default replay game events. 
+
+    Returns the following JSON response representing a list of Replay game events.
+
+    [
+      {
+        'id':0,
+        'displayName':'',
+        'created':0,
+        'start':0
+      },
+      ...
+    ]
+    replay_events = model.Replay.replay_events;
+    self.send_success(replay_events, jsonkind="photohunt#replay")  
+    """
+    default_replay = model.Replay.default_replay;
+    self.send_success(default_replay, jsonkind="photohunt#replay")  
+
+
 class VotesHandler(JsonRestHandler, SessionEnabledHandler):
   """Provides an API for working with Votes.  This servlet provides the
      /api/votes end-point, and exposes the following operations:
@@ -854,7 +885,7 @@ class VotesHandler(JsonRestHandler, SessionEnabledHandler):
               },
               "result": {
                 "type": "http://schema.org/Review",
-                "name": "A vote for a PhotoHunt photo",
+                "name": "A vote for a photohunt photo",
                 "url": photo.photo_content_url,
                 "text": "Voted!"
               }}
@@ -884,7 +915,7 @@ class SchemaHandler(JsonRestHandler, SessionEnabledHandler):
         self.response.out.write(template.render({
           'photoId': photo_id,
           'redirectUrl': 'index.html?photoId={}'.format(photo_id),
-          'name': 'Photo by {} for {} | PhotoHunt'.format(
+          'name': 'Photo by {} for {} | photohunt'.format(
               photo.owner_display_name,
               photo.theme_display_name),
           'imageUrl': photo.thumbnail_url,
@@ -896,19 +927,19 @@ class SchemaHandler(JsonRestHandler, SessionEnabledHandler):
         if photo:
           self.response.out.write(template.render({
             'redirectUrl': 'index.html?photoId='.format(photo_id),
-            'name': 'Photo by {} for {} | PhotoHunt'.format(
+            'name': 'Photo by {} for {} | photohunt'.format(
                 photo.owner_display_name,
                 photo.theme_display_name),
             'imageUrl': photo.thumbnail_url,
-            'description': 'Join in the PhotoHunt game.'
+            'description': 'Join in the photohunt game.'
           }))
         else:
           self.response.out.write(template.render({
             'redirectUrl': get_base_url(),
-            'name': 'PhotoHunt',
+            'name': 'photohunt',
             'imageUrl': '{}/images/interactivepost-icon.png'.format(
                 get_base_url()),
-            'description': 'Join in the PhotoHunt game.'
+            'description': 'Join in the photohunt game.'
           }))
     except TypeError as te:
       self.send_error(404, "Resource not found")
@@ -925,6 +956,7 @@ routes = [
     ('/api/connect', ConnectHandler),
     ('/api/disconnect', DisconnectHandler),
     ('/api/themes', ThemesHandler),
+    ('/api/replay', ReplayHandler),
     ('/api/friends', FriendsHandler),
     ('/api/images', ImageHandler),
     ('/api/votes', VotesHandler),

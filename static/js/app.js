@@ -15,8 +15,8 @@
 
 'use strict';
 
-angular.module('photoHunt',
-    ['photoHunt.services', 'photoHunt.directives', 'photoHunt.filters'],
+angular.module('photohunt',
+    ['photohunt.services', 'photohunt.directives', 'photohunt.filters'],
     function($locationProvider) {
       $locationProvider.html5Mode(true);
     }
