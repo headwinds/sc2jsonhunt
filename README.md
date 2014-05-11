@@ -366,14 +366,6 @@ $ git clone https://github.com/eagleflo/mpyq.git
 
 Then copied that mpyq folder into sc2reader. 
 
-Life Interruption:
-
-"Brandon you know that diaper creme container you were supposed to put up on the shelf?"
-"yeah"
-"While I changing elodie, Mabel decided to smear it all over her bed, hair and glasses"
-"Oh, I'll help"
-"No, you stay I dont want to see you right now"
-
 
 #### further reading
 
