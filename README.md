@@ -26,7 +26,7 @@ $ cd sc2reader/scripts
 
 On a Mac, right click on the file in SC2 and a context menu will appear where you can find the file on your computer. 
 
-![sc2replay screenshot](http://sc2jsonhunt.appspot.com/images/replays.png)
+![sc2replay screenshot](http://sc2jsonhunt.appspot.com/images/replays/replays.png)
 
 For some reason, finder fails...
 
@@ -36,7 +36,7 @@ $ python sc2json.py "swarms.SC2Replay"
 
 This produced a messy json dump and copy and pasted it into this [jsonformatter](http://jsonformatter.curiousconcept.com/). Thus, I could better read the data:
 
-'
+'''
 {
    "is_ladder":true,
    "file_time":null,
@@ -117,7 +117,7 @@ This produced a messy json dump and copy and pasted it into this [jsonformatter]
    ],
    "release":"2.1.1.29261"
 }
-'
+'''
 
 But wait? Where are all the game events? This is just a overall summary of the game results. 
 
@@ -129,7 +129,7 @@ In this game, I really struggled to defeat swarms of spider mines, throwing ultr
 
 Without looking at the instructions, I had a hunch that I needed to push the arrow key. I actually could have hit any key. And voila, as I hit the arrow, there were the game events as they happened. 
 
-
+'''
 1v1 on Heavy Rain LE at 2014-04-02 16:32:22
 
 Team 1: Player 1 - ubik (Terran)
@@ -150,6 +150,7 @@ Team 2: Player 2 - headwinds (Zerg)
 00.04	headwinds       SelectionEvent['Larva [2940001]', 'Larva [2980001]']
 00.06	ubik            Right Click; Target: MineralField [00400001]; Location: (53.0, 145.5, 49136)
 00.06	headwinds       SelectionEvent['Hive [28C0001]']
+'''
 
 Great! This is exactly what I want to expose to my javascript app. So how I could create a service from Python that Javascript can hook into and read these events? I knew I need to create an API to this data. I also knew that the Google App Engine could host Java and Python projects for free. I already had it installed and had fooled around with it a year ago. Now it was time to dust it off and try again with new motivation. 
 
@@ -162,6 +163,7 @@ From the menu, I selected Language then Python and dug through the examples sett
 I followed the excellent detailed instructions on how to install the Photo Hunt project. Back in the [Google Developer console](https://console.developers.google.com/project), I created new projected and named it:  
 sc2jsonhunt. I entered the following: 
 
+'''
 Credentials
 
 Authorized JavaScript origins
@@ -171,6 +173,7 @@ http://localhost:8080/
 Authorized redirect URI
 http://sc2jsonhunt.appspot.com/oauth2callback
 http://localhost:8080/oauth2callback
+'''
 
 Then, in the terminal, I wanted to run the project so, as instructed, I went to the folder containing gplus-photohunt-server-python and typed: 
 
@@ -178,7 +181,7 @@ $ dev_appserver.py gplus-photohunt-server-python
 
 All good! I can see the app on my local machine http://localhost:8080/. 
 
-![sc2replay screenshot](http://sc2jsonhunt.appspot.com/images/replays/photohunt.png)
+![sc2replay screenshot](http://sc2jsonhunt.appspot.com/images/replays/photoHunt.png)
 
 This is an exciting moment realizing that I have a running python angular app. Now, it shouldn't too difficult to add the sc2reader source. At this point, I could nearly see the solution and definitely believed that I could accomplish it within perhaps a few more hours or two mornings. I try to spend an hour each morning on hacker projects. For me, that makes's it sustainable and fun. 
 
@@ -237,6 +240,7 @@ I want to import sc2reader to use in my project.
 
 In model.py, I added sc2reader as the last import like so:
 
+'''
 import json
 import logging
 import random
@@ -253,6 +257,7 @@ from google.appengine.ext import blobstore
 from oauth2client.appengine import CredentialsProperty
 
 import sc2reader
+'''
 
 $ dev_appserver.py sc2jsonhunt
 
@@ -260,13 +265,14 @@ Presto. It seems to be "working" now. I have no idea why the owner of this proje
 
 It's working yet I still don't have any sc2 data to play with. I thought it might it be a good idea to look at the client side and investigate the angular services. Starting with services.js, I built on top of the ReplayHuntApi copying getPhoto: 
 
+'''
  getReplay: function(replayId) {
           return $http.get(Conf.apiBase + 'replay', {params:
               {'replayId': replayId}});
         }
+'''        
 
 I updated controllers.js adding:
-
 
 I added some blocks in the index.html to help motivate me. 
 
@@ -274,9 +280,11 @@ I added some blocks in the index.html to help motivate me.
 
 I updated handles.py and model.py adding a ReplaysHandler and a Replay model. At this point, I want to keep things super simple and only return a default string; don't even worry about the actual file yet.
 
+'''
 class Replay(db.Model, Jsonifiable):
   """Represents the sc2 json feed."""
   default_theme = 'swarms.SC2Replay'
+'''
 
 #### Testing the API in the browser
 
@@ -294,6 +302,7 @@ http://localhost:8080/api/replay - #404 fail
 
 I searched through handlers.py and discovered the routes array near the bottom and added my replay route.
 
+'''
 routes = [
     ('/api/connect', ConnectHandler),
     ('/api/disconnect', DisconnectHandler),
@@ -305,6 +314,7 @@ routes = [
     ('/api/photos', PhotosHandler),
     ('/photo.html', SchemaHandler),
     ('/invite.html', SchemaHandler)]
+'''
 
 $ dev_appserver.py sc2jsonhunt
 
@@ -334,13 +344,13 @@ replayGameEvents = sc2reader.load_replay('MyReplay.SC2Replay', load_level=4)
 
 This should return all the game events. Before I test it, I have a feeling it won't work because how will it know that the file is loaded? Will Python know to wait before returning the results?! I know that I need to return json containing a list of game event objects which, comparing it to the PhotosHandler, I'm definitely not doing yet. Within my models.py, I have updated Replay: 
 
-'
+'''
 class Replay(db.Model, Jsonifiable):
   """Represents the sc2 json feed."""
   default_replay = 'swarms.SC2Replay'
   jsonkind = 'photohunt#replay'
   replays_events = sc2reader.load_replay('swarms.SC2Replay', load_level=4)
-'
+'''
 
 This doesn't work. I get errors and I think my original idea to import the top level sc2reader is wrong. I need to import the sub sc2reader instead. Also, the replay file itself is static and I could probably create a replays folder within the static directory but then how I find the path to it? Possibly by:
 
@@ -348,17 +358,21 @@ import sc2reader.sc2reader
 
 When I do this, I get a different error:
 
+'''
   File "/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/sc2reader/__init__.py", line 10, in <module>
     from sc2reader import engine
   ImportError: cannot import name engine  
+'''
 
 Within the sub sc2reader directory, I see the engine directory so why won't it get imported?! 
 
 Further up there is another error which I missed a few times:
 
+'''
   File "/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/resources.py", line 11, in <module>
     import mpyq
 ImportError: No module named mpyq
+'''
 
 So there is no mpyq folder in this project?! I googled it and found its github
 
@@ -369,11 +383,11 @@ Then copied that mpyq folder into sc2reader.
 
 #### further reading
 
-[Playing with REALTIME data, Python and D3](http://www.brettdangerfield.com/post/realtime_data_tag_cloud/)
-[Analyzing a NHL Playoff Game with Twitter](http://www.danielforsyth.me/analyzing-a-nhl-playoff-game-with-twitter/)
-[Fast interactive prototyping with Sketch and d3.js](http://snips.net/blog/posts/2014/05-04-fast-interactive_prototyping_with_d3_js_II.html)
-[top 10 mistakes that python programmers make](http://www.toptal.com/python/top-10-mistakes-that-python-programmers-make)
-[The Hitchhiker’s Guide to Python!](http://docs.python-guide.org/en/latest/)
+[Playing with REALTIME data, Python and D3](http://www.brettdangerfield.com/post/realtime_data_tag_cloud/)     
+[Analyzing a NHL Playoff Game with Twitter](http://www.danielforsyth.me/analyzing-a-nhl-playoff-game-with-twitter/)     
+[Fast interactive prototyping with Sketch and d3.js](http://snips.net/blog/posts/2014/05-04-fast-interactive_prototyping_with_d3_js_II.html)     
+[top 10 mistakes that python programmers make](http://www.toptal.com/python/top-10-mistakes-that-python-programmers-make)      
+[The Hitchhiker’s Guide to Python!](http://docs.python-guide.org/en/latest/)      
 
 
 
