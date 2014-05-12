@@ -2,7 +2,7 @@
 
 #### challenge
 
-I want to be able to take an Starcraft 2 replay file and produce to json dump of all the game events which I can use in my javascript experiments. I'm planning to use the events to possibly create a game where you need to guess the next event based on what's happening to help you make better decisions and improve build order recall. Should I drone or produce units? What did [Jaedong](http://wcs.battle.net/sc2/en/players/jaedong) do?
+I want to be able to take an Starcraft 2 replay file and produce to json dump of all the game events which I can use in my javascript experiments. 
 
 #### log
 
@@ -257,7 +257,7 @@ from google.appengine.ext import blobstore
 from oauth2client.appengine import CredentialsProperty
 
 import sc2reader
-'```
+```
 
 $ dev_appserver.py sc2jsonhunt
 
