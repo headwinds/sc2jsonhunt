@@ -10,9 +10,9 @@ As I tackled this challenge, I jotted down the various paths and forks that I we
  
 My first tripple [fork](http://gamedev.stackexchange.com/questions/10622/parsing-sc2replay-files)
 
-[phpsc2replay](https://code.google.com/p/phpsc2replay/)
-[WARP - java](http://trac.erichseifert.de/warp)
-[python](https://github.com/GraylinKim/sc2reader)
+[1. phpsc2replay](https://code.google.com/p/phpsc2replay/)     
+[2. WARP - java](http://trac.erichseifert.de/warp)    
+[3. python](https://github.com/GraylinKim/sc2reader)    
 
 Do use I PHP, Java, or Python? I choose Python. Python is a language which I've tried to learn in the past without a lot of success mainly because I didn't have a real goal beyond knowing that language was powerful and both scientists and gamer developers were fond of it. Ideally, I would have liked to start with a NodeJS project but would have been too easy. 
 
