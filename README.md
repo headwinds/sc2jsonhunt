@@ -246,24 +246,14 @@ from oauth2client.appengine import CredentialsProperty
 import sc2reader
 ```
 
-$ dev_appserver.py sc2jsonhunt
+Next, I thought it might it be a good idea to look at the client side and investigate the angular services. Starting with services.js, I built on top of the ReplayHuntApi copying getPhoto: 
 
-Presto. It seems to be "working" now. I have no idea why the owner of this project wouldn't think to include that file. I can only guess that it must be good practice in python land not to... I should use my naviety to ask them. 
-
-It's working yet I still don't have any sc2 data to play with. I thought it might it be a good idea to look at the client side and investigate the angular services. Starting with services.js, I built on top of the ReplayHuntApi copying getPhoto: 
-
-```python
+```javascript
  getReplay: function(replayId) {
           return $http.get(Conf.apiBase + 'replay', {params:
               {'replayId': replayId}});
         }
 ```      
-
-I updated controllers.js adding:
-
-I added some blocks in the index.html to help motivate me. 
-
-![hacking the index to motivate me](http://sc2jsonhunt.appspot.com/images/replays/hackPhotoHunt.png)
 
 I updated handles.py and model.py adding a ReplaysHandler and a Replay model. At this point, I want to keep things super simple and only return a default string; don't even worry about the actual file yet.
 
@@ -277,9 +267,11 @@ class Replay(db.Model, Jsonifiable):
 
 When you compile the app in the terminal, you'll see 3 urls created. 
 
+```
 INFO     2014-05-08 13:48:53,426 api_server.py:171] Starting API server at: http://localhost:51669
 INFO     2014-05-08 13:48:53,432 dispatcher.py:182] Starting module "default" running at: http://localhost:8080
 INFO     2014-05-08 13:48:53,439 admin_server.py:117] Starting admin server at: http://localhost:8000
+```
 
 In order to test the API, you can try the following in your address bar of your favourite browser: 
 
@@ -304,8 +296,6 @@ routes = [
 ```
 
 $ dev_appserver.py sc2jsonhunt
-
-INFO     2014-05-08 14:15:08,493 module.py:627] default: "GET /api/replay HTTP/1.1" 200 16
 
 1. I tried the API in the address bar: http://localhost:8080/api/replay
 
