@@ -197,8 +197,7 @@ I renamed the folder from “gplus-photohunt-server-python” to “sc2jsonhunt�
 
 $ dev_appserver.py sc2jsonhunt
 
-The instructions for getting started are available at:
-https://developers.google.com/+/photohunt/python
+These are the [photo hunt instructions](https://developers.google.com/+/photohunt/python) for getting started with that code base. It seems like an excellent starting point if you want build your own APIs in Python with an Angular front end.
 
 #### Adding sc2reader to sc2jsonhunt 
 
@@ -218,25 +217,13 @@ class Replay(db.Model, Jsonifiable):
 
 $ dev_appserver.py sc2jsonhunt
 
-I imagine this is how most developers work and experiment. Baby steps. I only want to change a few lines and see what happens. This didn't do anything but it also didn't break anything.   
-
-I looked at the top of models.py again and studied:
-
-from apiclient.discovery import build
-
-I took a shot in the dark and added:
-
-from sc2reader.scripts.sc2replayer import main
-
-$ dev_appserver.py sc2jsonhunt
-
-Having another developer in the office who actually knew Python well would have been quite helpful but unfortunately I didn't have that luxury. 
+I imagine this is how most developers work and experiment. Baby steps. I only want to change a few lines and see what happens. This didn't do anything but it also didn't break anything. Having another developer in the office who actually knew Python well would have been quite helpful but unfortunately I didn't have that luxury; fortunately I can turn the project owners for help!  
 
 Finally, my first big bug.  While the app did appear in the browser, there were a bunch of errors in the terminal and learned about [how python execute from this stackoverflow thread](http://stackoverflow.com/questions/6523791/why-is-python-running-my-module-when-i-import-it-and-how-do-i-stop-it).
 
 Within the sc2reader directory, there is another sub sc2reader folder. You want that sub folder with its __init__.py file. 
 
-I want to import sc2reader to use in my project.
+So I want to import sc2reader to use in my project.
 
 In model.py, I added sc2reader as the last import like so:
 
