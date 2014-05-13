@@ -808,7 +808,24 @@ class ReplayHandler(JsonRestHandler, SessionEnabledHandler):
     self.send_success(replay_events, jsonkind="photohunt#replay")  
     """
     default_replay = model.Replay.default_replay;
-    self.send_success(default_replay, jsonkind="photohunt#replay")  
+    # default_replay_json = model.Replay.json_properties(default_replay);
+    # print(default_replay)
+    loopBreak = 0
+    game_events = default_replay.players[0].events
+    default_replay_json = "'{ result: ['"
+    for prop in game_events:
+      default_replay_str = str(prop)
+      default_replay_json+="'"
+      default_replay_json+=default_replay_str
+      loopBreak += 1
+      if loopBreak > 10: 
+        break
+      default_replay_json+="',"  
+    
+    default_replay_json+= "]}'"   
+    print(default_replay_json)
+    self.send_success(str(default_replay_json), jsonkind="photohunt#replay")  
+
 
 
 class VotesHandler(JsonRestHandler, SessionEnabledHandler):

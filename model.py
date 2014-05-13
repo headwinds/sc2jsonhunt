@@ -31,6 +31,8 @@ from google.appengine.ext import db
 from google.appengine.ext import blobstore
 from oauth2client.appengine import CredentialsProperty
 
+import sc2reader
+from sc2reader.factories import SC2Factory
 from sc2reader.scripts import sc2json
 
 class JsonifiableEncoder(json.JSONEncoder):
@@ -247,9 +249,21 @@ class UploadUrl(Jsonifiable):
 class Replay(db.Model, Jsonifiable):
   """Represents the sc2 json feed of replay game events."""
   jsonkind = 'photohunt#replay'
-  default_replay = 'swarms.SC2Replay'
+  # default_replay = 'swarms.SC2Replay'
   """
   replays_events = sc2reader.load_replay('static/replays/swarms.SC2Replay', load_level=4)
   """
-  replays_events = sc2reader.load_replay('static/replays/swarms.SC2Replay', load_level=4)
+  # replays_events = sc2reader.load_replay('sc2reader/swarms.SC2Replay')
+  # sc2 = SC2Factory()
+  # replay = sc2.load_replay('sc2reader/swarms.SC2Replay')
+  # resplay_json = sc2json('swarms.SC2Replay')
+  # default_replay = 'hello b' # sc2json
+  #sc2 = SC2Factory()
+  #default_replay = sc2.load_replay('static/replays/sample.SC2Replay', load_level=4)
+  #default_replay_json = JsonifiableEncoder(default_replay)
+  # default_replay_json = jsonEncoder.to_json()
+  sc2 = SC2Factory()
+  default_replay = sc2.load_replay('static/replays/sample.SC2Replay', load_level=4)
+  #default_replay_json = sc2json.jsonEncode('static/replays/sample.SC2Replay')
+  
 

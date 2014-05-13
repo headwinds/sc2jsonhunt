@@ -8,13 +8,13 @@ I want to be able to take an Starcraft 2 replay file and produce to json dump of
 
 As I tackled this challenge, I jotted down the various paths and forks that I went down. It began with a google search for "sc2 replay javascript".
  
-My first tripple [fork](http://gamedev.stackexchange.com/questions/10622/parsing-sc2replay-files)
+My first tripple [fork](http://gamedev.stackexchange.com/questions/10622/parsing-sc2replay-files) - my trident:
 
-[1. phpsc2replay](https://code.google.com/p/phpsc2replay/)     
-[2. WARP - java](http://trac.erichseifert.de/warp)    
-[3. python](https://github.com/GraylinKim/sc2reader)    
+[1. PHP - phpsc2replay](https://code.google.com/p/phpsc2replay/)     
+[2. Java - WARP](http://trac.erichseifert.de/warp)    
+[3. python - sc2reader](https://github.com/GraylinKim/sc2reader)    
 
-Do use I PHP, Java, or Python? I choose Python. Python is a language which I've tried to learn in the past without a lot of success mainly because I didn't have a real goal beyond knowing that language was powerful and both scientists and gamer developers were fond of it. Ideally, I would have liked to start with a NodeJS project but would have been too easy. 
+Do use I choose PHP, Java, or Python? I could stumble my way though of those languages but right now I'm most interested in Python. Python is a language which I've tried to learn in the past without a lot of success mainly because I didn't have a real goal beyond knowing that language was powerful and both scientists and gamer developers were fond of it. Ideally, I would have liked to start with a NodeJS project but would have been too easy. 
 
 I spent some going through the github issues on sc2reader and made a comment [here](https://github.com/GraylinKim/sc2reader/pull/157#issuecomment-33798486) and [here](https://github.com/GraylinKim/sc2reader/issues/117#issuecomment-33713400). Possessing the start of a json branch was a good sign that this was the right project for me to investigate further. Perhaps, I could dive in and help finish it hoping that it probably far along and might need a little push.   
 
@@ -357,8 +357,22 @@ So there is no mpyq folder in this project?! I googled it and found its github
 
 $ git clone https://github.com/eagleflo/mpyq.git
 
-Then copied that mpyq folder into sc2reader. 
 
+#### Dependencies - the Lib approach
+
+I discovered [this stackover thread about importing python modules with GAE](http://stackoverflow.com/questions/2710861/how-to-import-modules-in-google-app-engine) - I took the simple suggestion to drop in mpyq.py file into my project and its working now... well throwing different errors... but gives me something different to chase after. I'll probably try the slightly more complex lib approach next.
+
+Thank you, [bernier](http://adam-bernier.appspot.com/), for your Lib solution and [source](https://bitbucket.org/abernier/yab/src/).
+
+#### errors
+
+error: UnicodeDecodeError: 'utf8'
+```
+ File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/encodings/utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xfc in position 16: invalid start byte
+```
+solution: I tried a different sc2replay file and it worked - obviously not ideal 
 
 #### further reading
 
