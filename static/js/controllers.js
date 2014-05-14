@@ -37,7 +37,6 @@ function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
   $scope.uploadUrl;
 
   // replay
-  $scope.replayFileName = "default";
   $scope.replayReady = false;
   $scope.replayData = {};
 
@@ -161,10 +160,8 @@ function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
   $scope.getReplay = function() {
     ReplayHuntApi.getReplay().then(function(response) {
     
-      $scope.replayFileName = response.data;
       $scope.replayReady = true;
       
-
       //
       var timeoutHandler = function(){
         console.log("controllers - getReplay - response - timeout finished" );
@@ -268,9 +265,15 @@ function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
       'accesstype': 'offline'
     });
   }
+
+  $scope.renderReplay = function() {
+     $scope.getReplay();
+  }
   
   $scope.start = function() {
-    $scope.renderSignIn();
+    
+    //$scope.renderSignIn();
+    $scope.renderReplay();
     $scope.checkForHighlightedPhoto();
     
     ReplayHuntApi.getThemes().then(function(response) {
@@ -279,6 +282,7 @@ function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
       $scope.selectedTheme = $scope.themes[0];
       $scope.orderBy('recent');
       $scope.getUserPhotos();
+      
       var options = {
         'clientid': Conf.clientId,
         'contenturl': Conf.rootUrl + '/invite.html',
@@ -299,9 +303,11 @@ function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
 
       console.log("controllers - start - getThemes response - now get replays");
 
-      $scope.getReplay();
+     
 
     });
+
+
   }
   
   $scope.start();

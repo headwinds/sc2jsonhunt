@@ -71,100 +71,23 @@
     </div>
     <div id="bottomHeader">
       <h2>Hunting for SC2 game events</h2>
-      <div>
-        <button id="invite" class="button icon add primary" ng-show="themes">
-          Invite your friends
-        </button>
-      </div>
-      <div class="sort button-group">
-        <button class="button icon clock" id="sortRecent"
-            ng-class="recentButtonClasses"
-            ng-click="orderBy('recent'); ">Recent</button>
-        <button class="button icon like" id="sortPopular"
-            ng-class="popularButtonClasses"
-            ng-click="orderBy('popular');">Popular</button>
-      </div>
     </div>
   </header>
   
-  <section id="notification">{{notification}}</section>
+  <section id="notification" ng-show="isSignedIn">{{notification}}</section>
 
   <section id="replays">
-    <div class="contentGroup" ng-show="isSignedIn">
+    <div class="contentGroup">
       <replay></replay> <!-- that's neat my first directive ;-D -->
     </div>
   </section>
-
-  <section id="photoList">
-   <ng-switch on="highlightedPhoto">
-      <span ng-switch-when="undefined"></span>
-      <div ng-switch-default id="selectedPhoto" class="contentGroup">
-        <h3>Highlighted photo</h3>
-        <ul>
-          <li>
-            <photo item="highlightedPhoto" delete-photo="deletePhoto(photoId)">
-          </li>
-        </ul>
-      </div>
-    </ng-switch>
-    
-    <div class="contentGroup" ng-show="isSignedIn">
-      <h3>My Photos</h3>
-      <div id="uploadContainer" ng-show="canUpload()">
-        <button upload-box
-            upload-url="uploadUrl"
-            on-complete="uploadedPhoto(photo)"
-            id="upload">
-        </button>
-      </div>
-      <ul id="myPhotos" ng-show="userPhotos.length">
-        <li ng-repeat="photo in userPhotos|orderBy:ordering">
-          <photo item="photo" delete-photo="deletePhoto(photoId)"></photo>
-        </li>
-      </ul>
-    </div>
-    <div id="friendsPhotos" class="contentGroup" ng-show="friendsPhotos.length">
-      <h3>Photos from Friends</h3>
-      <ul id="friendsPhotos">
-        <li ng-repeat="photo in friendsPhotos|orderBy:ordering">
-          <photo item="photo" delete-photo="deletePhoto(photoId)"></photo>
-        </li>
-      </ul>
-    </div>
-    <div id="allPhotos" class="contentGroup" ng-show="allPhotos.length">
-      <h3>All Photos</h3>
-      <ul id="allPhotos">
-        <li ng-repeat="photo in allPhotos|orderBy:ordering">
-          <photo item="photo" delete-photo="deletePhoto(photoId)"></photo>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <nav ng-show="themes" id="boxThemes">
-    <div>
-    <h3>Recent Themes</h3>
-      <ul id="recentThemes">
-        <li ng-repeat="(key, value) in themes|limitTo:10">
-          <span><a ng-click="selectTheme(key)">{{value.displayName}}</a></span><span class="date">{{value.created|date:'longDate'}}</span>
-        </li>
-      </ul>
-    </div>
-    <div ng-show="friends">
-      <h3>Friends using photohunt</h4>
-      <ul id="friendList">
-        <li ng-repeat="friend in friends | orderBy:'displayName'">
-          <a href="{{friend.googlePublicProfileUrl}}"><img ng-src="{{friend.googlePublicProfilePhotoUrl|profilePicture:50}}"
-              alt="{{friend.googleDisplayName}}" width="50" height="50"/>{{friend.googleDisplayName}}</a></li>
-     </ul>
-    </div>
-  </nav>
-
+ 
   <footer>
-    Powered by <a target="_blank" href="http://angularjs.org/">
+    <a target="_blank" href="http://angularjs.org/">
       <img src="images/AngularJS-small.png" style="vertical-align: middle" />
     </a>
   </footer>
+
 </div>
   <script type="text/javascript">
   window.___gcfg = {
