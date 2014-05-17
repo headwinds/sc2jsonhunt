@@ -39,6 +39,8 @@ from oauth2client.client import flow_from_clientsecrets
 from oauth2client.client import FlowExchangeError
 from webapp2_extras import sessions
 
+from models import replay
+
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
@@ -807,7 +809,7 @@ class ReplayHandler(JsonRestHandler, SessionEnabledHandler):
     replay_events = model.Replay.replay_events;
     self.send_success(replay_events, jsonkind="photohunt#replay")  
     """
-    default_replay = model.Replay.default_replay;
+    default_replay = replay.ReplayModel.default_replay;
     # default_replay_json = model.Replay.json_properties(default_replay);
     # print(default_replay)
     loopBreak = 0
@@ -818,7 +820,7 @@ class ReplayHandler(JsonRestHandler, SessionEnabledHandler):
       default_replay_json+="'"
       default_replay_json+=default_replay_str
       loopBreak += 1
-      if loopBreak > 10: 
+      if loopBreak > 1000: 
         break
       default_replay_json+="',"  
     

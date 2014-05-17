@@ -10,6 +10,15 @@ a, a:hover {
   text-decoration: none;
 }
 
+section {
+  padding: 10px;
+}
+
+#replays {
+  clear: both;
+}
+
+
 #container {
   position:relative;
   width: 960px;
