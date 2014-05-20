@@ -1,10 +1,9 @@
-    # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import, print_function, unicode_literals, division
 
 from collections import defaultdict, namedtuple
 from datetime import datetime
 import hashlib
-import sys
 from xml.etree import ElementTree
 import zlib
 
@@ -15,10 +14,10 @@ from sc2reader.decoders import BitPackedDecoder
 from sc2reader import log_utils
 from sc2reader import readers
 from sc2reader import exceptions
-from sc2reader.data import builds as datapacks
-from sc2reader.exceptions import SC2ReaderLocalizationError
+from sc2reader.data import datapacks
+from sc2reader.exceptions import SC2ReaderLocalizationError, CorruptTrackerFileError
 from sc2reader.objects import Participant, Observer, Computer, Team, PlayerSummary, Graph, BuildEntry, MapInfo
-from sc2reader.constants import REGIONS, GAME_SPEED_FACTOR, LOBBY_PROPERTIES
+from sc2reader.constants import GAME_SPEED_FACTOR, LOBBY_PROPERTIES
 
 
 class Resource(object):
@@ -121,8 +120,8 @@ class Replay(Resource):
     #: The :class:`Length` of the replay in real time adjusted for the game speed
     real_length = None
 
-    #: The gateway the game was played on: us, eu, sea, etc
-    gateway = str()
+    #: The region the game was played on: us, eu, sea, etc
+    region = str()
 
     #: An integrated list of all the game events
     events = list()
@@ -184,7 +183,16 @@ class Replay(Resource):
     #: SC2 Expansion. One of 'WoL', 'HotS'
     expasion = str()
 
-    def __init__(self, replay_file, filename=None, load_level=4, engine=sc2reader.engine, **options):
+    #: True of the game was resumed from a replay
+    resume_from_replay = False
+
+    #: A flag marking which method was used to resume from replay. Unknown interpretation.
+    resume_method = None
+
+    #: Lists info for each user that is resuming from replay.
+    resume_user_info = None
+
+    def __init__(self, replay_file, filename=None, load_level=4, engine=sc2reader.engine, do_tracker_events=True, **options):
         super(Replay, self).__init__(replay_file, filename, **options)
         self.datapack = None
         self.raw_data = dict()
@@ -192,9 +200,7 @@ class Replay(Resource):
         # The current load level of the replay
         self.load_level = None
 
-        #default values, filled in during file read
-        self.player_names = list()
-        self.other_people = set()
+        # default values, filled in during file read
         self.speed = ""
         self.type = ""
         self.game_type = ""
@@ -204,9 +210,8 @@ class Replay(Resource):
         self.is_private = False
         self.map = None
         self.map_hash = ""
-        self.gateway = ""
+        self.region = ""
         self.events = list()
-        self.events_by_type = defaultdict(list)
         self.teams, self.team = list(), dict()
 
         self.player = utils.PersonDict()
@@ -280,12 +285,11 @@ class Replay(Resource):
             self.load_players()
 
         # Load tracker events if requested
-        if load_level >= 3:
+        if load_level >= 3 and do_tracker_events:
             self.load_level = 3
             for data_file in ['replay.tracker.events']:
                 self._read_data(data_file, self._get_reader(data_file))
             self.load_tracker_events()
-
 
         # Load events if requested
         if load_level >= 4:
@@ -296,6 +300,12 @@ class Replay(Resource):
 
         # Run this replay through the engine as indicated
         if engine:
+            resume_events = [ev for ev in self.game_events if ev.name == 'HijackReplayGameEvent']
+            if self.base_build <= 26490 and self.tracker_events and len(resume_events) > 0:
+                raise CorruptTrackerFileError(
+                    "Cannot run engine on resumed games with tracker events. Run again with the " +
+                    "do_tracker_events=False option to generate context without tracker events.")
+
             engine.run(self)
 
     def load_details(self):
@@ -318,13 +328,13 @@ class Replay(Resource):
 
             self.map_name = details['map_name']
 
-            self.gateway = details['cache_handles'][0].server.lower()
+            self.region = details['cache_handles'][0].server.lower()
             self.map_hash = details['cache_handles'][-1].hash
             self.map_file = details['cache_handles'][-1]
 
-            #Expand this special case mapping
-            if self.gateway == 'sg':
-                self.gateway = 'sea'
+            # Expand this special case mapping
+            if self.region == 'sg':
+                self.region = 'sea'
 
             dependency_hashes = [d.hash for d in details['cache_handles']]
             if hashlib.sha256('Standard Data: Swarm.SC2Mod'.encode('utf8')).hexdigest() in dependency_hashes:
@@ -356,7 +366,7 @@ class Replay(Resource):
         self.map = self.factory.load_map(self.map_file, **self.opt)
 
     def load_players(self):
-        #If we don't at least have details and attributes_events we can go no further
+        # If we don't at least have details and attributes_events we can go no further
         if 'replay.details' not in self.raw_data:
             return
         if 'replay.attributes.events' not in self.raw_data:
@@ -382,12 +392,12 @@ class Replay(Resource):
 
             if slot_data['control'] == 2:
                 if slot_data['observe'] == 0:
-                    self.entities.append(Participant(slot_id, slot_data, user_id, initData['player_init_data'][user_id], player_id, details['players'][detail_id], self.attributes.get(player_id, dict())))
+                    self.entities.append(Participant(slot_id, slot_data, user_id, initData['user_initial_data'][user_id], player_id, details['players'][detail_id], self.attributes.get(player_id, dict())))
                     detail_id += 1
                     player_id += 1
 
                 else:
-                    self.entities.append(Observer(slot_id, slot_data, user_id, initData['player_init_data'][user_id], player_id))
+                    self.entities.append(Observer(slot_id, slot_data, user_id, initData['user_initial_data'][user_id], player_id))
                     player_id += 1
 
             elif slot_data['control'] == 3:
@@ -456,7 +466,7 @@ class Replay(Resource):
         self.recorder = None
 
         entity_names = sorted(map(lambda p: p.name, self.entities))
-        hash_input = self.gateway+":"+','.join(entity_names)
+        hash_input = self.region+":"+','.join(entity_names)
         self.people_hash = hashlib.sha256(hash_input.encode('utf8')).hexdigest()
 
         # The presence of observers and/or computer players makes this not actually ladder
@@ -469,9 +479,9 @@ class Replay(Resource):
         if 'replay.message.events' not in self.raw_data:
             return
 
-        self.messages = self.raw_data['replay.message.events'].messages
-        self.pings = self.raw_data['replay.message.events'].pings
-        self.packets = self.raw_data['replay.message.events'].packets
+        self.messages = self.raw_data['replay.message.events']['messages']
+        self.pings = self.raw_data['replay.message.events']['pings']
+        self.packets = self.raw_data['replay.message.events']['packets']
 
         self.message_events = self.messages+self.pings+self.packets
         self.events = sorted(self.events + self.message_events, key=lambda e: e.frame)
@@ -540,18 +550,11 @@ class Replay(Resource):
     def register_default_readers(self):
         """Registers factory default readers."""
         self.register_reader('replay.details', readers.DetailsReader(), lambda r: True)
-        self.register_reader('replay.initData', readers.InitDataReader_Base(), lambda r: 15405 <= r.base_build < 16561)
-        self.register_reader('replay.initData', readers.InitDataReader_16561(), lambda r: 16561 <= r.base_build < 17326)
-        self.register_reader('replay.initData', readers.InitDataReader_17326(), lambda r: 17326 <= r.base_build < 19132)
-        self.register_reader('replay.initData', readers.InitDataReader_19132(), lambda r: 19132 <= r.base_build < 22612)
-        self.register_reader('replay.initData', readers.InitDataReader_22612(), lambda r: 22612 <= r.base_build < 23925)
-        self.register_reader('replay.initData', readers.InitDataReader_23925(), lambda r: 23925 <= r.base_build < 24764)
-        self.register_reader('replay.initData', readers.InitDataReader_24764(), lambda r: 24764 <= r.base_build < 26490)
-        self.register_reader('replay.initData', readers.InitDataReader_26490(), lambda r: 26490 <= r.base_build)
-        self.register_reader('replay.message.events', readers.MessageEventsReader_Base(), lambda r: r.build < 24247 or r.versions[1] == 1)
-        self.register_reader('replay.message.events', readers.MessageEventsReader_Beta_24247(), lambda r: r.build >= 24247 and r.versions[1] == 2)
-        self.register_reader('replay.attributes.events', readers.AttributesEventsReader_Base(), lambda r: r.build < 17326)
-        self.register_reader('replay.attributes.events', readers.AttributesEventsReader_17326(), lambda r: r.build >= 17326)
+        self.register_reader('replay.initData', readers.InitDataReader(), lambda r: True)
+        self.register_reader('replay.tracker.events', readers.TrackerEventsReader(), lambda r: True)
+        self.register_reader('replay.message.events', readers.MessageEventsReader(), lambda r: True)
+        self.register_reader('replay.attributes.events', readers.AttributesEventsReader(), lambda r: True)
+
         self.register_reader('replay.game.events', readers.GameEventsReader_15405(), lambda r: 15405 <= r.base_build < 16561)
         self.register_reader('replay.game.events', readers.GameEventsReader_16561(), lambda r: 16561 <= r.base_build < 17326)
         self.register_reader('replay.game.events', readers.GameEventsReader_17326(), lambda r: 17326 <= r.base_build < 18574)
@@ -560,9 +563,9 @@ class Replay(Resource):
         self.register_reader('replay.game.events', readers.GameEventsReader_22612(), lambda r: 22612 <= r.base_build < 23260)
         self.register_reader('replay.game.events', readers.GameEventsReader_23260(), lambda r: 23260 <= r.base_build < 24247)
         self.register_reader('replay.game.events', readers.GameEventsReader_24247(), lambda r: 24247 <= r.base_build < 26490)
-        self.register_reader('replay.game.events', readers.GameEventsReader_26490(), lambda r: 26490 <= r.base_build)
+        self.register_reader('replay.game.events', readers.GameEventsReader_26490(), lambda r: 26490 <= r.base_build < 27950)
+        self.register_reader('replay.game.events', readers.GameEventsReader_27950(), lambda r: 27950 <= r.base_build)
         self.register_reader('replay.game.events', readers.GameEventsReader_HotSBeta(), lambda r: r.versions[1] == 2 and r.build < 24247)
-        self.register_reader('replay.tracker.events', readers.TrackerEventsReader_Base(), lambda r: True)
 
     def register_default_datapacks(self):
         """Registers factory default datapacks."""
@@ -599,6 +602,12 @@ class Replay(Resource):
         elif self.opt.debug and data_file not in ['replay.message.events', 'replay.tracker.events']:
             raise ValueError("{0} not found in archive".format(data_file))
 
+    def __getstate__(self):
+        state = self.__dict__.copy()
+        del state['registered_readers']
+        del state['registered_datapacks']
+        return state
+
 
 class Map(Resource):
     url_template = 'http://{0}.depot.battle.net:1119/{1}.s2ma'
@@ -612,17 +621,17 @@ class Map(Resource):
     #: The map description as written by author
     description = str()
 
-    def __init__(self, map_file, filename=None, gateway=None, map_hash=None, **options):
+    def __init__(self, map_file, filename=None, region=None, map_hash=None, **options):
         super(Map, self).__init__(map_file, filename, **options)
 
         #: The unique hash used to identify this map on bnet's depots.
         self.hash = map_hash
 
-        #: The gateway this map was posted to. Maps must be posted individually to each gateway.
-        self.gateway = gateway
+        #: The region this map was posted to. Maps must be posted individually to each region.
+        self.region = region
 
         #: A URL reference to the location of this map on bnet's depots.
-        self.url = Map.get_url(gateway, map_hash)
+        self.url = Map.get_url(self.region, map_hash)
 
         #: The opened MPQArchive for this map
         self.archive = mpyq.MPQArchive(map_file)
@@ -668,12 +677,12 @@ class Map(Resource):
             self.dependencies.append(dependency_node.text)
 
     @classmethod
-    def get_url(cls, gateway, map_hash):
+    def get_url(cls, region, map_hash):
         """Builds a download URL for the map from its components."""
-        if gateway and map_hash:
+        if region and map_hash:
             # it seems like sea maps are stored on us depots.
-            gateway = 'us' if gateway == 'sea' else gateway
-            return cls.url_template.format(gateway, map_hash)
+            region = 'us' if region == 'sea' else region
+            return cls.url_template.format(region, map_hash)
         else:
             return None
 
@@ -833,8 +842,8 @@ class GameSummary(Resource):
                     files.append(utils.DepotFile(file_hash))
             self.localization_urls[language] = files
 
-        # Grab the gateway from the one of the files
-        self.gateway = list(self.localization_urls.values())[0][0].server.lower()
+        # Grab the region from the one of the files
+        self.region = list(self.localization_urls.values())[0][0].server.lower()
 
         # Each of the localization urls points to an XML file with a set of
         # localization strings and their unique ids. After reading these mappings
@@ -1004,9 +1013,8 @@ class GameSummary(Resource):
             settings = self.player_settings[index]
             player.is_ai = not isinstance(struct[0][1], dict)
             if not player.is_ai:
-                player.gateway = self.gateway
+                player.region = self.region
                 player.subregion = struct[0][1][0][2]
-                player.region = REGIONS[player.gateway].get(player.subregion, 'Unknown')
                 player.bnetid = struct[0][1][0][3]
                 player.unknown1 = struct[0][1][0]
                 player.unknown2 = struct[0][1][1]

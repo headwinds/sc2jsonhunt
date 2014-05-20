@@ -166,9 +166,22 @@ function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
       var timeoutHandler = function(){
         console.log("controllers - getReplay - response - timeout finished" );
         $scope.replayData = response;
-        console.log($scope.replayData, "controllers - getReplay - response - replayFileName: " + $scope.replayFileName );
+        console.log($scope.replayData, "controllers - getReplay - response ");
 
-        $("#replayDump").text( $scope.replayData.data );
+        var replayDataObj = $scope.replayData.data;
+
+        var resultHtml = "<ul>";
+        for ( var replayIndex in replayDataObj ) {
+          var li = "<li>" + replayDataObj[replayIndex] + "</li>";
+          console.log(li)
+          resultHtml += li;
+
+        }
+
+        resultHtml += "</ul>";
+
+
+        $("#replayDump").html( resultHtml );
 
         $scope.$apply();
       }

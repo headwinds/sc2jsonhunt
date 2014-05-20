@@ -39,7 +39,7 @@ from oauth2client.client import flow_from_clientsecrets
 from oauth2client.client import FlowExchangeError
 from webapp2_extras import sessions
 
-from models import replay
+from models.replay_model import ReplayModel
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -782,54 +782,6 @@ class ThemesHandler(JsonRestHandler):
       themes = [default_theme]
     self.send_success(themes, jsonkind="photohunt#themes")
 
-class ReplayHandler(JsonRestHandler, SessionEnabledHandler):
-  """Provides an API for working with Replays.
-
-  This handler provides the /api/replays end-point, and exposes the following
-  operations:
-    GET /api/replays
-  """
-
-  def get(self):
-    """Exposed as `GET /api/replays`.
-
-    When requested, send the default replay game events. 
-
-    Returns the following JSON response representing a list of Replay game events.
-
-    [
-      {
-        'id':0,
-        'displayName':'',
-        'created':0,
-        'start':0
-      },
-      ...
-    ]
-    replay_events = model.Replay.replay_events;
-    self.send_success(replay_events, jsonkind="photohunt#replay")  
-    """
-    default_replay = replay.ReplayModel.default_replay;
-    # default_replay_json = model.Replay.json_properties(default_replay);
-    # print(default_replay)
-    loopBreak = 0
-    game_events = default_replay.players[0].events
-    default_replay_json = "'{ result: ['"
-    for prop in game_events:
-      default_replay_str = str(prop)
-      default_replay_json+="'"
-      default_replay_json+=default_replay_str
-      loopBreak += 1
-      if loopBreak > 1000: 
-        break
-      default_replay_json+="',"  
-    
-    default_replay_json+= "]}'"   
-    print(default_replay_json)
-    self.send_success(str(default_replay_json), jsonkind="photohunt#replay")  
-
-
-
 class VotesHandler(JsonRestHandler, SessionEnabledHandler):
   """Provides an API for working with Votes.  This servlet provides the
      /api/votes end-point, and exposes the following operations:
@@ -916,6 +868,49 @@ class VotesHandler(JsonRestHandler, SessionEnabledHandler):
                                     body=activity).execute()
 
 
+class ReplayService(JsonRestHandler, SessionEnabledHandler):
+
+
+  """Provides an API for working with Replays.
+
+  This handler provides the /api/replays end-point, and exposes the following
+  operations:
+    GET /api/replays
+  """
+
+  def get(self):
+    """Exposed as `GET /api/replays`.
+
+    When requested, send the default replay game events. 
+
+    Returns the following JSON response representing a list of Replay game events.
+
+    [
+      {
+        'id':0,
+        'displayName':'',
+        'created':0,
+        'start':0
+      },
+      ...
+    ]
+    replay_events = model.Replay.replay_events;
+    self.send_success(replay_events, jsonkind="photohunt#replay")  
+    """
+    default_replay = ReplayModel.default_replay;
+    # default_replay_json = model.Replay.json_properties(default_replay);
+    # print(default_replay)
+    loopBreak = 0
+    result = {}
+    game_events = default_replay.players[0].events
+    for prop in game_events:
+      default_replay_str = str(prop)
+      result[str(loopBreak)] = default_replay_str
+      loopBreak += 1
+      if loopBreak > 1000: 
+        break
+    self.send_success(json.dumps(result), jsonkind="photohunt#replay")  
+
 class SchemaHandler(JsonRestHandler, SessionEnabledHandler):
   """Returns metadata for an image for user when writing moments."""
 
@@ -975,7 +970,7 @@ routes = [
     ('/api/connect', ConnectHandler),
     ('/api/disconnect', DisconnectHandler),
     ('/api/themes', ThemesHandler),
-    ('/api/replay', ReplayHandler),
+    ('/api/replay', ReplayService),
     ('/api/friends', FriendsHandler),
     ('/api/images', ImageHandler),
     ('/api/votes', VotesHandler),

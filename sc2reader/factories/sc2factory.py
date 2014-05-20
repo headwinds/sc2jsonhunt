@@ -80,11 +80,6 @@ class SC2Factory(object):
         self.configure(**options)
 
     # Primary Interface
-    def test_me(self, myStr):
-        """Loads a single sc2replay file. Accepts file path, url, or file object."""
-        # return self.load(Replay, source, options, **new_options)
-        return myStr
-
     def load_replay(self, source, options=None, **new_options):
         """Loads a single sc2replay file. Accepts file path, url, or file object."""
         return self.load(Replay, source, options, **new_options)

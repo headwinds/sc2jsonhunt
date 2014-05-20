@@ -62,6 +62,7 @@ class Team(object):
         return str(self)
 
 
+@log_utils.loggable
 class Attribute(object):
 
     def __init__(self, header, attr_id, player, value):
@@ -70,7 +71,9 @@ class Attribute(object):
         self.player = player
 
         if self.id not in LOBBY_PROPERTIES:
-            raise ValueError("Unknown attribute id: "+self.id)
+            self.logger.info("Unknown attribute id: {0}".format(self.id))
+            self.name = "Unknown"
+            self.value = None
         else:
             self.name, lookup = LOBBY_PROPERTIES[self.id]
             self.value = lookup[value.strip("\x00 ")[::-1]]
@@ -79,7 +82,7 @@ class Attribute(object):
         return str(self)
 
     def __str__(self):
-        return "[%s] %s: %s" % (self.player, self.name, self.value)
+        return "[{0}] {1}: {2}".format(self.player, self.name, self.value)
 
 
 class Entity(object):
@@ -120,9 +123,6 @@ class Entity(object):
 
         #: The Battle.net region the entity is registered to
         self.region = GATEWAY_LOOKUP[int(parts[0])]
-
-        #: Deprecated, see Entity.region
-        self.gateway = self.region
 
         #: The Battle.net subregion the entity is registered to
         self.subregion = int(parts[2])
@@ -195,9 +195,6 @@ class Player(object):
         #: The Battle.net region the entity is registered to
         self.region = GATEWAY_LOOKUP[detail_data['bnet']['region']]
 
-        #: Deprecated, see `Player.region`
-        self.gateway = self.region
-
         #: The Battle.net subregion the entity is registered to
         self.subregion = detail_data['bnet']['subregion']
 
@@ -231,7 +228,8 @@ class User(object):
         #: The user's combined Battle.net race levels
         self.combined_race_levels = init_data['combined_race_levels']
 
-        #: The user's highest leauge in the current season
+        #: The highest 1v1 league achieved by the user in the current season with 1 as Bronze and
+        #: 7 as Grandmaster. 8 seems to indicate that there is no current season 1v1 ranking.
         self.highest_league = init_data['highest_league']
 
         #: A flag indicating if this person was the one who recorded the game.
@@ -343,12 +341,7 @@ class PlayerSummary():
     #: Subregion id of player
     subregion = int()
 
-    #: The player's gateway, such as us, eu
-    gateway = str()
-
-    #: The player's region, such as na, la, eu or ru.  This is
-    # provided for convenience, but as of 20121018 is strictly a
-    # function of gateway and subregion.
+    #: The player's region, such as us, eu, sea
     region = str()
 
     #: unknown1

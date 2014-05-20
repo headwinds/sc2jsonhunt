@@ -5,6 +5,7 @@ from bisect import bisect_left
 from collections import defaultdict
 from datetime import datetime
 from functools import wraps
+import json
 
 from sc2reader.log_utils import loggable
 
@@ -19,6 +20,13 @@ def plugin(func):
             return func(*args, **opt)
         return call
     return wrapper
+
+
+class JSONDateEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, datetime):
+            return obj.strftime("%Y-%m-%d %H:%M:%S")
+        return json.JSONEncoder.default(self, obj)
 
 
 class GameState(dict):

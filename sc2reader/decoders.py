@@ -166,8 +166,8 @@ class BitPackedDecoder(object):
         self.read_bool = functools.partial(self.read_bits, 1)
 
     def done(self):
-        """ Returns true when all bits in the buffer have been used"""
-        return self.tell() == self.length and self._bit_shift == 0
+        """ Returns true when all bytes in the buffer have been used"""
+        return self.tell() == self.length
 
     def byte_align(self):
         """ Moves cursor to the beginning of the next byte """
@@ -374,6 +374,6 @@ class BitPackedDecoder(object):
             data = self.read_vint()
 
         else:
-            raise TypeError("Unknown Data Structure: '%s'" % datatype)
+            raise TypeError("Unknown Data Structure: '{0}'".format(datatype))
 
         return data
