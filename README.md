@@ -4,6 +4,13 @@
 
 I want to be able to take an Starcraft 2 replay file and produce to json dump of all the game events which I can use in my javascript experiments. 
 
+#### work n progress
+
+status: Currently, I can open a sc2 replay and return game events as an object:
+update: May 20/2014
+
+[sc2jsonhunt.appspot.com](http://sc2jsonhunt.appspot.com/)   
+
 #### log
 
 As I tackled this challenge, I jotted down the various paths and forks that I went down. It began with a google search for "sc2 replay javascript".
