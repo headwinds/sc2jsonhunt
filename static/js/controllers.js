@@ -172,8 +172,16 @@ function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
 
         var resultHtml = "<ul>";
         for ( var replayIndex in replayDataObj ) {
-          var li = "<li>" + replayDataObj[replayIndex] + "</li>";
-          console.log(li)
+          
+          var properties = replayDataObj[replayIndex].split(', ');
+          var gameObj = {};
+          properties.forEach(function(property) {
+              var tup = property.split(':');
+              gameObj[tup[0]] = tup[1];
+          });
+
+          var li = "<li>" + gameObj.player + " performed: " + gameObj.name + " @ time: " + gameObj.frame + "</li>";
+          //console.log(li)
           resultHtml += li;
 
         }

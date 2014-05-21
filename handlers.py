@@ -41,6 +41,11 @@ from webapp2_extras import sessions
 
 from models.replay_model import ReplayModel
 
+import sc2reader
+from sc2reader.events.game import GameEvent
+from sc2reader.events.message import ProgressEvent
+from sc2reader.events.game import SelectionEvent
+
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
@@ -903,9 +908,28 @@ class ReplayService(JsonRestHandler, SessionEnabledHandler):
     loopBreak = 0
     result = {}
     game_events = default_replay.players[0].events
-    for prop in game_events:
-      default_replay_str = str(prop)
-      result[str(loopBreak)] = default_replay_str
+    playerPID = default_replay.players[0].pid
+    for game_event in game_events:
+      #default_replay_str = str(game_event)
+      #gameEventObj = GameEvent(game_event, playerPID)
+      # gameEventObj = type("SimpleObject", (object,), {})()
+      #for prop in aGameEvent:
+      #  gameEventObj[prop] = prop
+      # game_event is a ProgressEvent containing time, player, event like 00.18 Fenner          GetControlGroupEvent
+      #for prop in game_event:
+      myTypeTest = isinstance(game_event, GameEvent) # starting to filter out the events I want...
+            
+      if str(myTypeTest) == "True":
+        gameEventObj = type("SimpleObject", (object,), {})()
+        #for prop in game_event:
+        gameEventObj.name = str(game_event.name)
+        gameEventObj.player = str(game_event.player)
+        gameEventObj.frame = str(game_event.frame)
+        #gameEventObj.frame = game_event.frame
+        #gameEventObj.event = game_event.event 
+        gameObjStr = "name: " +  gameEventObj.name + ", player: " +  gameEventObj.player + ", frame: " + gameEventObj.frame
+        result[str(loopBreak)] = gameObjStr #json.dumps(game_event)
+      
       loopBreak += 1
       if loopBreak > 1000: 
         break

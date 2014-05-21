@@ -364,6 +364,23 @@ So there is no mpyq folder in this project?! I googled it and found its github
 
 $ git clone https://github.com/eagleflo/mpyq.git
 
+I discovered you only need to include the mpyq.py file in the root of your project and [raised the issue](https://github.com/GraylinKim/sc2reader/issues/172#) so that it may be documented for the next developer.
+
+
+#### Meta Match - Deciding on a name and purpose 
+
+Besides being able to experiment with sc2 replay data, I did also have a primary and somewhat secretive purpose behind the application. Like many developers, I don't share all the functionality because I want to be the first to do it and I know my ideas aren't necessarily unique but the difference is that I'm actively working where my competitors may not be. This spurs development. 
+
+I've decided on the name "Meta Match" for a few reasons:
+
+* the meta game is talked about a lot in sc2 and other games too making it flexible 
+* the main functionality is about matching and countering an opponent's build  
+* I like to name my apps with alliteration so they are easy to remember and thus find later. 
+
+A quick google doesn't come up with any sites so I'm safe, right? metamatch.com was taken but metamatch.ca was available and I snapped it up for $10 from GoDaddy. 
+
+When ever someone goes to metamatch.ca, I want to map that url to sc2jsonhunt.appspot.com and mask it. This should be easier to setup but apparently it's not. I failed to achieve the GAE console but settled on domain forwarding with masking from GoDaddy's console.
+
 
 #### Dependencies - the Lib approach
 
@@ -371,15 +388,6 @@ I discovered [this stackover thread about importing python modules with GAE](htt
 
 Thank you, [bernier](http://adam-bernier.appspot.com/), for your Lib solution and [source](https://bitbucket.org/abernier/yab/src/).
 
-#### errors
-
-error: UnicodeDecodeError: 'utf8'
-```
- File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/encodings/utf_8.py", line 16, in decode
-    return codecs.utf_8_decode(input, errors, True)
-UnicodeDecodeError: 'utf8' codec can't decode byte 0xfc in position 16: invalid start byte
-```
-solution: I tried a different sc2replay file and it worked - obviously not ideal 
 
 #### further reading
 
