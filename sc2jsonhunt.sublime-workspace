@@ -479,18 +479,15 @@
 			"file": "model.py",
 			"settings":
 			{
-				"buffer_size": 8399,
+				"buffer_size": 8021,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "# sc2jsonhunt\n\n#### challenge\n\nI want to be able to take an Starcraft 2 replay file and produce to json dump of all the game events which I can use in my javascript experiments. I'm planning to use the events to possibly create a game where you need to guess the next event based on what's happening to help you make better decisions and improve build order recall. Should I drone or produce units? What did [Jaedong](http://wcs.battle.net/sc2/en/players/jaedong) do?\n\n#### log\n\nAs I tackled this challenge, I jotted down the various paths and forks that I went down. It began with a google search for \"sc2 replay javascript\".\n \nMy first tripple [fork](http://gamedev.stackexchange.com/questions/10622/parsing-sc2replay-files)\n\n[phpsc2replay](https://code.google.com/p/phpsc2replay/)\n[WARP - java](http://trac.erichseifert.de/warp)\n[python](https://github.com/GraylinKim/sc2reader)\n\nDo use I PHP, Java, or Python? I choose Python. Python is a language which I've tried to learn in the past without a lot of success mainly because I didn't have a real goal beyond knowing that language was powerful and both scientists and gamer developers were fond of it. Ideally, I would have liked to start with a NodeJS project but would have been too easy. \n\nI spent some going through the github issues on sc2reader and made a comment [here](https://github.com/GraylinKim/sc2reader/pull/157#issuecomment-33798486) and [here](https://github.com/GraylinKim/sc2reader/issues/117#issuecomment-33713400). Possessing the start of a json branch was a good sign that this was the right project for me to investigate further. Perhaps, I could dive in and help finish it hoping that it probably far along and might need a little push.   \n\nAfter I pulled down the sc2reader source, I open the terminal and located the scripts folder:\n\n$ cd sc2reader/scripts \n\n#### sc2replay files\n\nOn a Mac, right click on the file in SC2 and a context menu will appear where you can find the file on your computer. \n\n![sc2replay screenshot](http://sc2jsonhunt.appspot.com/images/replays.png)\n\nFor some reason, finder fails...\n\nI copy n pasted one of my replays into this folder so that it was easy to find without a long path and typed: \n\n$ python sc2json.py \"swarms.SC2Replay\"\n\nThis produced a messy json dump and copy and pasted it into this [jsonformatter](http://jsonformatter.curiousconcept.com/). Thus, I could better read the data:\n\n'\n{\n   \"is_ladder\":true,\n   \"file_time\":null,\n   \"real_type\":\"1v1\",\n   \"frames\":55339,\n   \"speed\":\"Faster\",\n   \"gateway\":\"us\",\n   \"category\":\"Ladder\",\n   \"filehash\":\"d6f84236e91cac24cc0aaf106f209b4c38d9a527a47a12c8b3917723e9cd79cd\",\n   \"filename\":\"swarms.SC2Replay\",\n   \"build\":29261,\n   \"game_length\":3458,\n   \"unix_timestamp\":1396458812,\n   \"type\":\"1v1\",\n   \"real_length\":2470,\n   \"observers\":[\n\n   ],\n   \"map_name\":\"Heavy Rain LE\",\n   \"game_fps\":16.0,\n   \"date\":\"2014-04-02 17:13:32\",\n   \"utc_date\":null,\n   \"is_private\":false,\n   \"versions\":[\n      1,\n      2,\n      1,\n      1,\n      29261,\n      28667\n   ],\n   \"time_zone\":-3.9999999998333333,\n   \"players\":[\n      {\n         \"uid\":0,\n         \"play_race\":\"Terran\",\n         \"handicap\":100,\n         \"pick_race\":\"Terran\",\n         \"pid\":1,\n         \"result\":\"Loss\",\n         \"name\":\"ubik\",\n         \"url\":\"http://us.battle.net/sc2/en/profile/4950281/1/ubik/\",\n         \"messages\":[\n\n         ],\n         \"color\":{\n            \"a\":255,\n            \"r\":180,\n            \"b\":30,\n            \"name\":\"Red\",\n            \"g\":20\n         },\n         \"type\":null,\n         \"avg_apm\":null\n      },\n      {\n         \"uid\":1,\n         \"play_race\":\"Zerg\",\n         \"handicap\":100,\n         \"pick_race\":\"Zerg\",\n         \"pid\":2,\n         \"result\":\"Win\",\n         \"name\":\"headwinds\",\n         \"url\":\"http://us.battle.net/sc2/en/profile/2120254/1/headwinds/\",\n         \"messages\":[\n\n         ],\n         \"color\":{\n            \"a\":255,\n            \"r\":0,\n            \"b\":255,\n            \"name\":\"Blue\",\n            \"g\":66\n         },\n         \"type\":null,\n         \"avg_apm\":null\n      }\n   ],\n   \"release\":\"2.1.1.29261\"\n}\n'\n\nBut wait? Where are all the game events? This is just a overall summary of the game results. \n\nNext I tried:\n\n$ python sc2replayer.py \"swarms.SC2Replay\" \n\nIn this game, I really struggled to defeat swarms of spider mines, throwing ultralisks at them without overseer support was not a good idea. It took me awhile to sort out the overseer with hyrda sniper support to finally clean them up. \n\nWithout looking at the instructions, I had a hunch that I needed to push the arrow key. I actually could have hit any key. And voila, as I hit the arrow, there were the game events as they happened. \n\n\n1v1 on Heavy Rain LE at 2014-04-02 16:32:22\n\nTeam 1: Player 1 - ubik (Terran)\n  Player 1 - ubik (Terran)\nTeam 2: Player 2 - headwinds (Zerg)\n  Player 2 - headwinds (Zerg)\n\n--------------------------\n\n\n00.01	ubik            SelectionEvent['OrbitalCommandFlying [2700001]']\n00.01	ubik            Ability (1260) - TrainSCV\n00.02	headwinds       SelectionEvent['Larva [2900001]', 'Larva [2940001]', 'Larva [2980001]']\n00.02	headwinds       Ability (1720) - MorphDrone\n00.02	headwinds       Ability (1720) - MorphDrone\n00.02	headwinds       SelectionEvent['Larva [2900001]']\n00.03	headwinds       SelectionEvent['Hive [28C0001]']\n00.04	headwinds       SelectionEvent['Larva [2940001]', 'Larva [2980001]']\n00.06	ubik            Right Click; Target: MineralField [00400001]; Location: (53.0, 145.5, 49136)\n00.06	headwinds       SelectionEvent['Hive [28C0001]']\n\nGreat! This is exactly what I want to expose to my javascript app. So how I could create a service from Python that Javascript can hook into and read these events? I knew I need to create an API to this data. I also knew that the Google App Engine could host Java and Python projects for free. I already had it installed and had fooled around with it a year ago. Now it was time to dust it off and try again with new motivation. \n\nI started to create a sample project from the developer console but this turned out to be the wrong fork in the path for me. I thought the mobile starter backend would suffice but it was a bit too confusing for me since it started with Java and then suggested you could change to a [different backend module](https://developers.google.com/appengine/docs/python/backends/ ). \n\nI decide to google other sample projects and quickly discovered [google cloud platform](http://googlecloudplatform.github.io/).\n\nFrom the menu, I selected Language then Python and dug through the examples settling on the [Photo Hunt](https://developers.google.com/+/photohunt/python) sample since it had both Python and Angular. I was already comfortable developing in Angular so this kept Python as the main obstacle. \n\nI followed the excellent detailed instructions on how to install the Photo Hunt project. Back in the [Google Developer console](https://console.developers.google.com/project), I created new projected and named it:  \nsc2jsonhunt. I entered the following: \n\nCredentials\n\nAuthorized JavaScript origins\nhttp://sc2jsonhunt.appspot.com/\nhttp://localhost:8080/\n\nAuthorized redirect URI\nhttp://sc2jsonhunt.appspot.com/oauth2callback\nhttp://localhost:8080/oauth2callback\n\nThen, in the terminal, I wanted to run the project so, as instructed, I went to the folder containing gplus-photohunt-server-python and typed: \n\n$ dev_appserver.py gplus-photohunt-server-python\n\nAll good! I can see the app on my local machine http://localhost:8080/. \n\n![sc2replay screenshot](http://sc2jsonhunt.appspot.com/images/replays/photohunt.png)\n\nThis is an exciting moment realizing that I have a running python angular app. Now, it shouldn't too difficult to add the sc2reader source. At this point, I could nearly see the solution and definitely believed that I could accomplish it within perhaps a few more hours or two mornings. I try to spend an hour each morning on hacker projects. For me, that makes's it sustainable and fun. \n\nSo I had a locally running angular python app but ultimately I want this run on the web. Next, I looked at [uploading apps with google app engine](https://developers.google.com/appengine/docs/python/gettingstartedpython27/uploading).\n\nI added project to Google App Engine Launcher, clicked the all-too-subtle deploy text.\n\n![sc2replay screenshot](http://sc2jsonhunt.appspot.com/images/replays/deploy.png)\n\nGreat success! This photo hunt app was now visible at [sc2jsonhunt.appspot.com](http://sc2jsonhunt.appspot.com/).\n\nI renamed the folder from “gplus-photohunt-server-python” to “sc2jsonhunt”\n\n$ dev_appserver.py sc2jsonhunt\n\nThe instructions for getting started are available at:\nhttps://developers.google.com/+/photohunt/python\n\n#### Adding sc2reader to sc2jsonhunt \n\nI copy and pasted the entire sc2reader folder into my sc2jsonhunt folder and attempted to run the app again. \n\n$ dev_appserver.py sc2jsonhunt\n\nI need to connect the sc2reader with the photohunt code base. Where to begin? First, I opened \"model.py\" in Sublime and noticed that it some code about produce json namely JsonifiableEncoder. This was encouraging! Hopefully, I could leverage some of this code to create json from the output of sc2reader. I read through the models.py file and learned that it contained several classes including Photo, User, Theme and Message. I could probably add a class that dealt with sc2reader here too. \n\nBut where is the main file? What kicks off this code base? There were 3 folders: apiclient, httplib2, oauth2client. I knew the last one must deal with authentication and the second one probably deals with http requests. Thus, the first one seems likely to create an API to serve up starcraft json.\n\nAt the top of the models.py file, I could see that it was importing code from these 3 folder. What if I attempted to import the sc2reader code in a similar fashion? With my limited Python, I started to code and added the following at the end of the models.py file. \n\nclass Replay(db.Model, Jsonifiable):\n  \"\"\"Represents the sc2 json feed.\"\"\"\n  default_replay = 'swarms.SC2Replay'\n\n$ dev_appserver.py sc2jsonhunt\n\nI imagine this is how most developers work and experiment. Baby steps. I only want to change a few lines and see what happens. This didn't do anything but it also didn't break anything.   \n\nI looked at the top of models.py again and studied:\n\nfrom apiclient.discovery import build\n\nI took a shot in the dark and added:\n\nfrom sc2reader.scripts.sc2replayer import main\n\n$ dev_appserver.py sc2jsonhunt\n\nHaving another developer in the office who actually knew Python well would have been quite helpful but unfortunately I didn't have that luxury. \n\nFinally, my first big bug.  While the app did appear in the browser, there were a bunch of errors in the terminal and learned about [how python execute from this stackoverflow thread](http://stackoverflow.com/questions/6523791/why-is-python-running-my-module-when-i-import-it-and-how-do-i-stop-it).\n\nWithin the sc2reader directory, there is another sub sc2reader folder. You want that sub folder with its __init__.py file. \n\nI want to import sc2reader to use in my project.\n\nIn model.py, I added sc2reader as the last import like so:\n\nimport json\nimport logging\nimport random\nimport re\nimport string\nimport datetime\nimport types\nimport handlers\nfrom apiclient.discovery import build\nfrom google.appengine.api import images\n\nfrom google.appengine.ext import db\nfrom google.appengine.ext import blobstore\nfrom oauth2client.appengine import CredentialsProperty\n\nimport sc2reader\n\n$ dev_appserver.py sc2jsonhunt\n\nPresto. It seems to be \"working\" now. I have no idea why the owner of this project wouldn't think to include that file. I can only guess that it must be good practice in python land not to... I should use my naviety to ask them. \n\nIt's working yet I still don't have any sc2 data to play with. I thought it might it be a good idea to look at the client side and investigate the angular services. Starting with services.js, I built on top of the ReplayHuntApi copying getPhoto: \n\n getReplay: function(replayId) {\n          return $http.get(Conf.apiBase + 'replay', {params:\n              {'replayId': replayId}});\n        }\n\nI updated controllers.js adding:\n\n\nI added some blocks in the index.html to help motivate me. \n\n![hacking the index to motivate me](http://sc2jsonhunt.appspot.com/images/replays/hackPhotoHunt.png)\n\nI updated handles.py and model.py adding a ReplaysHandler and a Replay model. At this point, I want to keep things super simple and only return a default string; don't even worry about the actual file yet.\n\nclass Replay(db.Model, Jsonifiable):\n  \"\"\"Represents the sc2 json feed.\"\"\"\n  default_theme = 'swarms.SC2Replay'\n\n#### Testing the API in the browser\n\nWhen you compile the app in the terminal, you'll see 3 urls created. \n\nINFO     2014-05-08 13:48:53,426 api_server.py:171] Starting API server at: http://localhost:51669\nINFO     2014-05-08 13:48:53,432 dispatcher.py:182] Starting module \"default\" running at: http://localhost:8080\nINFO     2014-05-08 13:48:53,439 admin_server.py:117] Starting admin server at: http://localhost:8000\n\nIn order to test the API, you can try the following in your address bar of your favourite browser: \n\nhttp://localhost:8080/api/themes - worked! I see data in the browser\n\nhttp://localhost:8080/api/replay - #404 fail \n\nI searched through handlers.py and discovered the routes array near the bottom and added my replay route.\n\nroutes = [\n    ('/api/connect', ConnectHandler),\n    ('/api/disconnect', DisconnectHandler),\n    ('/api/themes', ThemesHandler),\n    ('/api/replay', ReplayHandler),\n    ('/api/friends', FriendsHandler),\n    ('/api/images', ImageHandler),\n    ('/api/votes', VotesHandler),\n    ('/api/photos', PhotosHandler),\n    ('/photo.html', SchemaHandler),\n    ('/invite.html', SchemaHandler)]\n\n$ dev_appserver.py sc2jsonhunt\n\nINFO     2014-05-08 14:15:08,493 module.py:627] default: \"GET /api/replay HTTP/1.1\" 200 16\n\n1. I tried the API in the address bar: http://localhost:8080/api/replay\n\nThat's exciting! I see my swarms.SC2Replay string in the browser. \n\n2. I tried the app: http://localhost:8080/\n\nEven more promising!!! In the console, I log out the response from controllers.js\n\nObject {data: \"swarms.SC2Replay\", status: 200, headers: function, config: Object}\nconfig: Object\ndata: \"swarms.SC2Replay\"\nheaders: function (c){a||(a=Mb(b));return c?a[E(c)]||null:a}\nstatus: 200\n__proto__: Object\n\nAt this point, I have created a new API that returns a simple string. Next challenge is a big one. I need it to talk to sc2reader; parse my swarms.sc2Replay file and return the events as json dump. No sweat. Again, I'll attempt to break up the works and first attempt to talk to the file and get perhaps a success event or some simple detail about it. \n\nI returned to the README.rst file in the sc2reader folder and focussed on the \"Basic Usage\" section. In particular, line 139 about loading game events sounds about right. By looking at code, I think I could adapt it and instead of returning a static string, I could write:\n\nreplayGameEvents = sc2reader.load_replay('MyReplay.SC2Replay', load_level=4)\n[doc faq](http://sc2reader.readthedocs.org/en/latest/faq.html)\n\nThis should return all the game events. Before I test it, I have a feeling it won't work because how will it know that the file is loaded? Will Python know to wait before returning the results?! I know that I need to return json containing a list of game event objects which, comparing it to the PhotosHandler, I'm definitely not doing yet. Within my models.py, I have updated Replay: \n\n'\nclass Replay(db.Model, Jsonifiable):\n  \"\"\"Represents the sc2 json feed.\"\"\"\n  default_replay = 'swarms.SC2Replay'\n  jsonkind = 'photohunt#replay'\n  replays_events = sc2reader.load_replay('swarms.SC2Replay', load_level=4)\n'\n\nThis doesn't work. I get errors and I think my original idea to import the top level sc2reader is wrong. I need to import the sub sc2reader instead. Also, the replay file itself is static and I could probably create a replays folder within the static directory but then how I find the path to it? Possibly by:\n\nimport sc2reader.sc2reader \n\nWhen I do this, I get a different error:\n\n  File \"/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/sc2reader/__init__.py\", line 10, in <module>\n    from sc2reader import engine\n  ImportError: cannot import name engine  \n\nWithin the sub sc2reader directory, I see the engine directory so why won't it get imported?! \n\nFurther up there is another error which I missed a few times:\n\n  File \"/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/resources.py\", line 11, in <module>\n    import mpyq\nImportError: No module named mpyq\n\nSo there is no mpyq folder in this project?! I googled it and found its github\n\n$ git clone https://github.com/eagleflo/mpyq.git\n\nThen copied that mpyq folder into sc2reader. \n\nLife Interruption:\n\n\"Brandon you know that diaper creme container you were supposed to put up on the shelf?\"\n\"yeah\"\n\"While I changing elodie, Mabel decided to smear it all over her bed, hair and glasses\"\n\"Oh, I'll help\"\n\"No, you stay I dont want to see you right now\"\n\nAnd back to coding \n\n#### further reading\n\n[Playing with REALTIME data, Python and D3](http://www.brettdangerfield.com/post/realtime_data_tag_cloud/)\n[Analyzing a NHL Playoff Game with Twitter](http://www.danielforsyth.me/analyzing-a-nhl-playoff-game-with-twitter/)\n[Fast interactive prototyping with Sketch and d3.js](http://snips.net/blog/posts/2014/05-04-fast-interactive_prototyping_with_d3_js_II.html)\n[top 10 mistakes that python programmers make](http://www.toptal.com/python/top-10-mistakes-that-python-programmers-make)\n[The Hitchhiker’s Guide to Python!](http://docs.python-guide.org/en/latest/)\n\n\n\n\n\n\n\n\n\n\n",
 			"file": "README.md",
-			"file_size": 18237,
-			"file_write_time": 1399820644000000,
 			"settings":
 			{
-				"buffer_size": 17731,
+				"buffer_size": 18963,
 				"line_ending": "Unix"
 			}
 		},
@@ -498,7 +495,7 @@
 			"file": "handlers.py",
 			"settings":
 			{
-				"buffer_size": 33087,
+				"buffer_size": 34782,
 				"line_ending": "Unix"
 			}
 		},
@@ -506,7 +503,7 @@
 			"file": "phpsc2replay-1.61/index.php",
 			"settings":
 			{
-				"buffer_size": 189,
+				"buffer_size": 0,
 				"line_ending": "Unix",
 				"name": "$mpqfile = new MPQFile('swwarms.SC2Replay');"
 			}
@@ -522,13 +519,42 @@
 			}
 		},
 		{
-			"contents": "__version__ = \"0.2.5\"",
-			"file": "sc2reader/mpyq/__init__.py",
-			"file_size": 21,
-			"file_write_time": 1399820927000000,
+			"file": "styles/metamatch.scss",
 			"settings":
 			{
-				"buffer_size": 21,
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/index.html",
+			"settings":
+			{
+				"buffer_size": 4366,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/js/controllers.js",
+			"settings":
+			{
+				"buffer_size": 9602,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sc2reader/events/game.py",
+			"settings":
+			{
+				"buffer_size": 22558,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sc2reader/events/message.py",
+			"settings":
+			{
+				"buffer_size": 2916,
 				"line_ending": "Unix"
 			}
 		}
@@ -581,6 +607,7 @@
 	},
 	"file_history":
 	[
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/mpyq/__init__.py",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/README.md",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/index.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/app.js",
@@ -707,8 +734,7 @@
 		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/collections/contentCreation/question/QuestionCollection.js",
 		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/templates/common/instructionbar/instructionBarTemplate.html",
 		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/manageQAs/ManageQAsView.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/models/common/instructionbar/InstructionBarModel.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/models/contentCreation/ContentCreationModel.js"
+		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/models/common/instructionbar/InstructionBarModel.js"
 	],
 	"find":
 	{
@@ -716,7 +742,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 95.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"/Users/bflowers/Projects/headwinds/sc2jsonhunt",
@@ -735,6 +761,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ProgressEvent",
 			"mpyq",
 			"sc2reader",
 			"static",
@@ -861,8 +888,7 @@
 			"http://172.16.6.100/",
 			"focus",
 			"outline",
-			"onEmailBtnClickHandler",
-			"noteStr"
+			"onEmailBtnClickHandler"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -930,6 +956,7 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -937,15 +964,15 @@
 					"file": "model.py",
 					"settings":
 					{
-						"buffer_size": 8399,
+						"buffer_size": 8021,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8397,
-								8397
+								0,
+								0
 							]
 						],
 						"settings":
@@ -955,7 +982,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3125.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -965,15 +992,15 @@
 					"file": "README.md",
 					"settings":
 					{
-						"buffer_size": 17731,
+						"buffer_size": 18963,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								17134,
-								17134
+								17760,
+								17760
 							]
 						],
 						"settings":
@@ -983,7 +1010,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5600.0,
+						"translation.y": 5859.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -993,15 +1020,15 @@
 					"file": "handlers.py",
 					"settings":
 					{
-						"buffer_size": 33087,
+						"buffer_size": 34782,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								27383,
-								27383
+								31690,
+								31690
 							]
 						],
 						"settings":
@@ -1011,7 +1038,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 11632.0,
+						"translation.y": 13367.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1021,15 +1048,15 @@
 					"file": "phpsc2replay-1.61/index.php",
 					"settings":
 					{
-						"buffer_size": 189,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								178,
-								178
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1108,26 +1135,138 @@
 				},
 				{
 					"buffer": 5,
-					"file": "sc2reader/mpyq/__init__.py",
+					"file": "styles/metamatch.scss",
 					"settings":
 					{
-						"buffer_size": 21,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								21,
-								21
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "static/index.html",
+					"settings":
+					{
+						"buffer_size": 4366,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1078,
+								1078
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "static/js/controllers.js",
+					"settings":
+					{
+						"buffer_size": 9602,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5179,
+								5179
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2223.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "sc2reader/events/game.py",
+					"settings":
+					{
+						"buffer_size": 22558,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12794,
+								12808
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "sc2reader/events/message.py",
+					"settings":
+					{
+						"buffer_size": 2916,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1735,
+								1748
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 520.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

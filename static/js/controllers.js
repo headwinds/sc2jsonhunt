@@ -180,7 +180,27 @@ function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
               gameObj[tup[0]] = tup[1];
           });
 
-          var li = "<li>" + gameObj.player + " performed: " + gameObj.name + " @ time: " + gameObj.frame + "</li>";
+          //var moment = moment().seconds( Number(gameObj.seconds) );
+          var gameSecondsNum = Number(gameObj.second);
+          console.log(gameSecondsNum);
+
+          var gameTimeObj = moment({s: gameSecondsNum});
+
+          var mins = gameTimeObj.minutes(); //moment.minutes;
+          var seconds = gameTimeObj.seconds(); //moment.seconds; 
+
+          var playerName; 
+          switch(gameObj.player){
+            case "Player 1 - Fenner (Zerg)" :
+              playerName = "Fenner";
+              break;
+            default :
+              playerName = "Fenner";
+              break;   
+
+          }  
+
+          var li = "<li>" + playerName + " performed: " + gameObj.name + " @ time: " + mins + ":" + seconds + "</li>";
           //console.log(li)
           resultHtml += li;
 
