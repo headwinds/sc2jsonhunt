@@ -475,89 +475,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "model.py",
-			"settings":
-			{
-				"buffer_size": 8021,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "README.md",
-			"settings":
-			{
-				"buffer_size": 18963,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "handlers.py",
-			"settings":
-			{
-				"buffer_size": 34782,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "phpsc2replay-1.61/index.php",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix",
-				"name": "$mpqfile = new MPQFile('swwarms.SC2Replay');"
-			}
-		},
-		{
-			"contents": "Searching 166 files for \"mpyq\" (whole word)\n\n/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/resources.py:\n    9  import zlib\n   10  \n   11: import mpyq\n   12  import sc2reader\n   13  from sc2reader import utils\n   ..\n  246              self.load_level = 0\n  247              try:\n  248:                 self.archive = mpyq.MPQArchive(replay_file, listfile=False)\n  249              except Exception as e:\n  250                  raise exceptions.MPQError(\"Unable to construct the MPQArchive\", e)\n  ...\n  626  \n  627          #: The opened MPQArchive for this map\n  628:         self.archive = mpyq.MPQArchive(map_file)\n  629  \n  630          #: A byte string representing the minimap in tga format.\n\n/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/utils.py:\n  169              return None\n  170  \n  171:     # Wrap all mpyq related exceptions so they can be distinguished\n  172      # from other sc2reader issues later on.\n  173      try:\n  ...\n  180          # * Force a decompression to catch under reporting\n  181          # * If that fails, try to process normally\n  182:         # * mpyq doesn't allow you to skip decompression, so fail\n  183          #\n  184:         # Refs: arkx/mpyq#12, GraylinKim/sc2reader#102\n  185          try:\n  186              file_data = archive.read_file(data_file, force_decompress=True)\n\n6 matches across 2 files\n",
-			"settings":
-			{
-				"buffer_size": 1368,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "styles/metamatch.scss",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "static/index.html",
-			"settings":
-			{
-				"buffer_size": 4366,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "static/js/controllers.js",
-			"settings":
-			{
-				"buffer_size": 9602,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "sc2reader/events/game.py",
-			"settings":
-			{
-				"buffer_size": 22558,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "sc2reader/events/message.py",
-			"settings":
-			{
-				"buffer_size": 2916,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -607,20 +524,36 @@
 	},
 	"file_history":
 	[
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/mpyq/__init__.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/README.md",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/session.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/connect.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/friends.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/replay.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/index.html",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/app.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/themes.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/main.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/image.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/schema.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/votes.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/replay.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/model.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/app.yaml",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/models/replay_model.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/__init__.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/README.md",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/phpsc2replay-1.61/index.php",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/metamatch.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/events/game.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/events/message.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/mpyq/__init__.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/app.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/filters.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/services.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/model.py",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/sc2reader/scripts/sc2replayer.py",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/.project",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/.pydevproject",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/replay.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/README.rst",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/photo.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/apiclient/discovery.py",
@@ -718,23 +651,7 @@
 		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/templates/contentCreation/contentCreationTemplate.html",
 		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/templates/contentCreation/answer/mainAnswerItemTemplate.html",
 		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/contentCreation/answer/MainAnswerCollectionView.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/styles/scss/renewal/themes/common/contentCreation/question/_ir_common_contentCreation_question.scss",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/contentCreation/answer/MainAnswerTitleView.js",
-		"/Users/bflowers/ir.bat",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/templates/contentCreation/answer/mainAnswerTemplate.html",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/contentCreation/answer/MainAnswerListView.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/models/contentCreation/answer/AnswerModel.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/collections/contentCreation/answer/AnswerCollection.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/styles/scss/renewal/themes/common/contentCreation/answer/_ir_common_contentCreation_mainAnswer.scss",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/contentCreation/answer/AnswersView.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/templates/contentCreation/question/questionItemTemplate.html",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/contentCreation/question/QuestionCollectionView.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/contentCreation/question/QuestionView.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/models/contentCreation/question/QuestionModel.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/collections/contentCreation/question/QuestionCollection.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/templates/common/instructionbar/instructionBarTemplate.html",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/manageQAs/ManageQAsView.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/models/common/instructionbar/InstructionBarModel.js"
+		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/styles/scss/renewal/themes/common/contentCreation/question/_ir_common_contentCreation_question.scss"
 	],
 	"find":
 	{
@@ -761,6 +678,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"sessions",
 			"ProgressEvent",
 			"mpyq",
 			"sc2reader",
@@ -887,8 +805,7 @@
 			"172.16.6.100",
 			"http://172.16.6.100/",
 			"focus",
-			"outline",
-			"onEmailBtnClickHandler"
+			"outline"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -956,321 +873,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "model.py",
-					"settings":
-					{
-						"buffer_size": 8021,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "README.md",
-					"settings":
-					{
-						"buffer_size": 18963,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								17760,
-								17760
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5859.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "handlers.py",
-					"settings":
-					{
-						"buffer_size": 34782,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								31690,
-								31690
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 13367.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "phpsc2replay-1.61/index.php",
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_name": "$mpqfile = new MPQFile('swwarms.SC2Replay');",
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"settings":
-					{
-						"buffer_size": 1368,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										157,
-										161
-									],
-									[
-										328,
-										332
-									],
-									[
-										602,
-										606
-									],
-									[
-										837,
-										841
-									],
-									[
-										1106,
-										1110
-									],
-									[
-										1205,
-										1209
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "styles/metamatch.scss",
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "static/index.html",
-					"settings":
-					{
-						"buffer_size": 4366,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1078,
-								1078
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "static/js/controllers.js",
-					"settings":
-					{
-						"buffer_size": 9602,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5179,
-								5179
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2223.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "sc2reader/events/game.py",
-					"settings":
-					{
-						"buffer_size": 22558,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								12794,
-								12808
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "sc2reader/events/message.py",
-					"settings":
-					{
-						"buffer_size": 2916,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1735,
-								1748
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 520.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

@@ -15,6 +15,7 @@
 'use strict';
 
 angular.module('photohunt.directives', ['photohunt.services'])
+    /*
     .directive('replay', function(Conf, ReplayHuntApi) {
       return {
         restrict: 'E',
@@ -36,6 +37,7 @@ angular.module('photohunt.directives', ['photohunt.services'])
         }
       }
     })
+    */
     .directive('photo', function(Conf, ReplayHuntApi) {
       return {
         restrict: 'E',

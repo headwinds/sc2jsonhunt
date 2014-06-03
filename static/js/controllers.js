@@ -14,7 +14,10 @@
 
 'use strict';
 
-function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
+angular.module('photohunt.controllers',[]).controller('PhotoHuntCtrl', 
+  ['$scope', '$location', 'Conf', 'ReplayHuntApi', '$timeout', function ($scope, $location, Conf, ReplayHuntApi, $timeout) {
+
+//function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
   // signIn
   $scope.userProfile = undefined;
   $scope.hasUserProfile = false;
@@ -157,6 +160,7 @@ function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
     })
   }
 
+  /*
   $scope.getReplay = function() {
     ReplayHuntApi.getReplay().then(function(response) {
     
@@ -182,12 +186,14 @@ function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
 
           //var moment = moment().seconds( Number(gameObj.seconds) );
           var gameSecondsNum = Number(gameObj.second);
-          console.log(gameSecondsNum);
+          //console.log(gameSecondsNum);
 
           var gameTimeObj = moment({s: gameSecondsNum});
 
-          var mins = gameTimeObj.minutes(); //moment.minutes;
-          var seconds = gameTimeObj.seconds(); //moment.seconds; 
+          var minsStr = String( gameTimeObj.minutes() ); //moment.minutes;
+          var secondsStr = String( gameTimeObj.seconds() ); //moment.seconds; 
+
+          if ( Number(secondsStr) < 10 ) secondsStr = "0" + secondsStr; 
 
           var playerName; 
           switch(gameObj.player){
@@ -200,7 +206,7 @@ function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
 
           }  
 
-          var li = "<li>" + playerName + " performed: " + gameObj.name + " @ time: " + mins + ":" + seconds + "</li>";
+          var li = "<li>" + playerName + " performed: " + gameObj.name + " @ time: " + minsStr + ":" + secondsStr + "</li>";
           //console.log(li)
           resultHtml += li;
 
@@ -208,7 +214,7 @@ function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
 
         resultHtml += "</ul>";
 
-
+        $("#preloader").hide();
         $("#replayDump").html( resultHtml );
 
         $scope.$apply();
@@ -217,6 +223,7 @@ function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
       $timeout(timeoutHandler, 500);
     })
   }
+  */
   
   $scope.selectTheme = function(themeIndex) {
     $scope.selectedTheme = $scope.themes[themeIndex];
@@ -308,13 +315,16 @@ function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
   }
 
   $scope.renderReplay = function() {
-     $scope.getReplay();
+     //$scope.getReplay();
+     //ReplayViewController.getReplay();
   }
   
   $scope.start = function() {
+
+    console.log("controllers - start");
     
     //$scope.renderSignIn();
-    $scope.renderReplay();
+    //$scope.renderReplay();
     $scope.checkForHighlightedPhoto();
     
     ReplayHuntApi.getThemes().then(function(response) {
@@ -353,4 +363,4 @@ function PhotoHuntCtrl($scope, $location, Conf, ReplayHuntApi, $timeout) {
   
   $scope.start();
   
-}
+}]);
