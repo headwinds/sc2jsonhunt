@@ -1,17 +1,19 @@
 # sc2jsonhunt
 
-#### challenge
+## challenge
 
 I want to be able to take an Starcraft 2 replay file and produce to json dump of all the game events which I can use in my javascript experiments. 
 
-#### work n progress
+## work n progress
 
-status: Currently, I can open a sc2 replay and return game events as an object:
-update: May 20/2014
+status: Currently, I can open a sc2 replay and return game events as an object.
 
-[sc2jsonhunt.appspot.com](http://sc2jsonhunt.appspot.com/)   
+last update: Aug 9/2014
 
-#### log
+[metamatch.ca](http://metamatch.ca/) 
+
+
+## log
 
 As I tackled this challenge, I jotted down the various paths and forks that I went down. It began with a google search for "sc2 replay javascript".
  
@@ -396,6 +398,13 @@ Thank you, [bernier](http://adam-bernier.appspot.com/), for your Lib solution an
 [Fast interactive prototyping with Sketch and d3.js](http://snips.net/blog/posts/2014/05-04-fast-interactive_prototyping_with_d3_js_II.html)     
 [top 10 mistakes that python programmers make](http://www.toptal.com/python/top-10-mistakes-that-python-programmers-make)      
 [The Hitchhiker’s Guide to Python!](http://docs.python-guide.org/en/latest/)      
+
+
+##### helpful GAE commands
+
+appcfg.py rollback sc2jsonhunt
+appcfg.py update sc2jsonhunt
+[deployment issues](http://stackoverflow.com/questions/12677728/google-app-engine-not-updating-deployed-files)
 
 
 

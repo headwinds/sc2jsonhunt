@@ -4,502 +4,102 @@
 		"selected_items":
 		[
 			[
-				"to",
-				"toUpperCase"
+				"cain",
+				"cabinquest"
 			],
 			[
-				"w",
-				"width"
+				"cas",
+				"cascadingTree"
 			],
 			[
-				"link",
-				"links3"
+				"zoo",
+				"zoomNum"
 			],
 			[
-				"nod",
-				"nodes3"
+				"journ",
+				"journeyCollection"
 			],
 			[
-				"Deta",
-				"DetailsView_nr"
+				"roo",
+				"rootNode"
 			],
 			[
-				"has",
-				"hasChildren"
+				"even",
+				"eventInfoObj"
 			],
 			[
-				"end",
-				"endWait"
+				"te",
+				"text-indent"
 			],
 			[
-				"Sp",
-				"spiderChartView"
+				"attackDis",
+				"attackDistNum"
 			],
 			[
-				"in",
-				"introspect"
+				"cre",
+				"create_vis"
 			],
 			[
-				"Spid",
-				"createSpiderViz"
+				"creat",
+				"createLayout"
 			],
 			[
-				"fon",
-				"font-size"
-			],
-			[
-				"Bubb",
-				"BubbleGraphView_nr"
-			],
-			[
-				"cure",
-				"currentTheme"
-			],
-			[
-				"curr",
-				"currentTheme"
-			],
-			[
-				"remo",
-				"removeSubVis"
-			],
-			[
-				"Bu",
+				"Bubble",
 				"BubbleChartView"
 			],
 			[
-				"set",
-				"setTimeout"
+				"User",
+				"UserView_nr"
 			],
 			[
-				"main",
-				"mainBar"
+				"in",
+				"inline-block"
 			],
 			[
-				"sel",
-				"selectedRootData"
+				"v",
+				"vertical-align"
 			],
 			[
-				"Bub",
-				"BubbleChartSubView"
-			],
-			[
-				"margin",
-				"margin-right"
-			],
-			[
-				"s",
-				"secondContainerColor"
-			],
-			[
-				"BubbleCh",
-				"BubbleChartView_nr"
-			],
-			[
-				"dra",
-				"drawCycle"
-			],
-			[
-				"select",
-				"selectAll"
-			],
-			[
-				"user",
-				"username"
-			],
-			[
-				"f",
-				"firstBackgroundColor"
-			],
-			[
-				"fi",
-				"fifthTextColor"
-			],
-			[
-				"fir",
-				"firstBackgroundColor"
-			],
-			[
-				"margin-",
-				"margin-bottom"
-			],
-			[
-				"qu",
-				"questionView"
+				"lan",
+				"languageModel"
 			],
 			[
 				"lang",
 				"langModel"
 			],
 			[
-				"border-",
-				"border-bottom"
-			],
-			[
-				"ma",
-				"max-width"
-			],
-			[
-				"font",
-				"font-size"
-			],
-			[
-				"back",
-				"background"
-			],
-			[
-				"con",
-				"contentCreation"
-			],
-			[
-				"conent",
-				"contentCreationTemplate"
-			],
-			[
-				"Re",
-				"RenewalApp"
-			],
-			[
-				"email",
-				"emailStr"
-			],
-			[
-				"folerItem",
-				"folderItemView"
-			],
-			[
-				"Data",
-				"DataSetView"
-			],
-			[
-				"mar",
-				"margin-top"
-			],
-			[
-				"Ma",
-				"ManageQAView"
-			],
-			[
-				"show",
-				"showManageQAs"
-			],
-			[
-				"play",
-				"playersData"
-			],
-			[
-				"L",
-				"LoginMainView"
-			],
-			[
-				"Test",
-				"testModel"
-			],
-			[
-				"data",
-				"dataviz"
-			],
-			[
-				"pro",
-				"prototype"
-			],
-			[
-				"is",
-				"isCodeValid"
-			],
-			[
-				"valid",
-				"validateIntentCode"
-			],
-			[
-				"setup",
-				"setupResponse"
-			],
-			[
-				"call",
-				"callGetIntentService"
-			],
-			[
-				"cur",
-				"curResponseId"
-			],
-			[
-				"un",
-				"undefined"
-			],
-			[
-				"defaut",
-				"defaultResponseCode"
-			],
-			[
-				"bRe",
-				"bResponseTableDrawn"
-			],
-			[
-				"instru",
-				"instructionsRemove"
-			],
-			[
-				"json",
-				"jsonIntent"
-			],
-			[
-				"hide",
-				"hideOverlayMessage"
-			],
-			[
-				"tex",
-				"text-align"
-			],
-			[
-				"ba",
-				"background"
-			],
-			[
-				"ha",
-				"hasOwnProperty"
-			],
-			[
-				"cu",
-				"curResponseId"
-			],
-			[
-				"User",
-				"UserSettingsView"
-			],
-			[
-				"bor",
-				"borderColor"
-			],
-			[
-				"border-co",
-				"border-color"
-			],
-			[
-				"model",
-				"models"
-			],
-			[
-				"Date",
-				"DateRangeInputView"
-			],
-			[
-				"Def",
-				"defaultInterfaceId"
-			],
-			[
-				"U",
-				"UserSettingsView"
-			],
-			[
-				"MainAppView",
-				"MainAppView_nr"
-			],
-			[
-				"update",
-				"updateUserSettings"
-			],
-			[
-				"mini",
-				"ministirith"
-			],
-			[
-				"se",
-				"selectedUserModel"
-			],
-			[
-				"red",
-				"redrawTable"
-			],
-			[
-				"acc",
-				"accessible"
-			],
-			[
-				"defau",
-				"defaultInterfaceId"
-			],
-			[
-				"int",
-				"interfaces"
-			],
-			[
-				"pop",
-				"populateInterfacesTable"
-			],
-			[
-				"on",
-				"onBlurPasswordHandler"
-			],
-			[
-				"dis",
-				"disableUIAccess"
-			],
-			[
-				"margi",
-				"margin-right"
-			],
-			[
-				"hil",
-				"hiliteColor"
-			],
-			[
-				"te",
-				"text-align"
-			],
-			[
-				"text",
-				"text-align"
-			],
-			[
-				"inl",
-				"inline-block"
-			],
-			[
-				"re",
-				"removeClass"
-			],
-			[
-				"Main",
-				"MainAppView"
-			],
-			[
-				"root",
-				"rootThemes"
-			],
-			[
-				"inq",
-				"inquiryType"
-			],
-			[
-				"App",
-				"App_nr"
-			],
-			[
-				"bac",
-				"background"
-			],
-			[
-				"temp",
-				"templateId"
-			],
-			[
-				"creat",
-				"createUserAdminView"
-			],
-			[
-				"min",
-				"min-width"
-			],
-			[
-				"revealSub",
-				"reveal-submenu"
-			],
-			[
-				"detail",
-				"detailedReport"
-			],
-			[
-				"intelli",
-				"addIntelliSuggest"
-			],
-			[
-				"onSe",
-				"onSelectChangeHandler"
-			],
-			[
-				"list",
-				"list-style-type"
-			],
-			[
-				"ques",
-				"questionStr"
-			],
-			[
-				"post",
-				"postToFacebook"
-			],
-			[
-				"B",
-				"backbone"
-			],
-			[
-				"l",
-				"line-height"
-			],
-			[
-				"b",
-				"background"
-			],
-			[
-				"stop",
-				"stopPropagation"
-			],
-			[
-				"pr",
-				"preventDefault"
-			],
-			[
-				"res",
-				"responseUpdated"
-			],
-			[
-				"rep",
-				"responseUpdated"
-			],
-			[
-				"sampe",
-				"sample_interfaceId"
-			],
-			[
-				"sample",
-				"sample_sessionId"
-			],
-			[
-				"Conve",
-				"ConversationView"
-			],
-			[
-				"Con",
-				"conversationModel"
-			],
-			[
-				"j",
-				"jquery"
-			],
-			[
-				"border",
-				"border-radius"
+				"dispaly",
+				"displayPreviewMode"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "styles/metamatch.scss",
+			"settings":
+			{
+				"buffer_size": 106,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "styles/common/common.scss",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 49.0,
+		"height": 67.0,
 		"selected_items":
 		[
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
-				"Snippet: ",
-				"Snippet: Function"
-			],
-			[
-				"package",
-				"Package Control: List Packages"
-			],
-			[
-				"up",
-				"Package Control: Upgrade Package"
-			],
-			[
-				"ins",
+				"insta",
 				"Package Control: Install Package"
 			],
 			[
@@ -507,11 +107,15 @@
 				"About"
 			]
 		],
-		"width": 435.0
+		"width": 449.0
 	},
 	"console":
 	{
-		"height": 125.0
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
 	},
 	"distraction_free":
 	{
@@ -524,153 +128,118 @@
 	},
 	"file_history":
 	[
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/session.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/connect.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/friends.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/replay.html",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/index.html",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/themes.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/main.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/image.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/schema.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/votes.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/replay.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/model.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/app.yaml",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/models/replay_model.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/__init__.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/README.md",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/phpsc2replay-1.61/index.php",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/metamatch.scss",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/events/game.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/events/message.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/mpyq/__init__.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/app.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/filters.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/services.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/sc2reader/scripts/sc2replayer.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/.project",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/.pydevproject",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/sc2reader/README.rst",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/photo.html",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/apiclient/discovery.py",
-		"/Users/bflowers/Projects/Intelliresponse/finovate/design/open.svg",
-		"/Users/bflowers/Projects/Intelliresponse/finovate/js/views/mainbar/viewmode/ViewModeView_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/finovate/js/views/theme/details/DetailsView_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/finovate/js/views/dataviz/charts/spider/explore2.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/spider/cibc-example1.html",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/spider/cibc-example1_cut.html",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/WEB-INF/jsp/is.jsp",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/theme/details/DetailsSpiderChartView_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_default_more.scss",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/MainAppView_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/models/models.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/mainbar/viewmode/ViewModeView_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/offers/dev/build-mar-2014/overview/main.html",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/theme/details/DetailsView_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/theme/ThemeView_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/actionbar/graphcontrols/GraphControlsView_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_graph.scss",
 		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/theme/details/DetailsModularView_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/bubble/sub/BubbleSubChartView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/theme/ThemeView_nr.js",
 		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/actionbar/ActionBarView_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/controllers/preloader/ng_PreloaderController.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_themes_details.scss",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/notes/NotesView_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/bubble/BubbleChartView_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/mainbar/MainBarView_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_graphInfo.scss",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/server/Server_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/app.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_global_variables.scss",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_preloader.scss",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/default/_ir_zen_variables.scss",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/messages/MessagesView_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_notes.scss",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/router/MainRouter_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/views/detailsView.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/views/themeView.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/default/default.scss",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/actionbar/user/UserView_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/voices/design/icons/chart.svg",
-		"/Users/bflowers/Projects/qaportals/cleanup/renewalUI/web/app/templates/QAPortals/qaPortalsTemplate.html",
-		"/Users/bflowers/Projects/qaportals/cleanup/renewalUI/web/app/scripts/models/languages/english/EnglishModel.js",
-		"/Users/bflowers/Projects/qaportals/cleanup/renewalUI/web/app/scripts/models/qaPortals/QAPortalsModel.js",
-		"/Users/bflowers/Projects/qaportals/cleanup/renewalUI/web/app/scripts/views/common/instructionbar/InstructionBarView.js",
-		"/Users/bflowers/Projects/qaportals/cleanup/renewalUI/web/app/scripts/views/common/button/ButtonVectorView.js",
-		"/Users/bflowers/Projects/qaportals/cleanup/renewalUI/web/app/styles/scss/renewal/themes/common/qaPortals/_ir_common_qaPortals.scss",
-		"/Users/bflowers/Projects/qaportals/cleanup/renewalUI/web/app/scripts/routers/RenewalRouter.js",
-		"/Users/bflowers/Projects/qaportals/cleanup/renewalUI/web/app/scripts/views/QAPortals/QAPortalsView.js",
-		"/Users/bflowers/Projects/headwinds/code/d3.chart/examples/scripts/barChartExample.js",
-		"/Users/bflowers/Projects/headwinds/code/d3.chart/examples/indexAll.html",
-		"/Users/bflowers/Projects/headwinds/code/d3.chart/examples/index.html",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/libs/d3/bar-chart.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/views/layouts.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/bubble/BubbleChartSubView_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/bubble/BubbleChartViewBB_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/bubble/BubbleChartSubVizView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/MainAppView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/actionbar/graphcontrols/GraphControlsView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/journey/JourneyHUDView_nr.js",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/public/index.html",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/app/views/index/index.html",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/public/views/index.html",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/styles/scss/index/_index.scss",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/public/lib/bootstrap/docs/assets/css/bootstrap.css",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/styles/scss/common/_common.scss",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/styles/scss/common/_page.scss",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/styles/scss/common/_nav.scss",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/app/views/includes/footer.html",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/public/js/controllers/bellwoods/BellwoodsGameController.js",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/public/js/controllers/index/IndexController.js",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/public/views/hive/view.html",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/cascading/ng_CascadingTreeViewController.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/cascading/ng_CascadingTreeViewControllerBak2.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/spider/spider.html",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/spider/SpiderChartView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/WEB-INF/jsp/is.jsp",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_default.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_default_more.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/spider/archive/explore2.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/spider/archive/explore2.html",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/spider/SpiderChartView_nrMessed.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/spider/SpiderChartView_nrBak.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/controllers/main/ng_GlobalService.js",
+		"/Users/bflowers/Projects/headwinds/code/supersimple/js/controllers/MainController.js",
+		"/Users/bflowers/Projects/headwinds/code/supersimple/sass/cabinquest.scss",
+		"/Users/bflowers/Projects/headwinds/code/supersimple/sass/cabinquest/common/_common.scss",
+		"/Users/bflowers/Projects/headwinds/code/supersimple/js/init.js",
+		"/Users/bflowers/Projects/headwinds/code/supersimple/santa/Google Santa Tracker.html",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/theme/details/DetailsView_nr.js",
 		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/zen/_ir_zen_variables.scss",
-		"/Users/bflowers/Projects/headwinds/code/mean/node_modules/.bin/jade",
-		"/Users/bflowers/Projects/Intelliresponse/repo/ir-admin-web-renewal/trunk/app/styles/scss/renewal/themes/common/qaPortals/_ir_common_qaPortals.scss",
-		"/Users/bflowers/Projects/Intelliresponse/repo/ir-admin-web-renewal/trunk/app/scripts/views/nav/NavView.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/ir-admin-web-renewal/trunk/app/templates/nav/navTemplate.html",
-		"/Users/bflowers/Projects/Intelliresponse/repo/ir-admin-web-renewal/trunk/app/scripts/controllers/appview/AppViewController.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/ir-admin-web-renewal/trunk/app/index.html",
-		"/Users/bflowers/Projects/Intelliresponse/repo/ir-admin-web-renewal/trunk/app/scripts/main.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/ir-admin-web-renewal/trunk/app/scripts/app.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/ir-admin-web-renewal/trunk/app/scripts/routes.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/ir-admin-web-renewal/trunk/app/scripts/bootstrap.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/ir-admin-web-renewal/trunk/app/scripts/angular/directives/index.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/ir-admin-web-renewal/trunk/app/scripts/angular/controllers/index.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/contentCreation/answer/MainAnswerItemView.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/contentCreation/answer/interface/InterfaceCollectionView.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/models/contentCreation/answer/interface/InterfaceModel.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/contentCreation/answer/interface/InterfaceItemView.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/styles/scss/renewal/themes/common/contentCreation/_ir_common_contentCreation.scss",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/styles/scss/renewal/themes/common/contentCreation/question/_ir_common_contentCreation_questions.scss",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/templates/contentCreation/question/questionsTemplate.html",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/models/languages/english/EnglishModel.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/styles/scss/renewal/themes/common/contentCreation/answer/_ir_common_contentCreation_answer.scss",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/contentCreation/answer/AnswerView.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/contentCreation/ContentCreationView.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/templates/contentCreation/answer/answerTemplate.html",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/templates/contentCreation/question/questionTemplate.html",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/Gruntfile.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/styles/scss/renewal/themes/common/contentCreation/answer/_ir_common_contentCreation_mainAnswers.scss",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/templates/contentCreation/answer/mainAnswerTitleTemplate.html",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/styles/scss/renewal/themes/common/_ir_common.scss",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/routers/manageQAs/ManageQAsRouter.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/routers/RenewalRouter.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/contentCreation/question/QuestionItemView.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/contentCreation/question/QuestionsView.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/contentCreation/question/MainQuestionView.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/common/instructionbar/InstructionBarView.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/templates/contentCreation/contentCreationTemplate.html",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/templates/contentCreation/answer/mainAnswerItemTemplate.html",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/scripts/views/contentCreation/answer/MainAnswerCollectionView.js",
-		"/Users/bflowers/Dropbox/projects/intelliresponse/renewal/app/styles/scss/renewal/themes/common/contentCreation/question/_ir_common_contentCreation_question.scss"
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/mainbar/daterange/DateRangeView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/bubble/BubbleChartView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/config/Config_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_voices_tooltip.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/libs/tooltip/customTooltip.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/corporate/corporate.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/default/default.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/dusk/dusk.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/solarized/solarized.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/zen/default.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_default.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/actionbar/user/UserView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/views/layouts.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/mainbar/MainBarView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/mainbar/viewmode/ViewModeView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/mainbar/toolbartheme/ToolbarThemesView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/actionbar/logo/LogoView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/release/ReleaseView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_release.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/models/languages/en/EnglishModel_nr.js",
+		"/Users/bflowers/Dropbox/Brandon/intelliresponse/introspect/builds/web/js/views/MainAppView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/voices.html",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/app.js",
+		"/Users/bflowers/Desktop/MainAppViewBak_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/main.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_userslistadmin.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_usersettings.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_sharing.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/css/introspect/themes/zen/default.css",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/common/Common_nr.js",
+		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/config/routes.js",
+		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/app/controllers/characters/CharactersController.js",
+		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/app/views/includes/foot.jade",
+		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/public/views/index.html",
+		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/public/views/characters/list.html",
+		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/index.html",
+		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/app/controllers/cabin.js",
+		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/app/views/characters/characters.jade",
+		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/public/views/cabin/view.html",
+		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/public/js/app.js",
+		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/public/js/controllers/characters/characters.js",
+		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/public/js/controllers/cabin.js",
+		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/public/js/controllers/articles.js",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/dev/public/views/index.html",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/dev/survivorTips/meanDeploy.md",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/dev/README.md",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/dev/package.json",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/dev/server.js",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/dev/index.html",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/dev/config/env/production.json",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/dev/protips/meanDeploy.md",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/dev/protips/meanDeploy",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/design/cabinQuestNotes.md",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/dev/public/components/README.md",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/dev/db/controllers/AppController.js",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/dev/db/models/cat.js",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/dev/public/app/app.js",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/dev/db/controllers/CatController.js",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/notes.md",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/app/views/index.jade",
+		"/Users/brandon/Dropbox/Brandon/headwinds/site/cabinquest/app/controllers/index.js"
 	],
 	"find":
 	{
-		"height": 44.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
-			"/Users/bflowers/Projects/headwinds/sc2jsonhunt",
-			"/Users/bflowers/Projects/Intelliresponse/repo/ir-admin-web/trunk/web/responses",
-			"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/",
-			"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles",
 			"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web",
-			"/Users/bflowers/Projects/Code",
-			"/Users/bflowers/Projects/Dev/repo/ir-admin-web/trunk/web/",
-			"/Users/bflowers/Projects/Dev/repo/ir-admin-web/trunk/web/responses/intentCodeAdmin",
-			""
+			"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles",
+			"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js"
 		]
 	},
 	"find_state":
@@ -678,209 +247,218 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"sessions",
-			"ProgressEvent",
-			"mpyq",
-			"sc2reader",
-			"static",
-			"replayhunt",
-			"json",
-			"photohunt",
-			"PhotoHuntApi",
-			"ThemesHandler",
-			"Intent Codes",
-			"userCell",
-			"fullData",
-			"redraw",
-			"circleChildrenSelected",
-			"createDetails",
-			"notesTemplate",
-			"qCell",
-			"nameSplit",
-			"text",
-			"nodes",
-			"console",
-			"onClickHandler",
-			"fullData",
-			"force",
-			"tree",
-			"why are my ",
-			"how can I have holds",
-			"why are my cheque images being rejected",
-			"why are my check images being rejected",
-			"how am I notified",
-			"how do I see",
-			"if someone gets close to my smartphone",
-			"is there a fee for edeposit",
-			"do I still need to ",
-			"can I deposit multiple ",
-			"what are your rates",
-			"can I make a deposit",
-			"children",
-			"source",
-			"tick",
-			"update",
-			"onClickHandler",
-			"link",
-			"click",
-			"maxNodeSize",
-			"nodeTransform",
-			"collada",
-			"clearMessage",
-			"endWait",
-			"clearMessage",
-			"endWait",
-			"clearMessage",
-			"setTasksViewMode",
-			"createSpiderViz",
-			"spiderChartView",
-			"viz",
-			"vis",
-			" \"children\":\n",
-			"children\n",
-			"\"children\"\n",
-			"children\n",
-			"\",\n",
-			"svg",
-			"nodes",
-			"that.model",
-			"onChartViewModeChanged",
-			"isCompareMOde",
-			"createMainBarView",
-			"mainBarView",
-			"os",
-			"fn",
-			"onGetResponsesCallback",
-			"intelliresponse-root",
-			"bindMainContextMenu",
-			"onCloseBtnClickHandler",
-			"hideDetailsView",
-			"onDetailsViewCloseHandler",
-			"'detailsView:close'",
-			"onDetailsCloseHandler",
-			"updateThemeView",
-			"self.width",
-			"arrangeBub",
-			"detailsView",
-			"onDetailsViewReadyHandler",
-			"viewRea",
-			"onDetailsViewReadyHandler",
-			"onSubThemesShowHandler",
+			"questionGroupDetailDatatableID",
+			"questionGroupDetailDatatable",
+			"destroyGroupQuestionsTable",
+			"questionGroupDatatable",
+			"destroyDetailsView",
 			"toggleSubThemeState",
-			"onDetailsViewReadyHandler",
-			"detailsView:close",
-			"cachedRowData",
-			"rowData",
-			"onSubVizRootSelectedAgain",
-			"subViz:root selected again",
-			"exitPickMarker",
-			"doLayout",
-			"exitBoxZoomMode",
-			"graph",
-			"onSubThemesHideHandler",
-			"this.state",
-			"updateNoteWithCollectedRows",
-			"getNoteFromServer",
-			"onViewModeChanged",
-			"onChartViewModeChanged",
-			"subThemesDatatable",
-			"themesDatatable",
-			"onThemeRowClicked",
-			"onDetailsViewReadyHandler",
-			"showDetailsView",
-			"detailsViewReady",
-			"setTimeout",
-			"onDetailsViewReadyHandler",
-			"createSubThemesTable",
-			"createSubTable",
+			"mousewheel",
+			"onJourneyMinimizeClickHandler",
+			"minimized",
+			"resetActions",
+			"cloneToDoc",
+			"Sample",
+			"navbar",
+			"onJourneyMinimizeClickHandler",
+			"onNodeClickHandler",
+			"trigger",
+			"onNodeClickHandler",
+			"onFindRootCascadingHandler",
+			"$window.dispatcher.on(\"journey:findRoot\", $scope.onFindRootCascadingHandler);",
+			"moveSpider",
+			"renderSelectedNodes",
+			"onJourneyNodeSelectedHandler",
+			"onJourneyFindRootHandler",
+			"trigger",
+			"onNodeClickHandler",
+			"setHomePos",
+			"simpleSetup",
+			"onNodeClickHandler",
+			"createSpiderViz",
+			"simpleSetup",
+			"linkArc",
+			"users-table",
+			"populateInterfacesTable",
+			"addUsers",
+			"populateInterfacesTable",
+			"dataTable",
+			"onZoomCascadingHandler",
+			"onJourneyZoomHandler",
+			"that.zoomNum",
+			"toggleSafe",
+			"globalMessage",
+			"simpleSetup",
+			"charge",
+			"simpleSetup",
+			"moveSpider",
+			"setHomePos",
+			"moveSpider",
+			"linkDistance",
+			"simpleSetup",
+			"simpleSEtup",
 			"update",
-			"onServerSuccessHandler",
-			"endWait",
-			"beginWait",
-			"filterExcluded",
-			"beginWait",
-			"filterExcluded",
-			"data",
-			"filterExcluded",
-			"172.16.6.100",
-			"http://172.16.6.100/",
-			"focus",
-			"outline"
+			"addText",
+			"simpleSetup",
+			"onClickHandler",
+			"assignCircleStyle",
+			".append(\"svg:text\")",
+			"collapseRootChildren",
+			"flatten",
+			"collapseRootChildren",
+			"moveSpider",
+			"onClickHandler",
+			"collapseRootChildren",
+			"onDestroyCascadingHandler",
+			"onJourneyBackClickHandler",
+			"onCloseClickHandler",
+			"draw",
+			"onJourneyMinimizeClickHandler",
+			"journeyCrumbCollection",
+			"that.selectedNodes",
+			"onJourneyNodeSelectedHandler",
+			"selectedNodes",
+			"\n       that.selectedNodes",
+			"onClickClearCollectionHandler",
+			"draw",
+			"createSpiderViz",
+			"createSpider",
+			"simpleSetup",
+			"rootNode",
+			"destroySpiderViz",
+			"draw",
+			"vizHeight",
+			"bSourceInquiries",
+			"moveChart",
+			"moveSpider",
+			"moveChart",
+			"newPos",
+			"moveChart",
+			"svg",
+			"move",
+			"moveChart",
+			"width",
+			"fonts",
+			"pref",
+			"filtersVisible",
+			"pref",
+			"themeListView",
+			"increase",
+			"setupZoom",
+			"zoomReset",
+			"detailsContainer",
+			"showDetailsView",
+			"setSubNodesData",
+			"tooltip",
+			"themeName",
+			"tooltip",
+			"createRootNodes",
+			"tooltip",
+			"CustomTooltip",
+			"tooltip",
+			"show_details",
+			"createLayout",
+			"move_towards_center",
+			"createLayout",
+			"create_vis",
+			"createRootNodes",
+			"createLayout",
+			"move_towards_target",
+			"move_towards_center",
+			"textStyle",
+			"getStarPos",
+			"create_vis",
+			"clear",
+			"textStyle",
+			"display_group_all",
+			"createLayout",
+			"enterBoxZoomMode",
+			"mapStarredFilter",
+			"disable"
 		],
-		"highlight": false,
+		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
 		[
-			"photohunt",
-			"replayhunt",
-			"ReplayHuntApi",
-			"_children",
-			"animateTransform",
-			"animateMotion",
-			"animate from=\"0\" to=\"100\"",
-			"animate from=\"0\" to=\"100\" ",
-			"animate from=\"0\" to=\"100\" repeatCount=\"indefinite\" ",
-			"title",
-			"question",
-			"AnswerModel",
-			"../bower_components",
-			"bower_components",
-			"//console",
-			"resetIntentCode",
-			"// if (window.console) console",
-			"if ( window.console) console",
-			"curInterfaceId",
-			"//console",
-			"//comment",
-			"localIntentModelPath",
-			"localResponseModelPath",
-			"//console",
-			"SVGDemoViewController",
-			"RubeBlimp",
-			"//console",
-			"useradmin-individual",
-			"Click",
-			"darken",
-			"../../images",
-			"//console",
-			"",
-			".footer-extra",
-			".header-extra",
-			"extra",
-			"overlay-extra-container",
-			"'Geogrotesque-Medium'",
-			"//console",
-			"libs",
-			"8443",
-			"8080",
-			"C0mt3xt!",
-			"IRdev",
-			"dev24",
-			"5432",
-			"172.16.6.2",
-			"127.0.0.1",
-			"bflowers",
-			"subversion.intelliresponse.com"
+			"'ROLE_USERS', 'ROLE_GUEST'",
+			"ROLE_UZERS"
 		],
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": true,
+		"whole_word": false,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "styles/metamatch.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 106,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								72,
+								72
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "styles/common/common.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 36.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -909,9 +487,14 @@
 		]
 	},
 	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "sc2jsonhunt.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -919,10 +502,6 @@
 		"height": 0.0,
 		"selected_items":
 		[
-			[
-				"jade",
-				"node_modules/.bin/jade"
-			]
 		],
 		"width": 0.0
 	},
@@ -934,10 +513,24 @@
 		],
 		"width": 0.0
 	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
 	"show_minimap": true,
-	"show_open_files": true,
+	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 310.0,
-	"status_bar_visible": true
+	"side_bar_width": 377.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
 }

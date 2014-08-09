@@ -15,20 +15,18 @@
 'use strict';
 
 angular.module('photohunt.directives', ['photohunt.services'])
-    /*
-    .directive('replay', function(Conf, ReplayHuntApi) {
+    
+    .directive('fightcard', function(Conf, ReplayHuntApi) {
       return {
         restrict: 'E',
         replace: true,
         scope: {
-          replayReady: '&replayReady',
-          replayFileName: '&replayFileName',
-          replayData: '&replayData'
+          
         },
-        templateUrl: 'partials/replay.html',
+        templateUrl: 'partials/fightcard.html',
         link: function (scope, element, attrs) {
 
-          console.log("directives - replay - init")
+          console.log("directives - fightcard - init")
 
           element.find('.nextButton')
               .click(function(evt) {
@@ -37,7 +35,6 @@ angular.module('photohunt.directives', ['photohunt.services'])
         }
       }
     })
-    */
     .directive('photo', function(Conf, ReplayHuntApi) {
       return {
         restrict: 'E',

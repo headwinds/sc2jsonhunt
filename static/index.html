@@ -34,50 +34,23 @@
   <!--libs-->
 
 </head>
-<body ng-controller="PhotoHuntCtrl" ng-cloak>
+<body ng-cloak>
 <div id="container">
-  <div class="lens"><img src="images/lens.png" width="140" height="140"></div>
-  <header>
-    <div id="topHeader">
-      <h1>
-        <img src="images/title-photohunt.jpg" alt="photohunt"
-            width="160" height="45" />
-      </h1>
-      <div id="profileInfo" >
-        <span id="signin" ng-show="immediateFailed">
-          <span id="myGsignin"></span>
-        </span>
-        <span ng-show="userProfile">
-	        <a target="_blank" href="{{userProfile.googlePublicProfileUrl}}">
-	          <span class="name">{{userProfile.googleDisplayName}}</span>
-	          <img ng-src="{{userProfile.googlePublicProfilePhotoUrl|profilePicture:32}}" />
-	        </a>
-	        <button class="button danger disconnect" ng-click="disconnect()" style="">
-	           Disconnect
-	         </button>
-         </span>
-      </div>
+
+  <section id="fightcard" ng-controller="FightCardViewController" ng-init="init()">
+    <div class="contentGroup">
+      <fightcard></fightcard> <!-- that's neat my first directive ;-D -->
     </div>
-    <div id="bottomHeader">
-      <h2>Hunting for SC2 game events</h2>
-    </div>
-  </header>
-  
-  <section id="notification" ng-show="isSignedIn">{{notification}}</section>
+  </section>
 
   <section id="replays" ng-controller="ReplayViewController" ng-init="init()">
     <div class="contentGroup">
-      <p>I'm attempting to read data from a Starcraft 2 replay file and then do something interesting with the data. This is a work-n-progress and currently I'm only starting to get game events; not even that interesting of ones.</p>
-       <p>I'm inspired sites like <a href="http://www.sc2ranks.com/">sc2ranks</a> or <a href="http://ggtracker.com">ggtracker</a> which much more impressive apps than this pathetic display but its an <a href="https://github.com/headwinds/sc2jsonhunt">open source project</a> and a sign of better things to come - can't get any worse.</p> 
       <replay></replay> <!-- that's neat my first directive ;-D -->
     </div>
   </section>
- 
-  <footer>
-    <a target="_blank" href="http://angularjs.org/">
-      <img src="images/AngularJS-small.png" style="vertical-align: middle" />
-    </a>
-  </footer>
+
+
+
 
 </div>
   
@@ -91,11 +64,13 @@
   <!--controllers-->
   <script src="js/controllers.js"></script>
   <script src="js/controllers/replay/ReplayViewController.js"></script>
+   <script src="js/controllers/fightcard/FightCardViewController.js"></script>
   <script src="js/controllers/versus/VersusViewController.js"></script>
   <script src="js/filters.js"></script>
   <!--directives-->
   <script src="js/directives.js"></script>
   <script src="js/directives/replay/ReplayDirective.js"></script>
+  <!--<script src="js/directives/fightcard/FightCardDirective.js"></script>-->
   <script type='text/javascript'>
   function startApp() {
     angular.bootstrap(document, ['photohunt']);  
@@ -111,9 +86,11 @@
     po.src = 'https://apis.google.com/js/auth:plusone.js?onload=startApp';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
+
   $(function() {
     $("#sort").buttonset();
   });
+  
   </script>
 </body>
 </html>

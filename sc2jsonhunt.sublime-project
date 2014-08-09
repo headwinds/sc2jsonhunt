@@ -2,7 +2,8 @@
 	"folders":
 	[
 		{
-			"path": "/Users/bflowers/Projects/headwinds/sc2jsonhunt"
+			"follow_symlinks": true,
+			"path": "."
 		}
 	]
 }
