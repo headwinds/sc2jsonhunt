@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('photohunt.directives', ['photohunt.services'])
+angular.module('photohunt.directives')
     .directive('replay', function(Conf, ReplayHuntApi) {
       return {
         restrict: 'E',
