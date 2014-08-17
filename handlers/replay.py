@@ -111,7 +111,7 @@ class ReplayHandler(JsonRestHandler, SessionEnabledHandler):
         result[str(loopBreak)] = gameObjStr #json.dumps(game_event)
       
       loopBreak += 1
-      if loopBreak > 1000: # approx 4 mins of game time - I want to pass start time to get events on demand 
+      if loopBreak > 10: # approx 4 mins of game time - I want to pass start time to get events on demand 
         break
     self.send_success(json.dumps(result), jsonkind="photohunt#replay")  
 

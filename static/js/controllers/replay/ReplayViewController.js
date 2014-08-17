@@ -1,6 +1,8 @@
 angular.module('photohunt.controllers').controller('ReplayViewController', 
 	['$scope', '$location', 'Conf', 'ReplayHuntApi', '$timeout', '$window', function ($scope, $location, Conf, ReplayHuntApi, $timeout, $window) {
 
+	$scope.bShowApp = false; 
+	
 	$scope.init = function(){
 		console.log("ReplayViewController - init" );
 

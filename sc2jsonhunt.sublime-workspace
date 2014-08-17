@@ -75,46 +75,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "static/index.html",
-			"settings":
-			{
-				"buffer_size": 3227,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "static/js/directives/fightcard/FightCardDirective.js",
-			"settings":
-			{
-				"buffer_size": 305,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "static/partials/fightcard.html",
-			"settings":
-			{
-				"buffer_size": 266,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "static/js/controllers/fightcard/FightCardViewController.js",
-			"settings":
-			{
-				"buffer_size": 272,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "static/js/directives/versus/VersusDirective.js",
-			"settings":
-			{
-				"buffer_size": 247,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -152,29 +112,33 @@
 	},
 	"file_history":
 	[
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/indexDirectives.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/results/results.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/fightcard/fightcard.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/versus/versus.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/common.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/README.md",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/index.html",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/versus/VersusViewController.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/fightcard/FightCardDirective.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/fightcard.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/about.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/versus/VersusDirective.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/results/ResultsDirective.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/results/ResultsViewController.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/replay/ReplayDirective.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/results.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/replay.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/indexDirectives.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/versus/VersusViewController.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/results/ResultsViewController.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/fightcardB.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/fightcard/FightCardViewController.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/versus.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/header.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/notificaton.html",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/about.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/app.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/results.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/footer.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/indexBak.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/metamatch.scss",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/common.scss",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/README.md",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/mainmenu.html",
 		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/theme/details/DetailsModularView_nr.js",
 		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/theme/ThemeView_nr.js",
@@ -442,152 +406,8 @@
 	"groups":
 	[
 		{
-			"selected": 4,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "static/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3227,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2516,
-								2516
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 704.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "static/js/directives/fightcard/FightCardDirective.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 305,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								305,
-								305
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "static/partials/fightcard.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 266,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "static/js/controllers/fightcard/FightCardViewController.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 272,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "static/js/directives/versus/VersusDirective.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 247,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								213,
-								226
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

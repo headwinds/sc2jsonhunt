@@ -5,11 +5,19 @@ fightcard
 	<div>
 		<ul>
 			<li>
-				<div>
-					<div>Player 1</div>
+					<div ng-controller="PlayerViewController">
+						<player></player>
+					</div>
+
+
 					<div>vs</div>
-					<div>Player 2</div>
-				</div>
+
+					<div ng-controller="PlayerViewController">
+						<player></player>
+					</div>
+
+	
+
 			</li>
 		</ul>	
 	</div>
