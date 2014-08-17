@@ -1,5 +1,4 @@
 body {
-  background: url('../images/body-bg.png') repeat;
   font-family: Arial, sans-serif;
   font-size: 14px;
   margin: 0;
@@ -85,7 +84,6 @@ header a span:hover {
 }
 
 #topHeader {
-  background: #454545  url('../images/bg-ph.png') repeat-x;  
   border-bottom: 1px solid black;
   height: 45px;
   color: #fff;

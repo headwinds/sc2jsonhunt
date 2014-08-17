@@ -5,18 +5,15 @@ fightcard
 	<div>
 		<ul>
 			<li>
-					<div ng-controller="PlayerViewController">
-						<player></player>
-					</div>
+				<div ng-controller="PlayerViewController" ng-init="init('fenner')">
+					<player></player>
+				</div>
 
+				<div>vs</div>
 
-					<div>vs</div>
-
-					<div ng-controller="PlayerViewController">
-						<player></player>
-					</div>
-
-	
+				<div ng-controller="PlayerViewController" ng-init="init('petraeus')">
+					<player></player>
+				</div>
 
 			</li>
 		</ul>	

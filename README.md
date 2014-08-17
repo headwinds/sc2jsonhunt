@@ -6,7 +6,7 @@ I wanted to be able to take an Starcraft 2 replay file and produce to json dump 
 
 ## work n progress
 
-status: Currently, I can open a sc2 replay and return game events as an object.
+status: Currently, I can open a sc2 replay and return game events as a javascript-friendly array of objects.
 
 last update: Aug 9/2014
 
@@ -18,5 +18,5 @@ $ dev_appserver.py sc2jsonhunt
 
 ## log
 
-[[first strike april 2014]]
-[[design and purpose aug 2014]]
+[first strike april 2014](https://github.com/headwinds/sc2jsonhunt/wiki/first-strike---april-2014) 
+[design and purpose aug 2014](https://github.com/headwinds/sc2jsonhunt/wiki/design-and-purpose---aug-2014) 

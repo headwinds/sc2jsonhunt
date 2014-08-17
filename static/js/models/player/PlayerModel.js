@@ -1,6 +1,6 @@
-angular.module('cabinquest.bellwoods').factory("PlayerModel", function() {
+angular.module('photohunt').factory("PlayerModel", function() {
     return function( proNameStr, portraitPathStr ) {
-			this.proname = proNameStr;
+			this.proName = proNameStr;
 			this.portraitPath = portraitPathStr;
 		} 
     }

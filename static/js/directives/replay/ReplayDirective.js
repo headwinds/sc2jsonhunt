@@ -2,6 +2,9 @@
 
 angular.module('photohunt.directives')
     .directive('replay', function(Conf, ReplayHuntApi) {
+      
+      var bLog = false;
+
       return {
         restrict: 'E',
         replace: true,
@@ -13,11 +16,11 @@ angular.module('photohunt.directives')
         templateUrl: 'partials/replay.html',
         link: function (scope, element, attrs) {
 
-          console.log("directives - replay - init")
+          if (bLog) console.log("ReplayDirective - init")
 
           element.find('.nextButton')
               .click(function(evt) {
-                // console.log("directives - replay nextbutton - click")
+                // console.log("ReplayDirective - replay nextbutton - click")
               });
         }
       }

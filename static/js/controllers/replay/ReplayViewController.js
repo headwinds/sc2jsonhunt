@@ -2,9 +2,10 @@ angular.module('photohunt.controllers').controller('ReplayViewController',
 	['$scope', '$location', 'Conf', 'ReplayHuntApi', '$timeout', '$window', function ($scope, $location, Conf, ReplayHuntApi, $timeout, $window) {
 
 	$scope.bShowApp = false; 
+	var bLog = false;
 	
 	$scope.init = function(){
-		console.log("ReplayViewController - init" );
+		if (bLog) console.log("ReplayViewController - init" );
 
 		$scope.getReplay();
 	}
@@ -18,7 +19,7 @@ angular.module('photohunt.controllers').controller('ReplayViewController',
 	      //
 	      var timeoutHandler = function(){
 	        
-	        console.log("controllers - getReplay - response - timeout finished" );
+	        if (bLog) console.log("controllers - getReplay - response - timeout finished" );
 	        
 	        $scope.replayData = response;
 	        console.log($scope.replayData, "controllers - getReplay - response ");

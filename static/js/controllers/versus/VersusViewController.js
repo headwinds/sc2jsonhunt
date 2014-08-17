@@ -2,9 +2,10 @@ angular.module('photohunt').controller('VersusViewController',
 	['$scope', '$window', function ($scope, $window) {
 
 		$scope.bShowApp = false; 
+		var bLog = false;
 
 		$scope.init = function(){
-			console.log("VersusViewController - init");
+			if (bLog) console.log("VersusViewController - init");
 		}
    
 }]);
