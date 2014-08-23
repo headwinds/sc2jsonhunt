@@ -1,4 +1,4 @@
-angular.module('photohunt').controller('PlayerViewController', 
+angular.module('metamatch.controllers').controller('PlayerViewController', 
 	['$scope', '$window', function ($scope, $window) {
 
 		////////////////////////////////////////////// VARIABLES 
@@ -6,6 +6,7 @@ angular.module('photohunt').controller('PlayerViewController',
 		$scope.bShowApp = true; 
 		$scope.player = null;
 		$scope.proName = null;
+		$scope.player = {};
 
 		var bLog = true;
 

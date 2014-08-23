@@ -4,3 +4,39 @@
 	margin: 0px;
 	padding: 0px;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+section {
+  padding: 10px;
+}
+
+#replays {
+  clear: both;
+}
+
+
+#container {
+  position:relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+
+
+  	ul.fightList {
+		list-style-type: none;
+	}
+}
+
+ul {
+  list-style-type: none !important;
+}

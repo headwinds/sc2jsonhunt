@@ -3,18 +3,20 @@
 versus
 </h4>
 <div>
+	
 	<div class="versusHeader" data-ng-model=" versusHeader ">
 		<div class="playerName">
-			<p>Player 1</p>
+			<p>{{selectedMatch.player1.proName}}</p>
 		</div>
 		<div class="time">
-			<p>10:10</p>
+			<p>{{versus.time}}</p>
 		</div>
 		<div class="playerName">
-			<p>Player 2</p>
+			<p>{{selectedMatch.player2.proName}}</p>
 		</div>
 
 	</div>
+
 	<div class="playerContainer">
 		<div class="player">
 		
@@ -23,5 +25,12 @@ versus
 		
 		</div>
 	</div>
+
+	<section ng-controller="ReplayViewController" ng-init="init()" ng-show="bShowApp">
+    	<div class="contentBlock">
+      		<replay></replay>
+    	</div>
+  	</section>
+
 </div>
 </section>

@@ -16,6 +16,7 @@
 
 """ReplayHandler"""
 
+import pprint
 import httplib2
 import model
 import logging
@@ -45,6 +46,7 @@ import sc2reader
 from sc2reader.events.game import GameEvent
 from sc2reader.events.message import ProgressEvent
 from sc2reader.events.game import SelectionEvent
+from sc2reader.events.game import CommandEvent
 
 from handlers.session import SessionEnabledHandler
 from handlers.session import UserNotAuthorizedException
@@ -84,11 +86,77 @@ class ReplayHandler(JsonRestHandler, SessionEnabledHandler):
     default_replay = ReplayModel.default_replay;
     # default_replay_json = model.Replay.json_properties(default_replay);
     # print(default_replay)
-    loopBreak = 0
+    player1_loopBreak = 0
+    player2_loopBreak = 0
+    
+    #player1_result = {}
+    #player2_result = {}
+    pp = pprint.PrettyPrinter(indent=4)
+
+    #result = { 'player1': player1_result, 'player2': player2_result}
     result = {}
-    game_events = default_replay.players[0].events
-    playerPID = default_replay.players[0].pid
-    for game_event in game_events:
+  
+    player1_game_events = default_replay.players[0].events 
+    player2_game_events = default_replay.players[1].events 
+
+    player1_playerPID = default_replay.players[0].pid
+    player2_playerPID = default_replay.players[1].pid
+
+    for player1_game_event in player1_game_events:
+      #default_replay_str = str(game_event)
+      #gameEventObj = GameEvent(game_event, playerPID)
+      # gameEventObj = type("SimpleObject", (object,), {})()
+      #for prop in aGameEvent:
+      #  gameEventObj[prop] = prop
+      # game_event is a ProgressEvent containing time, player, event like 00.18 Fenner          GetControlGroupEvent
+      #for prop in player1_game_event:
+      #myTypeTest = isinstance(player1_game_event, GameEvent) # starting to filter out the events I want...
+      myTypeTest = isinstance(player1_game_event, CommandEvent) # starting to filter out the events I want... remember to import the event type!
+      """ 
+      ['__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', 
+      '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', 
+      '__subclasshook__', '__weakref__', '_str_prefix', 
+      'ability', 'ability_data', 
+      'ability_id', 'ability_link', 
+      'ability_name', 
+      'ability_type', 
+      'ability_type_data', 'command_index', 'flag', 
+      'flags', 'frame', 'has_ability', 'is_local', 'logger', 
+      'name', 'other_unit', 
+      'other_unit_id', 
+      'pid', 
+      'player', 
+      'second']
+      """
+            
+      if str(myTypeTest) == "True":
+        player1_gameEventObj = type("SimpleObject", (object,), {})()
+        #for prop in game_event:
+        player1_gameEventObj.name = str(player1_game_event.name)
+        player1_gameEventObj.player = str(player1_game_event.player)
+        player1_gameEventObj.frame = str(player1_game_event.frame)
+        player1_gameEventObj.second = str(player1_game_event.second)
+        player1_gameEventObj.ability_name = str(player1_game_event.ability_name)
+        player1_gameEventObj.ability_data = str(player1_game_event.ability_data)
+        #for prop in player1_game_event:
+        #  print(prop)
+        #print( dir(player1_game_event) ) print all the properties of the class
+        
+        #pp.pprint(player1_game_event)
+        #gameEventObj.frame = game_event.frame
+        #gameEventObj.event = game_event.event 
+        print(str(player1_game_event))
+        #if player1_gameEventObj.name != "UserOptionsEvent"
+        #  for prop in player1_game_event:
+        #    print(prop)
+        player1_gameObjStr = "name: " +  player1_gameEventObj.name + ", player1: " +  player1_gameEventObj.player + ", frame: " + player1_gameEventObj.frame + ", second: " + player1_gameEventObj.second + ", ability_name: " + player1_gameEventObj.ability_name + ", ability_data: " + player1_gameEventObj.ability_data
+        result[str(player1_loopBreak)] = player1_gameObjStr #json.dumps(game_event)
+      
+      player1_loopBreak += 1
+      if player1_loopBreak > 200: # approx 2 mins of game time - I want to pass start time to get events on demand 
+        break
+
+    for player2_game_event in player2_game_events:
       #default_replay_str = str(game_event)
       #gameEventObj = GameEvent(game_event, playerPID)
       # gameEventObj = type("SimpleObject", (object,), {})()
@@ -96,22 +164,26 @@ class ReplayHandler(JsonRestHandler, SessionEnabledHandler):
       #  gameEventObj[prop] = prop
       # game_event is a ProgressEvent containing time, player, event like 00.18 Fenner          GetControlGroupEvent
       #for prop in game_event:
-      myTypeTest = isinstance(game_event, GameEvent) # starting to filter out the events I want...
+      myTypeTest = isinstance(player2_game_event, GameEvent) # starting to filter out the events I want...
             
       if str(myTypeTest) == "True":
-        gameEventObj = type("SimpleObject", (object,), {})()
+        player2_gameEventObj = type("SimpleObject", (object,), {})()
         #for prop in game_event:
-        gameEventObj.name = str(game_event.name)
-        gameEventObj.player = str(game_event.player)
-        gameEventObj.frame = str(game_event.frame)
-        gameEventObj.second = str(game_event.second)
+        player2_gameEventObj.name = str(player2_game_event.name)
+        player2_gameEventObj.player = str(player2_game_event.player)
+        player2_gameEventObj.frame = str(player2_game_event.frame)
+        player2_gameEventObj.second = str(player2_game_event.second)
         #gameEventObj.frame = game_event.frame
         #gameEventObj.event = game_event.event 
-        gameObjStr = "name: " +  gameEventObj.name + ", player: " +  gameEventObj.player + ", frame: " + gameEventObj.frame + ", second: " + gameEventObj.second
-        result[str(loopBreak)] = gameObjStr #json.dumps(game_event)
+        player2_gameObjStr = "name: " +  player2_gameEventObj.name + ", player2: " +  player2_gameEventObj.player + ", frame: " + player2_gameEventObj.frame + ", second: " + player2_gameEventObj.second
+        result[str(player2_loopBreak + 200)] = player2_gameObjStr #json.dumps(game_event)
       
-      loopBreak += 1
-      if loopBreak > 10: # approx 4 mins of game time - I want to pass start time to get events on demand 
-        break
+      player2_loopBreak += 1
+      if player2_loopBreak > 200: # approx 2 mins of game time - I want to pass start time to get events on demand 
+        break  
+
+      #result.player1 = player1_result 
+      #result.player2 = player2_result 
+
     self.send_success(json.dumps(result), jsonkind="photohunt#replay")  
 

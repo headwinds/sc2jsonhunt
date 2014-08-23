@@ -14,7 +14,7 @@
 
 'use strict';
 
-angular.module('photohunt.filters', [])
+angular.module('metamatch.filters', [])
     .filter('profilePicture', function() {
       return function(profilePicUrl, size) {
         if(profilePicUrl) {

@@ -1,32 +1,61 @@
-angular.module('photohunt.controllers').controller('ReplayViewController', 
-	['$scope', '$location', 'Conf', 'ReplayHuntApi', '$timeout', '$window', function ($scope, $location, Conf, ReplayHuntApi, $timeout, $window) {
+angular.module('metamatch.controllers').controller('ReplayViewController', 
+	['$rootScope', '$scope', '$location', 'ConfigureFactory', 'ReplayHuntApiFactory', '$timeout', '$window', 
+	function ($rootScope, $scope, $location, ConfigureFactory, ReplayHuntApiFactory, $timeout, $window) {
+
+	////////////////////////////////////////////// VARIABLES	
 
 	$scope.bShowApp = false; 
-	var bLog = false;
+	var bLog = true;
+
+	////////////////////////////////////////////// INIT
 	
 	$scope.init = function(){
 		if (bLog) console.log("ReplayViewController - init" );
 
-		$scope.getReplay();
+		setupEvents();
+
+	
 	}
+
+	////////////////////////////////////////////// EVENTS
+
+	var setupEvents = function(){
+		$rootScope.$on("fightcard:go", onFightCardGoHandler)
+	}
+
+	////////////////////////////////////////////// HANDLERS
+
+	var onFightCardGoHandler = function(event, data) {
+
+		if (bLog) console.log("ReplayViewController - onFightCardGoHandler");
+
+		$scope.getReplay();
+
+		$scope.bShowApp = true; 
+
+	}
+
+	////////////////////////////////////////////// SERVICES
 
 	$scope.getReplay = function() {
 	    
-	    ReplayHuntApi.getReplay().then(function(response) {
+	    ReplayHuntApiFactory.getReplay().then(function(response) {
 	    
 	      $scope.replayReady = true;
 	      
 	      //
 	      var timeoutHandler = function(){
 	        
-	        if (bLog) console.log("controllers - getReplay - response - timeout finished" );
+	        if (bLog) console.log("ReplayViewController - getReplay - response - timeout finished" );
 	        
 	        $scope.replayData = response;
-	        console.log($scope.replayData, "controllers - getReplay - response ");
+	        console.log($scope.replayData, "ReplayViewController - getReplay - response ");
 
 	        var replayDataObj = $scope.replayData.data;
 
-	        var resultHtml = "<ul>";
+	        var player1ResultHtml = "<ul>";
+	        var player2ResultHtml = "<ul>";
+
 	        for ( var replayIndex in replayDataObj ) {
 	          
 	          var properties = replayDataObj[replayIndex].split(', ');
@@ -47,27 +76,40 @@ angular.module('photohunt.controllers').controller('ReplayViewController',
 
 	          if ( Number(secondsStr) < 10 ) secondsStr = "0" + secondsStr; 
 
-	          var playerName; 
-	          switch(gameObj.player){
-	            case "Player 1 - Fenner (Zerg)" :
-	              playerName = "Fenner";
-	              break;
-	            default :
-	              playerName = "Fenner";
-	              break;   
+	          var playerName = (gameObj.player1) ? "Fenner" : "Petraeus";
 
-	          }  
+	          /*
+				"Player 1 - Fenner (Zerg)"
+				"Player 2 - KiseRyota (Zerg)"
+	          */  
 
-	          var li = "<li>" + playerName + " performed: " + gameObj.name + " @ time: " + minsStr + ":" + secondsStr + "</li>";
-	          //console.log(li)
-	          resultHtml += li;
+	          //console.log(gameObj);
+
+	          if (playerName === "Fenner") {
+
+	          	var player1li = "<li>" + playerName + " performed: " + gameObj.name + " @ time: " + minsStr + ":" + secondsStr + "</li>";
+	          	//console.log(li)
+	          	player1ResultHtml += player1li;
+
+	          } else {
+
+	          	var player2li = "<li>" + playerName + " performed: " + gameObj.name + " @ time: " + minsStr + ":" + secondsStr + "</li>";
+	          	//console.log(li)
+	          	player2ResultHtml += player2li;
+
+	          }
+ 
+
+	          
 
 	        }
 
-	        resultHtml += "</ul>";
+	        player1ResultHtml += "</ul>";
+	        player2ResultHtml += "</ul>";
 
 	        $("#preloader").hide();
-	        $("#replayDump").html( resultHtml );
+	        $("#player1").html( player1ResultHtml );
+	        $("#player2").html( player2ResultHtml );
 
 	        $scope.$apply();
 	      }

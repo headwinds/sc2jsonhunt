@@ -1,25 +1,22 @@
-<section>
+<section id="fightcard">
 <h4>
 fightcard
 </h4>
 	<div>
-		<ul>
+		<ul class="fightList">
 			<li>
 				<div ng-controller="PlayerViewController" ng-init="init('fenner')">
-					<player></player>
+					<player datasource="player"></player>
 				</div>
 
 				<div>vs</div>
 
 				<div ng-controller="PlayerViewController" ng-init="init('petraeus')">
-					<player></player>
+					<player datasource="player"></player>
 				</div>
 
 			</li>
 		</ul>	
 	</div>
-	<div>
-		<p>You will be playing Player 1 vs Player 2</p>
-		<button>GO</button>
-	</div>
+
 </section>

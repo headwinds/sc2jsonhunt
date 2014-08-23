@@ -12,9 +12,10 @@
  * the License.
  */
 
+/*
 'use strict';
 
-angular.module('photohunt.directives', ['photohunt.services'])
+angular.module('metamatch.directives', ['metamatch.services'])
     
     .directive('photo', function(Conf, ReplayHuntApi) {
       return {
@@ -134,3 +135,4 @@ angular.module('photohunt.directives', ['photohunt.services'])
       }
     })
 ;
+*/

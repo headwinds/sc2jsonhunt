@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('photohunt.directives')
+angular.module('metamatch.directives')
     .directive("player", function () {
         return {
             restrict: 'E',
