@@ -26,7 +26,7 @@
     <div class="contentBlock">
       <fightcard datasource="matches"></fightcard> 
       <div>
-        <p>You will be playing as {{selectedMatch.player1.proName}} vs {{selectedMatch.player2.proName}}</p>
+        <p>{{ selectedMatch.details }}</p>
         <button ng-click="onMatchGoClickHandler()">GO</button>
       </div>
     </div>

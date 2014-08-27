@@ -5231,6 +5231,22 @@ ul {
 
 #fightcard ul {
   list-style-type: none; }
+#fightcard li {
+  display: block;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100px; }
+#fightcard .player {
+  display: inline-block;
+  width: 45%;
+  padding: 0px;
+  margin: 0px; }
+#fightcard div.vs {
+  display: inline-block;
+  width: 5%;
+  padding: 0px;
+  margin: 0px; }
 
 .playerEventListContainer {
   display: inline-block;

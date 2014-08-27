@@ -2,7 +2,7 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 	['$rootScope', '$scope', '$window', 'PlayerModel', '$timeout', function ($rootScope, $scope, $window, PlayerModel, $timeout) {
 		
 		////////////////////////////////////////////// VARIABLES 
-		var bLog = false;
+		var bLog = true;
 
 		$scope.bShowApp = true; 
 		$scope.selectedMatch = null;
@@ -31,6 +31,8 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 
 		$scope.selectedMatch = match0; // for now, there is only 1 match
 
+		$scope.selectedMatch.details = "You will be playing as " + $scope.selectedMatch.player1.proName + " vs " + $scope.selectedMatch.player2.proName;
+
 		$scope.matches = [match0, match1, match2]; 
 
 		////////////////////////////////////////////// INIT 
@@ -41,12 +43,16 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 			$timeout( function(){
 				$scope.$broadcast("fightcard:players", $scope.matches)
 			}, 500);
+
+			setupEvents();
+
 		}
 
 		////////////////////////////////////////////// EVENTS
 
 		var setupEvents = function(){
 			$scope.$on("player:ready", onPlayerReadyHandler);
+			$scope.$on("player:selected", onPlayerSelectedHandler);
 		}
 		
 		$scope.onMatchGoClickHandler = function(){
@@ -57,8 +63,22 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 			$rootScope.$broadcast("fightcard:go", $scope.selectedMatch); 
 		}
 
-		var onPlayerReadyHandler = function(data){
+		var onPlayerReadyHandler = function(event, data){
 			if (bLog) console.log("FightCardViewController - onPlayerReadyHandler - data.proName: " + data.proName);
 		}
+
+		var onPlayerSelectedHandler = function(event, data){
+
+			if (bLog) console.log(data, "FightCardViewController - onPlayerSelectedHandler - data.proName: " + data.proName);
+
+			var selectedPlayerProName = data.proName; 
+
+			var opponentProName = ( selectedPlayerProName === $scope.selectedMatch.player1.proName ) ? $scope.selectedMatch.player2.proName :  $scope.selectedMatch.player1.proName;
+
+			$scope.selectedMatch.details = "You will be playing as " + selectedPlayerProName + " vs " + opponentProName;
+
+		}
+
+		
    
 }]);

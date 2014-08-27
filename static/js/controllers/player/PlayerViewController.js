@@ -17,13 +17,15 @@ angular.module('metamatch.controllers').controller('PlayerViewController',
 		////////////////////////////////////////////// INIT 
 
 		$scope.init = function( proNameStr ){
-			if (bLog) console.log("PlayerViewController - init - proNameStr: " + proNameStr);
+			if (bLog) console.log($scope, "PlayerViewController - init - proNameStr: " + proNameStr);
 
 			$scope.proName = proNameStr;
 
 			$scope.$on("fightcard:players", onPlayerDataReadyHandler );
 
 			$scope.$emit("player:ready", { proName: $scope.proName});
+
+			
 
 		}
 
@@ -42,6 +44,12 @@ angular.module('metamatch.controllers').controller('PlayerViewController',
 			});
 
 			if (bLog) console.log($scope.player, "PlayerViewController - onPlayerDataReadyHandler - event");
+		}
+
+		$scope.onPlayerSelect = function( playerName ) {
+			if (bLog) console.log("PlayerViewController - onPlayerSelect - playerName: " + playerName);
+
+			$scope.$emit("player:selected", { proName: playerName});
 		}
 
 		

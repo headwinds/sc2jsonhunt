@@ -5,13 +5,14 @@ fightcard
 	<div>
 		<ul class="fightList">
 			<li>
-				<div ng-controller="PlayerViewController" ng-init="init('fenner')">
+				
+				<div ng-controller="PlayerViewController" ng-init="init('fenner')" class="player" style="text-align: right">
 					<player datasource="player"></player>
 				</div>
 
-				<div>vs</div>
+				<div class="vs" style="text-align: center">vs</div>
 
-				<div ng-controller="PlayerViewController" ng-init="init('petraeus')">
+				<div ng-controller="PlayerViewController" ng-init="init('petraeus')" class="player" style="text-align: left">
 					<player datasource="player"></player>
 				</div>
 
