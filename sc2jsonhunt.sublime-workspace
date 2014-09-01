@@ -87,38 +87,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "static/js/factories/api/ReplayHuntApiFactory.js",
-			"settings":
-			{
-				"buffer_size": 2563,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "static/js/directives/replay/ReplayDirective.js",
-			"settings":
-			{
-				"buffer_size": 324,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "handlers/replay.py",
-			"settings":
-			{
-				"buffer_size": 7661,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "handlers/schema.py",
-			"settings":
-			{
-				"buffer_size": 3435,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -156,13 +124,20 @@
 	},
 	"file_history":
 	[
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/app.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/replay/ReplayDirective.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/MainMetaMatch.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/fightcard/fightcard.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/fightcard.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/index.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/player/PlayerViewController.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/player.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/MetaMatchViewController.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/fightcard/FightCardViewController.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/factories/api/ReplayHuntApiFactory.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/replay/ReplayDirective.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/replay.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/app.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/MainMetaMatch.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/factories/configure/ConfigureFactory.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/services.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/index.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/replay/ReplayViewController.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/filters.js",
@@ -170,25 +145,18 @@
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/versus/VersusDirective.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/events/EventBus.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/models/player/PlayerModel.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/fightcard/FightCardViewController.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/fightcard.html",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/player/PlayerViewController.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/results/ResultsViewController.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/versus/VersusViewController.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/Gulpfile.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/player/PlayerDirective.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/fightcard/FightCardDirective.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/MetaMatchViewController.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/replay.py",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/replay.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/_page.scss",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/versus/versus.scss",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/fightcard/fightcard.scss",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/versus.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/metamatch.scss",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/bootstrap/assets/javascripts/bootstrap.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/stylesheets/photohunt.css",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/player.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/README.md",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/common.scss",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/Gulpfile.js",
@@ -308,6 +276,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"setupEvents",
 			"Conf",
 			"ReplayHuntApi",
 			"Conf",
@@ -434,8 +403,7 @@
 			"move_towards_center",
 			"createLayout",
 			"create_vis",
-			"createRootNodes",
-			"createLayout"
+			"createRootNodes"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -455,127 +423,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "static/js/factories/api/ReplayHuntApiFactory.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2563,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								17,
-								18
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 183.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "static/js/directives/replay/ReplayDirective.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 324,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								324,
-								324
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "handlers/replay.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7661,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4903,
-								4903
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1760.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "handlers/schema.py",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 3435,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],

@@ -1,3 +1,9 @@
+/*
+
+	see arcade - "Unit_Test_Map"
+
+*/
+
 angular.module('metamatch.controllers').controller('ReplayViewController', 
 	['$rootScope', '$scope', '$location', 'ConfigureFactory', 'ReplayHuntApiFactory', '$timeout', '$window', 
 	function ($rootScope, $scope, $location, ConfigureFactory, ReplayHuntApiFactory, $timeout, $window) {
@@ -36,6 +42,33 @@ angular.module('metamatch.controllers').controller('ReplayViewController',
 	}
 
 	////////////////////////////////////////////// SERVICES
+
+	$scope.getGraphicByAbility = function( abilityStr ){
+
+		var race = "zerg";
+		var imgPath = "images/" + race + "/units/"; 
+
+		//var unitNameTest = abilityStr.toLowerCase().split("morph")[1];
+
+		console.log("ReplayViewController - getGraphicByAbility - abilityStr: " + abilityStr )
+
+		var unitName = abilityStr.toLowerCase().split("morph")[1] + ".png";
+		
+		switch( abilityStr ) {
+			case "MorphDrone" :
+				unitName = "drone.png";
+				break;
+			default :
+				unitName = "drone.png";
+				break;
+
+		}
+
+		var unitPath = imgPath + unitName;
+		var graphicHtml = "<img src=" + unitPath + " />"
+
+		return graphicHtml;
+	}
 
 	$scope.getReplay = function() {
 	    
@@ -85,17 +118,39 @@ angular.module('metamatch.controllers').controller('ReplayViewController',
 
 	          //console.log(gameObj);
 
+	          var gameEventStr = gameObj.name.trim();
+
 	          if (playerName === "Fenner") {
 
-	          	var player1li = "<li>" + playerName + " performed: " + gameObj.name + " @ time: " + minsStr + ":" + secondsStr + "</li>";
-	          	//console.log(li)
-	          	player1ResultHtml += player1li;
+	          	// name is the name of the event while player is the name of the player
+
+	          	console.log( gameObj.name.trim() )
+
+	          	if ( gameEventStr === "BasicCommandEvent" && undefined !== gameObj.ability_name) {
+
+	          		//var player1li = "<li>" + playerName + " performed: " + gameObj.name + " @ time: " + minsStr + ":" + secondsStr + "</li>";
+	          		
+	          		
+
+	          			var player1li = "<li>" + $scope.getGraphicByAbility( gameObj.ability_name ) + "</li>";
+
+	          			console.log( $scope.getGraphicByAbility( gameObj.ability_name ) )
+	          			player1ResultHtml += player1li;
+	          		
+	          	}
+
+
 
 	          } else {
 
-	          	var player2li = "<li>" + playerName + " performed: " + gameObj.name + " @ time: " + minsStr + ":" + secondsStr + "</li>";
-	          	//console.log(li)
-	          	player2ResultHtml += player2li;
+	          	if ( gameEventStr === "BasicCommandEvent" && undefined !== gameObj.ability_name) {
+
+	          		//var player1li = "<li>" + playerName + " performed: " + gameObj.name + " @ time: " + minsStr + ":" + secondsStr + "</li>";
+	          		var player2li = "<li>" + $scope.getGraphicByAbility( gameObj.ability_name ) + "</li>";
+
+	          		console.log( $scope.getGraphicByAbility( gameObj.ability_name ) )
+	          		player2ResultHtml += player2li;
+	          	}
 
 	          }
  

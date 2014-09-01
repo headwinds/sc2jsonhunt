@@ -129,7 +129,7 @@ class ReplayHandler(JsonRestHandler, SessionEnabledHandler):
       'second']
       """
             
-      if str(myTypeTest) == "True":
+      if str(myTypeTest) == "True" and str(player1_game_event.name) == "BasicCommandEvent":
         player1_gameEventObj = type("SimpleObject", (object,), {})()
         #for prop in game_event:
         player1_gameEventObj.name = str(player1_game_event.name)
@@ -145,7 +145,7 @@ class ReplayHandler(JsonRestHandler, SessionEnabledHandler):
         #pp.pprint(player1_game_event)
         #gameEventObj.frame = game_event.frame
         #gameEventObj.event = game_event.event 
-        print(str(player1_game_event))
+        #print(str(player1_game_event))
         #if player1_gameEventObj.name != "UserOptionsEvent"
         #  for prop in player1_game_event:
         #    print(prop)
@@ -166,16 +166,19 @@ class ReplayHandler(JsonRestHandler, SessionEnabledHandler):
       #for prop in game_event:
       myTypeTest = isinstance(player2_game_event, GameEvent) # starting to filter out the events I want...
             
-      if str(myTypeTest) == "True":
+      if str(myTypeTest) == "True" and str(player2_game_event.name) == "BasicCommandEvent":
         player2_gameEventObj = type("SimpleObject", (object,), {})()
         #for prop in game_event:
         player2_gameEventObj.name = str(player2_game_event.name)
         player2_gameEventObj.player = str(player2_game_event.player)
         player2_gameEventObj.frame = str(player2_game_event.frame)
         player2_gameEventObj.second = str(player2_game_event.second)
+        player2_gameEventObj.ability_name = str(player2_game_event.ability_name)
+        player2_gameEventObj.ability_data = str(player2_game_event.ability_data)
         #gameEventObj.frame = game_event.frame
         #gameEventObj.event = game_event.event 
-        player2_gameObjStr = "name: " +  player2_gameEventObj.name + ", player2: " +  player2_gameEventObj.player + ", frame: " + player2_gameEventObj.frame + ", second: " + player2_gameEventObj.second
+        print(str(player2_game_event))
+        player2_gameObjStr = "name: " +  player2_gameEventObj.name + ", player2: " +  player2_gameEventObj.player + ", frame: " + player2_gameEventObj.frame + ", second: " + player2_gameEventObj.second + ", ability_name: " + player2_gameEventObj.ability_name + ", ability_data: " + player2_gameEventObj.ability_data
         result[str(player2_loopBreak + 200)] = player2_gameObjStr #json.dumps(game_event)
       
       player2_loopBreak += 1
