@@ -1,8 +1,25 @@
+
+.versusHeader {
+	@include commonDiv;
+
+	.playerName {
+		@include commonDiv;
+		display: inline-block;
+		width: 45%;
+
+	}
+
+	.time {
+		@include commonDiv;
+		display: inline-block;
+		width: 5%;
+	}
+
+}
+
 .playerEventListContainer {
 	display: inline-block;
 	position: relative;
 	float: left;
 	min-width: 300px;
-
-
 }

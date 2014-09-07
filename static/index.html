@@ -7,6 +7,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <title>meta match</title>
   <link rel="stylesheet" href="stylesheets/jquery-ui.css"/>
   <link rel="stylesheet" href="stylesheets/gh-buttons.css"/>
@@ -21,14 +23,17 @@
 <body ng-cloak>
 <section id="container" ng-controller="MetaMatchViewController" ng-init="init()" ng-show="bShowApp">
 
-
   <section ng-controller="FightCardViewController" ng-init="init()" ng-show="bShowApp">
     <div class="contentBlock">
       <fightcard datasource="matches"></fightcard> 
-      <div>
+      <div class="centerText">
         <p>{{ selectedMatch.details }}</p>
-        <button ng-click="onMatchGoClickHandler()">GO</button>
+        <button class="btn btn-lg btn-success btn-touch-mobile" ng-click="matchGoClickHandler()">GO</button>
       </div>
+    </div>
+    <div class="aboutContainer centerText">
+      <p class="about">
+      Have you ever wanted to study what pro starcraft player's build? Like other major league manager games, you can pretend to play as a starcraft pro and attempt to make the same build decisions. If you guess correctly by watching what your opponent is building, you'll gain points and improve your own game play. It's is a work-n-progress and is full of bugs. If you'd like to <a href="https://github.com/headwinds/sc2jsonhunt">learn more about Starcraft, Python, and Javascript Angular by contributing</a> to this experiment hacked together by <a href="http://www.headwinds.net">headwinds</a>
     </div>
   </section>
 
@@ -60,6 +65,9 @@
   
   <!--models-->
   <script src="js/models/player/PlayerModel.js"></script>
+
+  <!--utils-->
+  <script src="js/utils/NumberUtilFactory.js"></script>
 
   <!--controllers-->
   <script src="js/controllers/player/PlayerViewController.js"></script>

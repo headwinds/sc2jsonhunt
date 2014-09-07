@@ -30,10 +30,10 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 		}
 
 		$scope.selectedMatch = match0; // for now, there is only 1 match
-
-		$scope.selectedMatch.details = "You will be playing as " + $scope.selectedMatch.player1.proName + " vs " + $scope.selectedMatch.player2.proName;
-
+		
 		$scope.matches = [match0, match1, match2]; 
+
+		$scope.selectedPlayerProName = "unknown"; 
 
 		////////////////////////////////////////////// INIT 
 
@@ -41,9 +41,17 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 			if (bLog) console.log("FightCardViewController - init");
 
 			$timeout( function(){
-				$scope.$broadcast("fightcard:players", $scope.matches)
+				$scope.$broadcast("fightcard:players", $scope.matches);
+
+				// broadcast the default match
+				$scope.selectedPlayerProName = $scope.selectedMatch.player1.proName;
+				selectPlayer(); 
+
+				$scope.selectedMatch.details = "You will be playing as " + $scope.selectedMatch.player1.proName + " vs " + $scope.selectedMatch.player2.proName;
+
 			}, 500);
 
+			
 			setupEvents();
 
 		}
@@ -52,32 +60,58 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 
 		var setupEvents = function(){
 			$scope.$on("player:ready", onPlayerReadyHandler);
-			$scope.$on("player:selected", onPlayerSelectedHandler);
+			$rootScope.$on("player:selected", onPlayerSelectedHandler);
 		}
-		
-		$scope.onMatchGoClickHandler = function(){
 
-			if (bLog) console.log("FightCardViewController - onMatchGoClickHandler ");
-
-			$scope.bShowApp = false;
-			$rootScope.$broadcast("fightcard:go", $scope.selectedMatch); 
-		}
+		////////////////////////////////////////////// HANDLERS
 
 		var onPlayerReadyHandler = function(event, data){
 			if (bLog) console.log("FightCardViewController - onPlayerReadyHandler - data.proName: " + data.proName);
 		}
 
 		var onPlayerSelectedHandler = function(event, data){
-
 			if (bLog) console.log(data, "FightCardViewController - onPlayerSelectedHandler - data.proName: " + data.proName);
 
-			var selectedPlayerProName = data.proName; 
+			$scope.selectedPlayerProName = data.proName; 
 
-			var opponentProName = ( selectedPlayerProName === $scope.selectedMatch.player1.proName ) ? $scope.selectedMatch.player2.proName :  $scope.selectedMatch.player1.proName;
+			selectPlayer(); 
+		}
 
-			$scope.selectedMatch.details = "You will be playing as " + selectedPlayerProName + " vs " + opponentProName;
+	
+		////////////////////////////////////////////// FUNCTIONS
+
+		var selectPlayer = function(){
+
+			if (bLog) console.log("FightCardViewController - selectPlayer - selectedPlayerProName: " + $scope.selectedPlayerProName);
+
+			// details
+			var opponentProName = ( $scope.selectedPlayerProName === $scope.selectedMatch.player1.proName ) ? $scope.selectedMatch.player2.proName :  $scope.selectedMatch.player1.proName;
+			var selectedPlayerId  = ( $scope.selectedPlayerProName === $scope.selectedMatch.player1.proName ) ? "player1" : "player2";
+
+			$scope.selectedMatch.details = "You will be playing as " + $scope.selectedPlayerProName + " vs " + opponentProName;
+
+			
+			// broadcast
+			var broadcastData = {proName: $scope.selectedPlayerProName, playerId: selectedPlayerId, match: $scope.selectedMatch };
+			console.log(broadcastData, "FightCardViewController - selectPlayer - broadcastData");
+			$rootScope.$broadcast("fightcard:match:selected", broadcastData)
 
 		}
+		
+		$scope.matchGoClickHandler = function(){
+
+			if (bLog) console.log("FightCardViewController - onMatchGoClickHandler ");
+
+			$scope.bShowApp = false;
+
+			// who was selected?! 
+			
+			selectPlayer( $scope.selectedProName ); 
+
+			$rootScope.$broadcast("fightcard:go", $scope.selectedMatch); 
+		}
+
+		
 
 		
    

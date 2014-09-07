@@ -1,5 +1,5 @@
 angular.module('metamatch.controllers').controller('PlayerViewController', 
-	['$scope', '$window', function ($scope, $window) {
+	['$rootScope', '$scope', '$window',  function ($rootScope, $scope, $window) {
 
 		////////////////////////////////////////////// VARIABLES 
 
@@ -25,8 +25,6 @@ angular.module('metamatch.controllers').controller('PlayerViewController',
 
 			$scope.$emit("player:ready", { proName: $scope.proName});
 
-			
-
 		}
 
 		////////////////////////////////////////////// HANDLERS 
@@ -46,10 +44,10 @@ angular.module('metamatch.controllers').controller('PlayerViewController',
 			if (bLog) console.log($scope.player, "PlayerViewController - onPlayerDataReadyHandler - event");
 		}
 
-		$scope.onPlayerSelect = function( playerName ) {
-			if (bLog) console.log("PlayerViewController - onPlayerSelect - playerName: " + playerName);
+		$scope.playerSelectClickHandler = function( playerName ) {
+			if (bLog) console.log("PlayerViewController - playerSelectClickHandler - playerName: " + playerName);
 
-			$scope.$emit("player:selected", { proName: playerName});
+			$rootScope.$broadcast("player:selected", { proName: playerName });
 		}
 
 		

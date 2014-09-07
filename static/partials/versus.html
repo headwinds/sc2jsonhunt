@@ -1,33 +1,25 @@
 <section>
-<h4>
-versus
-</h4>
+<h4 class="centerText">versus</h4>
 <div>
 	
-	<div class="versusHeader" data-ng-model=" versusHeader ">
-		<div class="playerName">
+	<div class="versusHeader centerText" data-ng-model=" versusHeader ">
+		<div class="playerName" style="text-align: right">
 			<p>{{selectedMatch.player1.proName}}</p>
 		</div>
-		<div class="time">
-			<p>{{versus.time}}</p>
+		<div class="time" style="text-align: center">
+			<p>{{versusHeader.time}}</p>
+			<p>{{versusHeader.score}}</p>
 		</div>
-		<div class="playerName">
+		<div class="playerName" style="text-align: left">
 			<p>{{selectedMatch.player2.proName}}</p>
 		</div>
 
 	</div>
 
-	<div class="playerContainer">
-		<div class="player">
-		
-		</div>
-		<div class="player">
-		
-		</div>
-	</div>
+	
 
 	<section ng-controller="ReplayViewController" ng-init="init()" ng-show="bShowApp">
-    	<div class="contentBlock">
+    	<div class="contentBlock centerText">
       		<replay></replay>
     	</div>
   	</section>

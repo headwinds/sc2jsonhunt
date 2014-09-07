@@ -1,0 +1,20 @@
+.playersContainer {
+	margin: 0 auto;
+	width: 600px;
+}
+
+.playerEventOption {
+	@include commonDiv;
+	
+}
+
+.playerDisabled {
+	pointer-events: none;
+	cursor: default;
+
+}
+
+.playerEnabled {
+	pointer-events: all;
+	cursor: pointer;
+}

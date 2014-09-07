@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"select",
+				"selectPlayer"
+			],
+			[
+				"to",
+				"toLowerCase"
+			],
+			[
+				"ver",
+				"versusHeader"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"con",
+				"convertTime"
+			],
+			[
 				"ability",
 				"abilityName"
 			],
@@ -38,10 +58,6 @@
 			[
 				"even",
 				"eventInfoObj"
-			],
-			[
-				"te",
-				"text-indent"
 			],
 			[
 				"attackDis",
@@ -122,23 +138,51 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/apiclient",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/fightcard",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/player",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/replay",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/versus",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/utils",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials"
+	],
 	"file_history":
 	[
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/fightcard/fightcard.scss",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/fightcard.html",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/index.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/replay/ReplayViewController.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/replay.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/versus/VersusViewController.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/fightcard/FightCardViewController.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/player/PlayerViewController.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/player.html",
+		"/Users/bflowers/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/index.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/fightcard/fightcard.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/replay.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/stylesheets/metamatch.css",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/_page.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/app.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/utils/NumberUtilFactory.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/versus.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/README.md",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/versus/versus.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/replay/_replay.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/common.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/fightcard.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/_variables.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/config/postalConfig.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/MetaMatchViewController.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/fightcard/FightCardViewController.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/factories/api/ReplayHuntApiFactory.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/replay/ReplayDirective.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/replay.py",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/app.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/MainMetaMatch.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/factories/configure/ConfigureFactory.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/services.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/replay/ReplayViewController.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/filters.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/results/ResultsDirective.js",
@@ -146,19 +190,12 @@
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/events/EventBus.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/models/player/PlayerModel.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/results/ResultsViewController.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/versus/VersusViewController.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/Gulpfile.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/player/PlayerDirective.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/fightcard/FightCardDirective.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/replay.html",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/_page.scss",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/versus/versus.scss",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/versus.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/metamatch.scss",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/bootstrap/assets/javascripts/bootstrap.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/stylesheets/photohunt.css",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/README.md",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/common.scss",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/Gulpfile.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/bundle.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/results/results.scss",
@@ -245,13 +282,7 @@
 		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/public/views/index.html",
 		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/public/views/characters/list.html",
 		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/index.html",
-		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/app/controllers/cabin.js",
-		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/app/views/characters/characters.jade",
-		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/public/views/cabin/view.html",
-		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/public/js/app.js",
-		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/public/js/controllers/characters/characters.js",
-		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/public/js/controllers/cabin.js",
-		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/public/js/controllers/articles.js"
+		"/Users/bflowers/Dropbox/Brandon/headwinds/site/cabinquest/dev/app/controllers/cabin.js"
 	],
 	"find":
 	{
@@ -276,6 +307,31 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"replayDataIndex",
+			"selectedMatch",
+			"selectedPlayerProName",
+			"playerSelectedName",
+			"setCurrentFrameData",
+			"onPlayerSelectedHandler",
+			"gameObj[playerId].split(\" \")[4]",
+			"selectedMatch",
+			"getReplay",
+			"replayData",
+			"selectedPlayer",
+			"playerSelectedName",
+			"convertTime",
+			"currrentFrameDataObj",
+			"btn-large",
+			"playerSelectedName",
+			"onPlayerSelectedHandler",
+			"player:selected",
+			"\"player:selected\"",
+			"selectedPlayer",
+			"currrentFrameDataObj",
+			"getGraphicByAbility",
+			"$scope.replayData",
+			"replayData",
+			"p",
 			"setupEvents",
 			"Conf",
 			"ReplayHuntApi",
@@ -378,32 +434,7 @@
 			"moveChart",
 			"svg",
 			"move",
-			"moveChart",
-			"width",
-			"fonts",
-			"pref",
-			"filtersVisible",
-			"pref",
-			"themeListView",
-			"increase",
-			"setupZoom",
-			"zoomReset",
-			"detailsContainer",
-			"showDetailsView",
-			"setSubNodesData",
-			"tooltip",
-			"themeName",
-			"tooltip",
-			"createRootNodes",
-			"tooltip",
-			"CustomTooltip",
-			"tooltip",
-			"show_details",
-			"createLayout",
-			"move_towards_center",
-			"createLayout",
-			"create_vis",
-			"createRootNodes"
+			"moveChart"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -493,10 +524,11 @@
 		],
 		"width": 0.0
 	},
+	"selected_group": 0,
 	"settings":
 	{
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,

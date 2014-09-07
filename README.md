@@ -20,3 +20,6 @@ $ dev_appserver.py sc2jsonhunt
 
 [first strike april 2014](https://github.com/headwinds/sc2jsonhunt/wiki/first-strike---april-2014) 
 [design and purpose aug 2014](https://github.com/headwinds/sc2jsonhunt/wiki/design-and-purpose---aug-2014) 
+[gameplay](https://github.com/headwinds/sc2jsonhunt/wiki/gameplay---sept-2014) 
+
+

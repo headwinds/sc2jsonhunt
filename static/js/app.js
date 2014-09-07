@@ -18,6 +18,7 @@ angular.module('metamatch.controllers', []);
 angular.module('metamatch.filters', []);
 angular.module('metamatch.factories', []);
 angular.module('metamatch.services', []);
+angular.module('metamatch.utils', []);
 
 angular.module('metamatch.fightcard', []);
 angular.module('metamatch.versus', []);
@@ -28,7 +29,8 @@ angular.module('metamatch', [ 'metamatch.fightcard',
                               'metamatch.results', 
                               'metamatch.directives', 
                               'metamatch.controllers', 
-                              'metamatch.factories'],
+                              'metamatch.factories',
+                              'metamatch.utils'],
 
 	function($locationProvider) {
       

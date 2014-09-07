@@ -91,7 +91,7 @@ class ReplayHandler(JsonRestHandler, SessionEnabledHandler):
     
     #player1_result = {}
     #player2_result = {}
-    pp = pprint.PrettyPrinter(indent=4)
+    pp = pprint.PrettyPrinter(indent=4) #prints objects to the console 
 
     #result = { 'player1': player1_result, 'player2': player2_result}
     result = {}
@@ -149,11 +149,11 @@ class ReplayHandler(JsonRestHandler, SessionEnabledHandler):
         #if player1_gameEventObj.name != "UserOptionsEvent"
         #  for prop in player1_game_event:
         #    print(prop)
-        player1_gameObjStr = "name: " +  player1_gameEventObj.name + ", player1: " +  player1_gameEventObj.player + ", frame: " + player1_gameEventObj.frame + ", second: " + player1_gameEventObj.second + ", ability_name: " + player1_gameEventObj.ability_name + ", ability_data: " + player1_gameEventObj.ability_data
+        player1_gameObjStr = "name: " +  player1_gameEventObj.name + ", player1: " +  player1_gameEventObj.player + ", proName: " +  player1_gameEventObj.player + ", frame: " + player1_gameEventObj.frame + ", second: " + player1_gameEventObj.second + ", ability_name: " + player1_gameEventObj.ability_name + ", ability_data: " + player1_gameEventObj.ability_data
         result[str(player1_loopBreak)] = player1_gameObjStr #json.dumps(game_event)
       
       player1_loopBreak += 1
-      if player1_loopBreak > 200: # approx 2 mins of game time - I want to pass start time to get events on demand 
+      if player1_loopBreak > 1000: # approx 2 mins of game time - I want to pass start time to get events on demand 
         break
 
     for player2_game_event in player2_game_events:
@@ -178,11 +178,11 @@ class ReplayHandler(JsonRestHandler, SessionEnabledHandler):
         #gameEventObj.frame = game_event.frame
         #gameEventObj.event = game_event.event 
         print(str(player2_game_event))
-        player2_gameObjStr = "name: " +  player2_gameEventObj.name + ", player2: " +  player2_gameEventObj.player + ", frame: " + player2_gameEventObj.frame + ", second: " + player2_gameEventObj.second + ", ability_name: " + player2_gameEventObj.ability_name + ", ability_data: " + player2_gameEventObj.ability_data
+        player2_gameObjStr = "name: " +  player2_gameEventObj.name + ", player2: " +  player2_gameEventObj.player + ", proName: " +  player2_gameEventObj.player + ", frame: " + player2_gameEventObj.frame + ", second: " + player2_gameEventObj.second + ", ability_name: " + player2_gameEventObj.ability_name + ", ability_data: " + player2_gameEventObj.ability_data
         result[str(player2_loopBreak + 200)] = player2_gameObjStr #json.dumps(game_event)
       
       player2_loopBreak += 1
-      if player2_loopBreak > 200: # approx 2 mins of game time - I want to pass start time to get events on demand 
+      if player2_loopBreak > 1000: # approx 2 mins of game time - I want to pass start time to get events on demand 
         break  
 
       #result.player1 = player1_result 
