@@ -10,9 +10,11 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 		$scope.fightcard = {
 			what: "this is the fight card"
 		}
+		///////////////////////////////////////////////////////////////////////////////
 
-		var fenner = new PlayerModel("fenner", "images/players/fenner/fennerPortrait.png"); 
-		var pet = new PlayerModel("petraeus", "images/players/petraeus/petraeusPortrait.png"); 
+		var fenner = new PlayerModel("Fenner", "images/players/fenner/fennerPortrait.png", 1); 
+		var pet = new PlayerModel("KiseRyota", "images/players/kiseryota/kiseryotaPortrait.png", 2); 
+		var players = [ fenner, pet ];
 
 		var match0 = {
 			player1: fenner,
@@ -29,10 +31,13 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 			player2: pet
 		}
 
-		$scope.selectedMatch = match0; // for now, there is only 1 match
-		
-		$scope.matches = [match0, match1, match2]; 
+		///////////////////////////////////////////////////////////////////////////////
 
+		$scope.selectedMatch = match0; // for now, there is only 1 match
+
+		$scope.matches = [match0, match1, match2]; 
+		
+		$scope.selectedPlayer = null;
 		$scope.selectedPlayerProName = "unknown"; 
 
 		////////////////////////////////////////////// INIT 
@@ -47,7 +52,7 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 				$scope.selectedPlayerProName = $scope.selectedMatch.player1.proName;
 				selectPlayer(); 
 
-				$scope.selectedMatch.details = "You will be playing as " + $scope.selectedMatch.player1.proName + " vs " + $scope.selectedMatch.player2.proName;
+				$scope.selectedMatch.details = "You will be playing as " + $scope.selectedMatch.player1.proNameCase + " vs " + $scope.selectedMatch.player2.proNameCase;
 
 			}, 500);
 
@@ -72,7 +77,10 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 		var onPlayerSelectedHandler = function(event, data){
 			if (bLog) console.log(data, "FightCardViewController - onPlayerSelectedHandler - data.proName: " + data.proName);
 
+			$scope.selectedPlayer = $rootScope.getPlayerModelByProName(data.proName); // not quite all the details - need to look up the model!
 			$scope.selectedPlayerProName = data.proName; 
+
+			if (bLog) console.log($scope.selectedPlayer, "FightCardViewController - onPlayerSelectedHandler - player model lookup");
 
 			selectPlayer(); 
 		}
@@ -80,17 +88,44 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 	
 		////////////////////////////////////////////// FUNCTIONS
 
+		/*
+		getPlayerModelByProName = function( proName ) {
+
+			if (bLog) console.log("FightCardViewController - getPlayerModelByProName - proName: " + proName);
+			
+			_.each( players, function(player){
+				if ( player.proName === proName ) return player; 
+			})
+		}
+		*/
+
+
+		$rootScope.getPlayerModelByProName = function( proName ) {
+
+			if (bLog) console.log("FightCardViewController - getPlayerModelByProName - proName: " + proName);
+		
+			var foundPlayer = {}
+
+			_.each( players, function(player){
+				if ( player.proName.toLowerCase() === proName ) foundPlayer = player; 
+			})
+
+			return foundPlayer; 
+		}
+
 		var selectPlayer = function(){
 
 			if (bLog) console.log("FightCardViewController - selectPlayer - selectedPlayerProName: " + $scope.selectedPlayerProName);
 
+
+			$scope.selectedPlayer = $rootScope.getPlayerModelByProName( $scope.selectedPlayerProName.toLowerCase() ); 
+
 			// details
-			var opponentProName = ( $scope.selectedPlayerProName === $scope.selectedMatch.player1.proName ) ? $scope.selectedMatch.player2.proName :  $scope.selectedMatch.player1.proName;
+			var opponentProName = ( $scope.selectedPlayerProName === $scope.selectedMatch.player1.proName ) ? $scope.selectedMatch.player2.proNameCase :  $scope.selectedMatch.player1.proNameCase;
 			var selectedPlayerId  = ( $scope.selectedPlayerProName === $scope.selectedMatch.player1.proName ) ? "player1" : "player2";
 
-			$scope.selectedMatch.details = "You will be playing as " + $scope.selectedPlayerProName + " vs " + opponentProName;
+			$scope.selectedMatch.details = "You will be playing as " + $scope.selectedPlayer.proNameCase + " vs " + opponentProName;
 
-			
 			// broadcast
 			var broadcastData = {proName: $scope.selectedPlayerProName, playerId: selectedPlayerId, match: $scope.selectedMatch };
 			console.log(broadcastData, "FightCardViewController - selectPlayer - broadcastData");
@@ -106,7 +141,7 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 
 			// who was selected?! 
 			
-			selectPlayer( $scope.selectedProName ); 
+			selectPlayer(); 
 
 			$rootScope.$broadcast("fightcard:go", $scope.selectedMatch); 
 		}

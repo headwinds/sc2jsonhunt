@@ -30,7 +30,7 @@ angular.module('metamatch.controllers').controller('PlayerViewController',
 		////////////////////////////////////////////// HANDLERS 
 
 		var onPlayerDataReadyHandler = function(event, data){
-			//if (bLog) console.log(arguments, "PlayerViewController - onPlayerDataReadyHandler - event");
+			if (bLog) console.log(data, "PlayerViewController - onPlayerDataReadyHandler - data");
 
 			//var matches = data.targetScope.matches; // alternative...
 			//if (bLog) console.log(matches, "PlayerViewController - onPlayerDataReadyHandler - matches");
@@ -44,10 +44,17 @@ angular.module('metamatch.controllers').controller('PlayerViewController',
 			if (bLog) console.log($scope.player, "PlayerViewController - onPlayerDataReadyHandler - event");
 		}
 
-		$scope.playerSelectClickHandler = function( playerName ) {
-			if (bLog) console.log("PlayerViewController - playerSelectClickHandler - playerName: " + playerName);
+		$scope.playerSelectClickHandler = function( proName ) {
+			if (bLog) console.log("PlayerViewController - playerSelectClickHandler - playerName: " + proName);
 
-			$rootScope.$broadcast("player:selected", { proName: playerName });
+			// getModelByName 
+			// $rootScope.getPlayerModelByProName( playerName );
+
+			var proNameLowerCase = proName.toLowerCase();
+
+			var selectedPlayerModel = $rootScope.getPlayerModelByProName( proNameLowerCase );
+
+			$rootScope.$broadcast("player:selected", { proName: proNameLowerCase, proNameCase: proName });
 		}
 
 		
