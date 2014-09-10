@@ -14,6 +14,13 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 
 		var fenner = new PlayerModel("Fenner", "images/players/fenner/fennerPortrait.png", 1); 
 		var pet = new PlayerModel("KiseRyota", "images/players/kiseryota/kiseryotaPortrait.png", 2); 
+
+		var bomber = new PlayerModel("Bomber", "images/players/fenner/fennerPortrait.png", 1); 
+		var mc = new PlayerModel("MC", "images/players/kiseryota/kiseryotaPortrait.png", 2); 
+
+		var scarlett = new PlayerModel("Scarlett", "images/players/fenner/fennerPortrait.png", 1); 
+		var snute = new PlayerModel("Snute", "images/players/kiseryota/kiseryotaPortrait.png", 2); 
+
 		var players = [ fenner, pet ];
 
 		var match0 = {
@@ -22,20 +29,20 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 		}
 
 		var match1 = {
-			player1: fenner,
-			player2: pet
+			player1: bomber,
+			player2: mc
 		}
 
 		var match2 = {
-			player1: fenner,
-			player2: pet
+			player1: scarlett,
+			player2: snute
 		}
 
 		///////////////////////////////////////////////////////////////////////////////
 
 		$scope.selectedMatch = match0; // for now, there is only 1 match
 
-		$scope.matches = [match0, match1, match2]; 
+		$scope.matches = [match0]; //[match0, match1, match2]; 
 		
 		$scope.selectedPlayer = null;
 		$scope.selectedPlayerProName = "unknown"; 

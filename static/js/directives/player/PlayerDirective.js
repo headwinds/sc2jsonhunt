@@ -5,8 +5,10 @@ angular.module('metamatch.directives')
         return {
             restrict: 'E',
             templateUrl: 'partials/player.html',
-            //template: '<p>Fightcard</p>',
-            replace: true
+            replace: true,
+            scope: {
+          		playermodel: '='
+        	}
         };
     })
 ;

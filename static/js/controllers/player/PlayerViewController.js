@@ -1,5 +1,5 @@
 angular.module('metamatch.controllers').controller('PlayerViewController', 
-	['$rootScope', '$scope', '$window',  function ($rootScope, $scope, $window) {
+	['$rootScope', '$scope', '$window', '$timeout', function ($rootScope, $scope, $window, $timeout) {
 
 		////////////////////////////////////////////// VARIABLES 
 
@@ -16,14 +16,15 @@ angular.module('metamatch.controllers').controller('PlayerViewController',
 
 		////////////////////////////////////////////// INIT 
 
-		$scope.init = function( proNameStr ){
-			if (bLog) console.log($scope, "PlayerViewController - init - proNameStr: " + proNameStr);
+		$scope.init = function(){
+			
+			$timeout( function(){
+				if (bLog) console.log($scope.playermodel, "PlayerViewController - init - $scope");
 
-			$scope.proName = proNameStr;
-
-			$scope.$on("fightcard:players", onPlayerDataReadyHandler );
-
-			$scope.$emit("player:ready", { proName: $scope.proName});
+				$scope.proName = $scope.playermodel.proName;	
+				$scope.$on("fightcard:players", onPlayerDataReadyHandler );	
+				$scope.$emit("player:ready", { proName: $scope.proName});
+			}); 
 
 		}
 

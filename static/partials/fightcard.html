@@ -1,25 +1,6 @@
 <section id="fightcard">
-<h4 class="centerText">
-fightcard
-</h4>
-	<div>
-		<ul class="fightList">
-			<li>
-
-				<!-- I need to compile these templates!-->
-				
-				<div ng-controller="PlayerViewController" ng-init="init('fenner')" class="player" style="text-align: right">
-					<player datasource="player"></player>
-				</div>
-
-				<div class="vs centerText">vs</div>
-
-				<div ng-controller="PlayerViewController" ng-init="init('kiseryota')" class="player" style="text-align: left">
-					<player datasource="player"></player>
-				</div>
-
-			</li>
-		</ul>	
-	</div>
-
+<h4 class="centerText">FIGHTCARD</h4>
+	<div ng-repeat="matchModel in matches">
+  		<match matchmodel="matchModel" ng-controller="MatchViewController" ng-init="init()"></match>
+    </div>
 </section>
