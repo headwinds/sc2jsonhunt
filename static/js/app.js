@@ -1,23 +1,49 @@
-/*
- * Copyright (c) 2013 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
- */
-
-
 'use strict';
 
-angular.module('photoHunt',
-    ['photoHunt.services', 'photoHunt.directives', 'photoHunt.filters'],
+angular.module('photohunt',
+    ['photohunt.services', 'photohunt.directives', 'photohunt.filters', 'photohunt.controllers'],
     function($locationProvider) {
+      
       $locationProvider.html5Mode(true);
+
+      console.log("app.js - photohunt - init");
+
+
     }
 );
+
+
+angular.module('metamatch.directives', []);
+angular.module('metamatch.controllers', []);
+angular.module('metamatch.filters', []);
+angular.module('metamatch.factories', []);
+angular.module('metamatch.services', []);
+angular.module('metamatch.utils', []);
+
+angular.module('metamatch.fightcard', []);
+angular.module('metamatch.versus', []);
+angular.module('metamatch.results', []);
+
+angular.module('metamatch', [ 'metamatch.fightcard', 
+                              'metamatch.versus', 
+                              'metamatch.results', 
+                              'metamatch.directives', 
+                              'metamatch.controllers', 
+                              'metamatch.factories',
+                              'metamatch.utils'],
+
+	function($locationProvider) {
+      
+      $locationProvider.html5Mode(true);
+      console.log("app.js - METAMATCH - init");
+
+    }
+);
+
+var sayHi = function(){
+	console.log("app.js - hi");
+}
+
+sayHi();
+
+// hey there

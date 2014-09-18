@@ -12,10 +12,12 @@
  * the License.
  */
 
+/*
 'use strict';
 
-angular.module('photoHunt.directives', ['photoHunt.services'])
-    .directive('photo', function(Conf, PhotoHuntApi) {
+angular.module('metamatch.directives', ['metamatch.services'])
+    
+    .directive('photo', function(Conf, ReplayHuntApi) {
       return {
         restrict: 'E',
         replace: true,
@@ -36,7 +38,7 @@ angular.module('photoHunt.directives', ['photoHunt.services'])
                     voteButton.focus();
                     scope.item.voteClass.push('disable');
                   });
-                  PhotoHuntApi.votePhoto(scope.item.id)
+                  ReplayHuntApi.votePhoto(scope.item.id)
                       .then(function(response) {});
                 }
               });
@@ -133,3 +135,4 @@ angular.module('photoHunt.directives', ['photoHunt.services'])
       }
     })
 ;
+*/

@@ -1,18 +1,3 @@
-<!--
-/*
- * Copyright (c) 2013 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
- */
--->
 <!DOCTYPE html>
 <html lang="en" xmlns:ng="http://angularjs.org">
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -22,146 +7,103 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8" />
-  <title>PhotoHunt</title>
-  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css"/>
-  <link rel="stylesheet" href="stylesheets/photohunt.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>meta match</title>
+  <link rel="stylesheet" href="stylesheets/jquery-ui.css"/>
   <link rel="stylesheet" href="stylesheets/gh-buttons.css"/>
+  <link rel="stylesheet" href="stylesheets/metamatch.css"/>
   <!-- IE Fix for HTML5 Tags -->
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-  <script src="js/jquery.filedrop.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/services.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/directives.js"></script>
-  <script type='text/javascript'>
-  function startApp() {
-    angular.bootstrap(document, ['photoHunt']);  
-  }
-  </script>
-</head>
-<body ng-controller="PhotoHuntCtrl" ng-cloak>
-<div id="container">
-  <div class="lens"><img src="images/lens.png" width="140" height="140"></div>
-  <header>
-    <div id="topHeader">
-      <h1>
-        <img src="images/title-photohunt.jpg" alt="PhotoHunt"
-            width="160" height="45" />
-      </h1>
-      <div id="profileInfo" >
-        <span id="signin" ng-show="immediateFailed">
-          <span id="myGsignin"></span>
-        </span>
-        <span ng-show="userProfile">
-	        <a target="_blank" href="{{userProfile.googlePublicProfileUrl}}">
-	          <span class="name">{{userProfile.googleDisplayName}}</span>
-	          <img ng-src="{{userProfile.googlePublicProfilePhotoUrl|profilePicture:32}}" />
-	        </a>
-	        <button class="button danger disconnect" ng-click="disconnect()" style="">
-	           Disconnect
-	         </button>
-         </span>
-      </div>
-    </div>
-    <div id="bottomHeader">
-      <h2>Hunting for photos of
-        <span id="todayTheme">{{selectedTheme.displayName}}</span>!
-      </h2>
-      <div>
-        <button id="invite" class="button icon add primary" ng-show="themes">
-          Invite your friends
-        </button>
-      </div>
-      <div class="sort button-group">
-        <button class="button icon clock" id="sortRecent"
-            ng-class="recentButtonClasses"
-            ng-click="orderBy('recent'); ">Recent</button>
-        <button class="button icon like" id="sortPopular"
-            ng-class="popularButtonClasses"
-            ng-click="orderBy('popular');">Popular</button>
-      </div>
-    </div>
-  </header>
-  
-  <section id="notification">{{notification}}</section>
+  <!--libs-->
 
-  <section id="photoList">
-   <ng-switch on="highlightedPhoto">
-      <span ng-switch-when="undefined"></span>
-      <div ng-switch-default id="selectedPhoto" class="contentGroup">
-        <h3>Highlighted photo</h3>
-        <ul>
-          <li>
-            <photo item="highlightedPhoto" delete-photo="deletePhoto(photoId)">
-          </li>
-        </ul>
+</head>
+<body ng-cloak>
+<section id="container" ng-controller="MetaMatchViewController" ng-init="init()" ng-show="bShowApp">
+
+  <section ng-controller="FightCardViewController" ng-init="init()" ng-show="bShowApp">
+    <div class="contentBlock">
+      <fightcard datasource="matches"></fightcard> 
+      <div class="centerText">
+        <p>{{ selectedMatch.details }}</p>
+        <button class="btn btn-lg btn-success btn-touch-mobile" ng-click="matchGoClickHandler()">GO</button>
       </div>
-    </ng-switch>
-    <div class="contentGroup" ng-show="isSignedIn">
-      <h3>My Photos</h3>
-      <div id="uploadContainer" ng-show="canUpload()">
-        <button upload-box
-            upload-url="uploadUrl"
-            on-complete="uploadedPhoto(photo)"
-            id="upload">
-        </button>
-      </div>
-      <ul id="myPhotos" ng-show="userPhotos.length">
-        <li ng-repeat="photo in userPhotos|orderBy:ordering">
-          <photo item="photo" delete-photo="deletePhoto(photoId)"></photo>
-        </li>
-      </ul>
     </div>
-    <div id="friendsPhotos" class="contentGroup" ng-show="friendsPhotos.length">
-      <h3>Photos from Friends</h3>
-      <ul id="friendsPhotos">
-        <li ng-repeat="photo in friendsPhotos|orderBy:ordering">
-          <photo item="photo" delete-photo="deletePhoto(photoId)"></photo>
-        </li>
-      </ul>
-    </div>
-    <div id="allPhotos" class="contentGroup" ng-show="allPhotos.length">
-      <h3>All Photos</h3>
-      <ul id="allPhotos">
-        <li ng-repeat="photo in allPhotos|orderBy:ordering">
-          <photo item="photo" delete-photo="deletePhoto(photoId)"></photo>
-        </li>
-      </ul>
+    <div class="aboutContainer centerText">
+      <p class="about">
+      Have you ever wanted to study what pro starcraft player's build? Like other major league manager games, you can pretend to play as a starcraft pro and attempt to make the same build decisions. If you guess correctly by watching what your opponent is building, you'll gain points and improve your own game play. It's is a work-n-progress and is full of bugs. If you'd like to <a href="https://github.com/headwinds/sc2jsonhunt">learn more about Starcraft, Python, and Javascript Angular by contributing</a> to this experiment hacked together by <a href="http://www.headwinds.net">headwinds</a>
     </div>
   </section>
 
-  <nav ng-show="themes" id="boxThemes">
-    <div>
-    <h3>Recent Themes</h3>
-      <ul id="recentThemes">
-        <li ng-repeat="(key, value) in themes|limitTo:10">
-          <span><a ng-click="selectTheme(key)">{{value.displayName}}</a></span><span class="date">{{value.created|date:'longDate'}}</span>
-        </li>
-      </ul>
-    </div>
-    <div ng-show="friends">
-      <h3>Friends using PhotoHunt</h4>
-      <ul id="friendList">
-        <li ng-repeat="friend in friends | orderBy:'displayName'">
-          <a href="{{friend.googlePublicProfileUrl}}"><img ng-src="{{friend.googlePublicProfilePhotoUrl|profilePicture:50}}"
-              alt="{{friend.googleDisplayName}}" width="50" height="50"/>{{friend.googleDisplayName}}</a></li>
-     </ul>
-    </div>
-  </nav>
 
-  <footer>
-    Powered by <a target="_blank" href="http://angularjs.org/">
-      <img src="images/AngularJS-small.png" style="vertical-align: middle" />
-    </a>
-  </footer>
-</div>
+  <section ng-controller="VersusViewController" ng-init="init()" ng-show="bShowApp">
+    <div class="contentBlock">
+       <versus></versus>
+    </div>
+  </section>
+
+
+   <section ng-controller="ResultsViewController" ng-init="init()" ng-show="bShowApp">
+    <div class="contentBlock">
+    <results></results>
+    </div>
+  </section>
+
+
+ 
+</section>
+  
+
+  <!--fightcards - should be json in the future! -->
+  <script src="js/config/fightcards/sept2014/sample.js"></script>
+
+  <!--libs-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/jquery.filedrop.js"></script>
+  <script src="js/bower_components/momentjs/moment.js"></script>
+  <script src="js/bower_components/underscore/underscore.js"></script>
+  <script src="js/app.js"></script>
+  
+  <!--models-->
+  <script src="js/models/player/PlayerModel.js"></script>
+
+  <!--utils-->
+  <script src="js/utils/NumberUtilFactory.js"></script>
+
+  <!--controllers-->
+  <script src="js/controllers/player/PlayerViewController.js"></script>
+   <script src="js/controllers/match/MatchViewController.js"></script>
+  <script src="js/controllers/replay/ReplayViewController.js"></script>
+  <script src="js/controllers/fightcard/FightCardViewController.js"></script>
+  <script src="js/controllers/versus/VersusViewController.js"></script>
+  <script src="js/controllers/results/ResultsViewController.js"></script>
+  <script src="js/controllers/MetaMatchViewController.js"></script>
+
+  <!--filters-->
+
+   
+  <!--factories-->
+  <script src="js/factories/configure/ConfigureFactory.js"></script>
+  <script src="js/factories/api/ReplayHuntApiFactory.js"></script>
+  
+  <!--directives-->
+  <script src="js/directives/player/PlayerDirective.js"></script>
+  <script src="js/directives/match/MatchDirective.js"></script>
+  <script src="js/directives/replay/ReplayDirective.js"></script>
+  <script src="js/directives/fightcard/FightCardDirective.js"></script>
+  <script src="js/directives/versus/VersusDirective.js"></script>
+  <script src="js/directives/results/ResultsDirective.js"></script>
+
   <script type="text/javascript">
+
+  // hmmmm if I don't have an internet connect, the app fails due to this block of code:
+  // why do I need the google api to start the app?! Ok I don't I can use jquery doc ready instead....
+  // interesting to discover this issue when I didn't have internet - could reminder to turn it off for offline testing ;-D
+/*
   window.___gcfg = {
     parsetags: 'explicit'
   };
@@ -170,9 +112,21 @@
     po.src = 'https://apis.google.com/js/auth:plusone.js?onload=startApp';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
-  $(function() {
-    $("#sort").buttonset();
+  */
+
+  function startApp() {
+    angular.bootstrap(document, ['metamatch']);  
+  }
+
+  $(document).ready( function(){
+    console.log("index.html doc ready");
+    startApp();
   });
+ 
+  //$(function() {
+  //  $("#sort").buttonset();
+  //});
+  
   </script>
 </body>
 </html>

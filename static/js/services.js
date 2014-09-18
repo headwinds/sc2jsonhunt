@@ -12,9 +12,10 @@
  * the License.
  */
 
+/*
 'use strict';
 
-angular.module('photoHunt.services', [])
+angular.module('photohunt.factories')
     .factory('Conf', function($location) {
       function getRootUrl() {
         var rootUrl = $location.protocol() + '://' + $location.host();
@@ -23,7 +24,7 @@ angular.module('photoHunt.services', [])
         return rootUrl;
       };
       return {
-        'clientId': 'YOUR-CLIENT-ID',
+        'clientId': '317913143898-ihmdutte2jeinefnuot4cdrjm7i22r1c.apps.googleusercontent.com',
         'apiBase': '/api/',
         'rootUrl': getRootUrl(),
         'scopes': 'https://www.googleapis.com/auth/plus.login ',
@@ -32,7 +33,7 @@ angular.module('photoHunt.services', [])
          'cookiepolicy': 'single_host_origin'
       };
     })
-    .factory('PhotoHuntApi', function($http, Conf) {
+    .factory('ReplayHuntApi', function($http, Conf) {
       return {
         signIn: function(authResult) {
           return $http.post(Conf.apiBase + 'connect', authResult);
@@ -72,7 +73,12 @@ angular.module('photoHunt.services', [])
         },
         disconnect: function() {
           return $http.post(Conf.apiBase + 'disconnect');
+        },
+        getReplay: function(replayId) {
+          return $http.get(Conf.apiBase + 'replay', {params:
+              {'replayId': replayId}});
         }
       };
     })
 ;
+*/

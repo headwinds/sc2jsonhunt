@@ -1,0 +1,1080 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"get",
+				"getPlayerModelByProName"
+			],
+			[
+				"ma",
+				"max-width"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"select",
+				"selectPlayer"
+			],
+			[
+				"to",
+				"toLowerCase"
+			],
+			[
+				"ver",
+				"versusHeader"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"con",
+				"convertTime"
+			],
+			[
+				"ability",
+				"abilityName"
+			],
+			[
+				"list",
+				"list-style-type"
+			],
+			[
+				"pro",
+				"proName"
+			],
+			[
+				"cain",
+				"cabinquest"
+			],
+			[
+				"cas",
+				"cascadingTree"
+			],
+			[
+				"zoo",
+				"zoomNum"
+			],
+			[
+				"journ",
+				"journeyCollection"
+			],
+			[
+				"roo",
+				"rootNode"
+			],
+			[
+				"even",
+				"eventInfoObj"
+			],
+			[
+				"attackDis",
+				"attackDistNum"
+			],
+			[
+				"cre",
+				"create_vis"
+			],
+			[
+				"creat",
+				"createLayout"
+			],
+			[
+				"Bubble",
+				"BubbleChartView"
+			],
+			[
+				"User",
+				"UserView_nr"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"v",
+				"vertical-align"
+			],
+			[
+				"lan",
+				"languageModel"
+			],
+			[
+				"lang",
+				"langModel"
+			],
+			[
+				"dispaly",
+				"displayPreviewMode"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "static/partials/fightcard.html",
+			"settings":
+			{
+				"buffer_size": 222,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/index.html",
+			"settings":
+			{
+				"buffer_size": 5237,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/js/test.txt",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/js/config/fightcards/sept2014/sample.js",
+			"settings":
+			{
+				"buffer_size": 1016,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/js/models/player/PlayerModel.js",
+			"settings":
+			{
+				"buffer_size": 301,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/js/controllers/fightcard/FightCardViewController.js",
+			"settings":
+			{
+				"buffer_size": 5191,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 931,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sept2014/sample.js",
+			"settings":
+			{
+				"buffer_size": 766,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/js/controllers/match/MatchViewController.js",
+			"settings":
+			{
+				"buffer_size": 738,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/js/directives/match/MatchDirective.js",
+			"settings":
+			{
+				"buffer_size": 290,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/partials/match.html",
+			"settings":
+			{
+				"buffer_size": 356,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/js/controllers/player/PlayerViewController.js",
+			"settings":
+			{
+				"buffer_size": 1914,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/js/controllers/TemplateViewController.js",
+			"settings":
+			{
+				"buffer_size": 629,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/js/directives/player/PlayerDirective.js",
+			"settings":
+			{
+				"buffer_size": 293,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 67.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"About"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/fightcard",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/match",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/player",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/match",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/player",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/replay",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/models",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/models/player",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/starcraft"
+	],
+	"file_history":
+	[
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/config.rb",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/match.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/replay/ReplayDirective.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/index.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/starcraft/starcraft.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/starcraft/_sc_variables.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/common.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/starcraft/_sc_zerg_units.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/starcraft/_starcraft.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/replay/ReplayViewController.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/fightcard/FightCardViewController.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/todo.md",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/models/player/PlayerModel.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/player/PlayerViewController.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/fightcard.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/player/PlayerDirective.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/player.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/versus/VersusViewController.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/versus.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/_page.scss",
+		"/Users/bflowers/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/replay.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/graphics.md",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/fightcard/fightcard.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/replay.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/stylesheets/metamatch.css",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/app.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/utils/NumberUtilFactory.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/README.md",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/versus/versus.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/replay/_replay.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/_variables.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/config/postalConfig.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/MetaMatchViewController.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/factories/api/ReplayHuntApiFactory.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/MainMetaMatch.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/factories/configure/ConfigureFactory.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/services.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/filters.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/results/ResultsDirective.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/versus/VersusDirective.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/events/EventBus.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/results/ResultsViewController.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/Gulpfile.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/fightcard/FightCardDirective.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/metamatch.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/bootstrap/assets/javascripts/bootstrap.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/stylesheets/photohunt.css",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/Gulpfile.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/bundle.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/results/results.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/about.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/results.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/indexDirectives.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/fightcardB.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/header.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/notificaton.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/footer.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/indexBak.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/mainmenu.html",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/theme/details/DetailsModularView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/theme/ThemeView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/actionbar/ActionBarView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/MainAppView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/actionbar/graphcontrols/GraphControlsView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/journey/JourneyHUDView_nr.js",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/public/index.html",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/app/views/index/index.html",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/public/views/index.html",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/styles/scss/index/_index.scss",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/public/lib/bootstrap/docs/assets/css/bootstrap.css",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/styles/scss/common/_common.scss",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/styles/scss/common/_page.scss",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/styles/scss/common/_nav.scss",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/app/views/includes/footer.html",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/public/js/controllers/bellwoods/BellwoodsGameController.js",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/public/js/controllers/index/IndexController.js",
+		"/Users/bflowers/Projects/headwinds/cabinquest/builds/bellwoods0_5_build1/public/views/hive/view.html",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/cascading/ng_CascadingTreeViewController.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/cascading/ng_CascadingTreeViewControllerBak2.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/spider/spider.html",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/spider/SpiderChartView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/WEB-INF/jsp/is.jsp",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_default.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_default_more.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/spider/archive/explore2.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/spider/archive/explore2.html",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/spider/SpiderChartView_nrMessed.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/spider/SpiderChartView_nrBak.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/controllers/main/ng_GlobalService.js",
+		"/Users/bflowers/Projects/headwinds/code/supersimple/js/controllers/MainController.js",
+		"/Users/bflowers/Projects/headwinds/code/supersimple/sass/cabinquest.scss",
+		"/Users/bflowers/Projects/headwinds/code/supersimple/sass/cabinquest/common/_common.scss",
+		"/Users/bflowers/Projects/headwinds/code/supersimple/js/init.js",
+		"/Users/bflowers/Projects/headwinds/code/supersimple/santa/Google Santa Tracker.html",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/theme/details/DetailsView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/zen/_ir_zen_variables.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/mainbar/daterange/DateRangeView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/dataviz/charts/bubble/BubbleChartView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/config/Config_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_voices_tooltip.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/libs/tooltip/customTooltip.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/corporate/corporate.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/default/default.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/dusk/dusk.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/solarized/solarized.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/zen/default.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_default.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/actionbar/user/UserView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/views/layouts.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/mainbar/MainBarView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/mainbar/viewmode/ViewModeView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/mainbar/toolbartheme/ToolbarThemesView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/actionbar/logo/LogoView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/views/release/ReleaseView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_release.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/models/languages/en/EnglishModel_nr.js",
+		"/Users/bflowers/Dropbox/Brandon/intelliresponse/introspect/builds/web/js/views/MainAppView_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/voices.html",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/app.js",
+		"/Users/bflowers/Desktop/MainAppViewBak_nr.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/main.js",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_userslistadmin.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_usersettings.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_sharing.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common.scss",
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/css/introspect/themes/zen/default.css"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static",
+			"/Users/bflowers/Projects/headwinds/sc2jsonhunt/",
+			"/Users/bflowers/Projects/headwinds/sc2jsonhunt/js",
+			"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles",
+			"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web",
+			"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles",
+			"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"fightcard",
+			"selectPlayer",
+			"selectedPlayer",
+			"proNameCase",
+			"replayDataIndex",
+			"selectedMatch",
+			"selectedPlayerProName",
+			"playerSelectedName",
+			"setCurrentFrameData",
+			"onPlayerSelectedHandler",
+			"gameObj[playerId].split(\" \")[4]",
+			"selectedMatch",
+			"getReplay",
+			"replayData",
+			"selectedPlayer",
+			"playerSelectedName",
+			"convertTime",
+			"currrentFrameDataObj",
+			"btn-large",
+			"playerSelectedName",
+			"onPlayerSelectedHandler",
+			"player:selected",
+			"\"player:selected\"",
+			"selectedPlayer",
+			"currrentFrameDataObj",
+			"getGraphicByAbility",
+			"$scope.replayData",
+			"replayData",
+			"p",
+			"setupEvents",
+			"Conf",
+			"ReplayHuntApi",
+			"Conf",
+			"$scope.player",
+			"result",
+			"player2_result",
+			"playerPID",
+			".png",
+			"body-bg.png",
+			"}",
+			"PhotoHuntCtrl",
+			"photo.html",
+			"questionGroupDetailDatatableID",
+			"questionGroupDetailDatatable",
+			"destroyGroupQuestionsTable",
+			"questionGroupDatatable",
+			"destroyDetailsView",
+			"toggleSubThemeState",
+			"mousewheel",
+			"onJourneyMinimizeClickHandler",
+			"minimized",
+			"resetActions",
+			"cloneToDoc",
+			"Sample",
+			"navbar",
+			"onJourneyMinimizeClickHandler",
+			"onNodeClickHandler",
+			"trigger",
+			"onNodeClickHandler",
+			"onFindRootCascadingHandler",
+			"$window.dispatcher.on(\"journey:findRoot\", $scope.onFindRootCascadingHandler);",
+			"moveSpider",
+			"renderSelectedNodes",
+			"onJourneyNodeSelectedHandler",
+			"onJourneyFindRootHandler",
+			"trigger",
+			"onNodeClickHandler",
+			"setHomePos",
+			"simpleSetup",
+			"onNodeClickHandler",
+			"createSpiderViz",
+			"simpleSetup",
+			"linkArc",
+			"users-table",
+			"populateInterfacesTable",
+			"addUsers",
+			"populateInterfacesTable",
+			"dataTable",
+			"onZoomCascadingHandler",
+			"onJourneyZoomHandler",
+			"that.zoomNum",
+			"toggleSafe",
+			"globalMessage",
+			"simpleSetup",
+			"charge",
+			"simpleSetup",
+			"moveSpider",
+			"setHomePos",
+			"moveSpider",
+			"linkDistance",
+			"simpleSetup",
+			"simpleSEtup",
+			"update",
+			"addText",
+			"simpleSetup",
+			"onClickHandler",
+			"assignCircleStyle",
+			".append(\"svg:text\")",
+			"collapseRootChildren",
+			"flatten",
+			"collapseRootChildren",
+			"moveSpider",
+			"onClickHandler",
+			"collapseRootChildren",
+			"onDestroyCascadingHandler",
+			"onJourneyBackClickHandler",
+			"onCloseClickHandler",
+			"draw",
+			"onJourneyMinimizeClickHandler",
+			"journeyCrumbCollection",
+			"that.selectedNodes",
+			"onJourneyNodeSelectedHandler",
+			"selectedNodes",
+			"\n       that.selectedNodes",
+			"onClickClearCollectionHandler",
+			"draw",
+			"createSpiderViz",
+			"createSpider",
+			"simpleSetup",
+			"rootNode",
+			"destroySpiderViz",
+			"draw",
+			"vizHeight",
+			"bSourceInquiries",
+			"moveChart",
+			"moveSpider",
+			"moveChart",
+			"newPos"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"'ROLE_USERS', 'ROLE_GUEST'",
+			"ROLE_UZERS"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "static/partials/fightcard.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 222,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								115,
+								138
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "static/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5237,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3753,
+								3753
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 854.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "static/js/test.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "static/js/config/fightcards/sept2014/sample.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1016,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								991,
+								991
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "static/js/models/player/PlayerModel.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 301,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								224,
+								236
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "static/js/controllers/fightcard/FightCardViewController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5191,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1219,
+								1219
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 931,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								931,
+								931
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "sept2014/sample.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 766,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								732,
+								741
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "static/js/controllers/match/MatchViewController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 738,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								112,
+								124
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "static/js/directives/match/MatchDirective.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 290,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								223,
+								270
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "static/partials/match.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 356,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								33,
+								43
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "static/js/controllers/player/PlayerViewController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1914,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								809,
+								809
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 189.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "static/js/controllers/TemplateViewController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 629,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								190,
+								190
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "static/js/directives/player/PlayerDirective.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 293,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								186,
+								186
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "sc2jsonhunt.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 260.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

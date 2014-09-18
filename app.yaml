@@ -1,4 +1,4 @@
-application: YOUR_APP_ID
+application: sc2jsonhunt
 version: 1
 runtime: python27
 api_version: 1
@@ -37,4 +37,4 @@ handlers:
   upload: static/index.html
 
 - url: /.*
-  script: handlers.app
+  script: main.app
