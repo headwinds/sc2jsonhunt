@@ -28,7 +28,8 @@ angular.module('metamatch.controllers').controller('ReplayViewController',
 
 	////////////////////////////////////////////// VARIABLES	
 
-	$scope.bShowApp = false; 
+	$scope.bPreloaderMessage = true;
+	$scope.bShowApp = false; 	
 	var bLog = true;
 
 	var NumberUtilFactory = new NumberUtilFactory();
@@ -108,15 +109,68 @@ angular.module('metamatch.controllers').controller('ReplayViewController',
 			unitName = abilityStr.toLowerCase().split("morph")[1] + ".png";
 		}
 
+
+		if ( abilityStr.toLowerCase().indexOf("morphto") > -1 ) {
+			unitName = abilityStr.toLowerCase().split("morphto")[1] + ".png";
+		}
+
 		if ( abilityStr.toLowerCase().indexOf("cancel") > -1 ) {
 			//unitName = abilityStr.toLowerCase().split("cancel")[1] + ".png";
 			unitName = "cancelbuilding.png";
 		}
 
+		if ( abilityStr.toLowerCase().indexOf("spawn") > -1 ) {
+			//unitName = abilityStr.toLowerCase().split("cancel")[1] + ".png";
+			//unitName = "queen.png";
+			unitName = abilityStr.toLowerCase().split("spawn")[1] + ".png";
+		}
+
+		if ( abilityStr.toLowerCase().indexOf("train") > -1 ) {
+			//unitName = abilityStr.toLowerCase().split("cancel")[1] + ".png";
+			//unitName = "queen.png";
+			unitName = abilityStr.toLowerCase().split("train")[1] + ".png";
+		}
+
 		if ( abilityStr.toLowerCase().indexOf("queen") > -1 ) {
 			//unitName = abilityStr.toLowerCase().split("cancel")[1] + ".png";
 			unitName = "queen.png";
+			//unitName = abilityStr.toLowerCase().split("train")[1] + ".png";
 		}
+
+		if ( abilityStr.toLowerCase() === "returncargo" ) {
+			//unitName = abilityStr.toLowerCase().split("cancel")[1] + ".png";
+			unitName = "returncargo.png";
+			//unitName = abilityStr.toLowerCase().split("train")[1] + ".png";
+		}
+
+		if ( abilityStr.toLowerCase() === "holdposition" ) {
+			//unitName = abilityStr.toLowerCase().split("cancel")[1] + ".png";
+			unitName = "holdposition.png";
+			//unitName = abilityStr.toLowerCase().split("train")[1] + ".png";
+		}
+
+		//
+
+		if ( abilityStr.toLowerCase().indexOf("evolve") > -1 ) {
+			//unitName = abilityStr.toLowerCase().split("cancel")[1] + ".png";
+			//unitName = "metabolicboost.png";
+			unitName = abilityStr.toLowerCase().split("evolve")[1] + ".png";
+		}
+
+		if ( abilityStr.toLowerCase().indexOf("upgradeto") > -1 ) {
+			//unitName = abilityStr.toLowerCase().split("cancel")[1] + ".png";
+			//unitName = "metabolicboost.png";
+			unitName = abilityStr.toLowerCase().split("upgradeto")[1] + ".png";
+		}
+
+		 
+		//EvolveMetabolicBoost
+
+		// ReturnCargo
+
+		console.log("ReplayViewController - getGraphicByAbility - unitName: " + unitName )
+
+		//SpawnChangeling
 		
 		/*
 
@@ -263,7 +317,11 @@ angular.module('metamatch.controllers').controller('ReplayViewController',
 	$scope.getReplay = function() {
 	    
 	    ReplayHuntApiFactory.getReplay().then(function(response) {
-	    
+
+			if (bLog) console.log("==========================================");
+	    	if (bLog) console.log(response,"ReplayViewController - getReplay - response");
+	    	if (bLog) console.log("==========================================");
+
 	      	$scope.replayReady = true;
 	      
 	      	var replayDataObj = response.data;
@@ -327,7 +385,7 @@ angular.module('metamatch.controllers').controller('ReplayViewController',
 	      	displayReplayEvent("player1", $scope.player1Events[ replayDataIndex ]);
 	      	displayReplayEvent("player2", $scope.player2Events[ replayDataIndex ])
 
-	      	$("#preloader").hide();
+	      	$scope.bPreloaderMessage = false;
 
 	    });
 	}

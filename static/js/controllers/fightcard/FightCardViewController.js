@@ -12,6 +12,8 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 		}
 		///////////////////////////////////////////////////////////////////////////////
 
+		/*
+
 		var fenner = new PlayerModel("Fenner", "images/players/fenner/fennerPortrait.png", 1); 
 		var pet = new PlayerModel("KiseRyota", "images/players/kiseryota/kiseryotaPortrait.png", 2); 
 
@@ -37,12 +39,15 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 			player1: scarlett,
 			player2: snute
 		}
+		*/
 
 		///////////////////////////////////////////////////////////////////////////////
 
-		$scope.selectedMatch = match0; // for now, there is only 1 match
+		if (bLog) console.log(fightcards, "\n\n FightCardViewController - matches \n\n");
 
-		$scope.matches = [match0]; //[match0, match1, match2]; 
+		$scope.selectedMatch = fightcards.matches[0]; //match0; // global variable - see fightcards/sept2014/sample.js
+
+		$scope.matches = fightcards.matches; //[match0, match1, match2]; 
 		
 		$scope.selectedPlayer = null;
 		$scope.selectedPlayerProName = "unknown"; 
