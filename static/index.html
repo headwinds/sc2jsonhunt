@@ -1,18 +1,3 @@
-<!--
-/*
- * Copyright (c) 2013 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
- */
--->
 <!DOCTYPE html>
 <html lang="en" xmlns:ng="http://angularjs.org">
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -22,9 +7,10 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8" />
-  <title>sc2jsonhunt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>meta match</title>
   <link rel="stylesheet" href="stylesheets/jquery-ui.css"/>
-  <link rel="stylesheet" href="stylesheets/photohunt.css"/>
   <link rel="stylesheet" href="stylesheets/gh-buttons.css"/>
   <link rel="stylesheet" href="stylesheets/metamatch.css"/>
   <!-- IE Fix for HTML5 Tags -->
@@ -35,49 +21,84 @@
 
 </head>
 <body ng-cloak>
-<div id="container">
+<section id="container" ng-controller="MetaMatchViewController" ng-init="init()" ng-show="bShowApp">
 
-  <section id="fightcard" ng-controller="FightCardViewController" ng-init="init()">
-    <div class="contentGroup">
-      <fightcard></fightcard> <!-- that's neat my first directive ;-D -->
+  <section ng-controller="FightCardViewController" ng-init="init()" ng-show="bShowApp">
+    <div class="contentBlock">
+      <fightcard datasource="matches"></fightcard> 
+      <div class="centerText">
+        <p>{{ selectedMatch.details }}</p>
+        <button class="btn btn-lg btn-success btn-touch-mobile" ng-click="matchGoClickHandler()">GO</button>
+      </div>
+    </div>
+    <div class="aboutContainer centerText">
+      <p class="about">
+      Have you ever wanted to study what pro starcraft player's build? Like other major league manager games, you can pretend to play as a starcraft pro and attempt to make the same build decisions. If you guess correctly by watching what your opponent is building, you'll gain points and improve your own game play. It's is a work-n-progress and is full of bugs. If you'd like to <a href="https://github.com/headwinds/sc2jsonhunt">learn more about Starcraft, Python, and Javascript Angular by contributing</a> to this experiment hacked together by <a href="http://www.headwinds.net">headwinds</a>
     </div>
   </section>
 
-  <section id="replays" ng-controller="ReplayViewController" ng-init="init()">
-    <div class="contentGroup">
-      <replay></replay> <!-- that's neat my first directive ;-D -->
+
+  <section ng-controller="VersusViewController" ng-init="init()" ng-show="bShowApp">
+    <div class="contentBlock">
+       <versus></versus>
     </div>
   </section>
 
 
+   <section ng-controller="ResultsViewController" ng-init="init()" ng-show="bShowApp">
+    <div class="contentBlock">
+    <results></results>
+    </div>
+  </section>
 
 
-</div>
-  
+ 
+</section>
+  <!--libs-->
   <script src="js/jquery.min.js"></script>
   <script src="js/angular.min.js"></script>
   <script src="js/jquery-ui.min.js"></script>
   <script src="js/jquery.filedrop.js"></script>
   <script src="js/bower_components/momentjs/moment.js"></script>
+  <script src="js/bower_components/underscore/underscore.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/services.js"></script>
+  
+  <!--models-->
+  <script src="js/models/player/PlayerModel.js"></script>
+
+  <!--utils-->
+  <script src="js/utils/NumberUtilFactory.js"></script>
+
   <!--controllers-->
-  <script src="js/controllers.js"></script>
+  <script src="js/controllers/player/PlayerViewController.js"></script>
+   <script src="js/controllers/match/MatchViewController.js"></script>
   <script src="js/controllers/replay/ReplayViewController.js"></script>
-   <script src="js/controllers/fightcard/FightCardViewController.js"></script>
+  <script src="js/controllers/fightcard/FightCardViewController.js"></script>
   <script src="js/controllers/versus/VersusViewController.js"></script>
-  <script src="js/filters.js"></script>
+  <script src="js/controllers/results/ResultsViewController.js"></script>
+  <script src="js/controllers/MetaMatchViewController.js"></script>
+
+  <!--filters-->
+
+   
+  <!--factories-->
+  <script src="js/factories/configure/ConfigureFactory.js"></script>
+  <script src="js/factories/api/ReplayHuntApiFactory.js"></script>
+  
   <!--directives-->
-  <script src="js/directives.js"></script>
+  <script src="js/directives/player/PlayerDirective.js"></script>
+  <script src="js/directives/match/MatchDirective.js"></script>
   <script src="js/directives/replay/ReplayDirective.js"></script>
-  <!--<script src="js/directives/fightcard/FightCardDirective.js"></script>-->
-  <script type='text/javascript'>
-  function startApp() {
-    angular.bootstrap(document, ['photohunt']);  
-  }
-  </script>
+  <script src="js/directives/fightcard/FightCardDirective.js"></script>
+  <script src="js/directives/versus/VersusDirective.js"></script>
+  <script src="js/directives/results/ResultsDirective.js"></script>
 
   <script type="text/javascript">
+
+  // hmmmm if I don't have an internet connect, the app fails due to this block of code:
+  // why do I need the google api to start the app?! Ok I don't I can use jquery doc ready instead....
+  // interesting to discover this issue when I didn't have internet - could reminder to turn it off for offline testing ;-D
+/*
   window.___gcfg = {
     parsetags: 'explicit'
   };
@@ -86,10 +107,20 @@
     po.src = 'https://apis.google.com/js/auth:plusone.js?onload=startApp';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
+  */
 
-  $(function() {
-    $("#sort").buttonset();
+  function startApp() {
+    angular.bootstrap(document, ['metamatch']);  
+  }
+
+  $(document).ready( function(){
+    console.log("index.html doc ready");
+    startApp();
   });
+ 
+  //$(function() {
+  //  $("#sort").buttonset();
+  //});
   
   </script>
 </body>

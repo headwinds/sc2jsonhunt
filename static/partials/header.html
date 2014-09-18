@@ -1,0 +1,25 @@
+  <header>
+    <div id="topHeader">
+      <h1>
+        <img src="images/title-photohunt.jpg" alt="photohunt"
+            width="160" height="45" />
+      </h1>
+      <div id="profileInfo" >
+        <span id="signin" ng-show="immediateFailed">
+          <span id="myGsignin"></span>
+        </span>
+        <span ng-show="userProfile">
+	        <a target="_blank" href="{{userProfile.googlePublicProfileUrl}}">
+	          <span class="name">{{userProfile.googleDisplayName}}</span>
+	          <img ng-src="{{userProfile.googlePublicProfilePhotoUrl|profilePicture:32}}" />
+	        </a>
+	        <button class="button danger disconnect" ng-click="disconnect()" style="">
+	           Disconnect
+	         </button>
+         </span>
+      </div>
+    </div>
+    <div id="bottomHeader">
+      <h2>Hunting for SC2 game events</h2>
+    </div>
+  </header>

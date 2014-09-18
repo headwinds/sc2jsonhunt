@@ -1,0 +1,36 @@
+.contentBlock {
+  display: block;
+  position: relative;
+  margin: 0px;
+  padding: 0px; }
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0; }
+
+a, a:hover {
+  text-decoration: none; }
+
+section {
+  padding: 10px; }
+
+#replays {
+  clear: both; }
+
+#container {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  background: #dedede;
+  border: solid #999;
+  border-width: 0 1px 1px 1px;
+  -webkit-box-shadow: 0 5px 3px 10px rgba(60, 60, 60, 0.3);
+  -moz-box-shadow: 0 5px 3px 10px rgba(60, 60, 60, 0.3);
+  box-shadow: 0 5px 10px 3px rgba(60, 60, 60, 0.3); }
+  #container ul.fightList {
+    list-style-type: none; }
+
+#fightcard ul {
+  list-style-type: none !important; }

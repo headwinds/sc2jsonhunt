@@ -12,9 +12,10 @@
  * the License.
  */
 
+/*
 'use strict';
 
-angular.module('photohunt.services', [])
+angular.module('photohunt.factories')
     .factory('Conf', function($location) {
       function getRootUrl() {
         var rootUrl = $location.protocol() + '://' + $location.host();
@@ -80,3 +81,4 @@ angular.module('photohunt.services', [])
       };
     })
 ;
+*/
