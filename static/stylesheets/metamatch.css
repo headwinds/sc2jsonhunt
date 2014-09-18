@@ -6683,9 +6683,21 @@ h4 {
   font-size: 20px;
   font-family: "Rajdhani", Helvetica, Arial, sans-serif; }
 
-/* line 82, zerg/units/*.png */
-.units-sprite, .units-baneling, .units-cancelbuilding, .units-drone, .units-overlord, .units-queen, .units-zergling {
-  background: url('/static/images/zerg/units-s0271cf5625.png') no-repeat; }
+/* line 202, zerg/units/*.png */
+.units-sprite, .units-GroundCarapace1, .units-GroundCarapace2, .units-GroundCarapace3, .units-baneling, .units-cancelbuilding, .units-changeling, .units-drone, .units-glialreconstitution, .units-hive, .units-holdposition, .units-lair, .units-metabolicboost, .units-missilettacks1, .units-missilettacks2, .units-missilettacks3, .units-overlord, .units-overseer, .units-queen, .units-returncargo, .units-roach, .units-zergling {
+  background: url('/static/images/zerg/units-s763dc06498.png') no-repeat; }
+
+/* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.units-GroundCarapace1 {
+  background-position: 0 -900px; }
+
+/* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.units-GroundCarapace2 {
+  background-position: 0 -1100px; }
+
+/* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.units-GroundCarapace3 {
+  background-position: 0 -1300px; }
 
 /* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .units-baneling {
@@ -6693,19 +6705,67 @@ h4 {
 
 /* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .units-cancelbuilding {
-  background-position: 0 -900px; }
+  background-position: 0 -1500px; }
+
+/* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.units-changeling {
+  background-position: 0 -1700px; }
 
 /* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .units-drone {
   background-position: 0 -540px; }
 
 /* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.units-glialreconstitution {
+  background-position: 0 -1900px; }
+
+/* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.units-hive {
+  background-position: 0 -2100px; }
+
+/* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.units-holdposition {
+  background-position: 0 -2300px; }
+
+/* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.units-lair {
+  background-position: 0 -2500px; }
+
+/* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.units-metabolicboost {
+  background-position: 0 -2700px; }
+
+/* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.units-missilettacks1 {
+  background-position: 0 -2900px; }
+
+/* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.units-missilettacks2 {
+  background-position: 0 -3100px; }
+
+/* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.units-missilettacks3 {
+  background-position: 0 -3300px; }
+
+/* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .units-overlord {
   background-position: 0 0; }
 
 /* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.units-overseer {
+  background-position: 0 -3500px; }
+
+/* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .units-queen {
   background-position: 0 -180px; }
+
+/* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.units-returncargo {
+  background-position: 0 -3700px; }
+
+/* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.units-roach {
+  background-position: 0 -3900px; }
 
 /* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .units-zergling {

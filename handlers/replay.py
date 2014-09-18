@@ -102,6 +102,7 @@ class ReplayHandler(JsonRestHandler, SessionEnabledHandler):
     player1_playerPID = default_replay.players[0].pid
     player2_playerPID = default_replay.players[1].pid
 
+    totalPlayer1Events = len(player1_game_events)
     for player1_game_event in player1_game_events:
       #default_replay_str = str(game_event)
       #gameEventObj = GameEvent(game_event, playerPID)
@@ -153,9 +154,10 @@ class ReplayHandler(JsonRestHandler, SessionEnabledHandler):
         result[str(player1_loopBreak)] = player1_gameObjStr #json.dumps(game_event)
       
       player1_loopBreak += 1
-      if player1_loopBreak > 1000: # approx 2 mins of game time - I want to pass start time to get events on demand 
+      if player1_loopBreak > totalPlayer1Events: # approx 2 mins of game time - I want to pass start time to get events on demand 
         break
 
+    totalPlayer2Events = len(player2_game_events)
     for player2_game_event in player2_game_events:
       #default_replay_str = str(game_event)
       #gameEventObj = GameEvent(game_event, playerPID)
@@ -182,7 +184,7 @@ class ReplayHandler(JsonRestHandler, SessionEnabledHandler):
         result[str(player2_loopBreak + 200)] = player2_gameObjStr #json.dumps(game_event)
       
       player2_loopBreak += 1
-      if player2_loopBreak > 1000: # approx 2 mins of game time - I want to pass start time to get events on demand 
+      if player2_loopBreak > totalPlayer2Events: # approx 2 mins of game time - I want to pass start time to get events on demand 
         break  
 
       #result.player1 = player1_result 
