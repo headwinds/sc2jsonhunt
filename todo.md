@@ -18,3 +18,9 @@ need to make:
 * cancelbuilding
 
 # PHASE 2.0
+
+
+# MOBILE
+
+doubletap causes zoom! 
+width should be minium 480 landscape mode vs portrait 
