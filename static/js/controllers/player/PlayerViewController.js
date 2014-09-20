@@ -24,6 +24,10 @@ angular.module('metamatch.controllers').controller('PlayerViewController',
 				$scope.proName = $scope.playermodel.proName;	
 				$scope.$on("fightcard:players", onPlayerDataReadyHandler );	
 				$scope.$emit("player:ready", { proName: $scope.proName});
+
+				$scope.playerClass = "progamers-" + $scope.proName;
+
+
 			}); 
 
 		}

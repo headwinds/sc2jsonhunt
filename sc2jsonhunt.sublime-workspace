@@ -124,74 +124,18 @@
 	"buffers":
 	[
 		{
-			"file": "static/partials/fightcard.html",
+			"file": "styles/common/_page.scss",
 			"settings":
 			{
-				"buffer_size": 222,
+				"buffer_size": 976,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "static/partials/replay.html",
+			"file": "styles/starcraft/_sc_progamers.scss",
 			"settings":
 			{
-				"buffer_size": 327,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "handlers/replay.py",
-			"settings":
-			{
-				"buffer_size": 8345,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "static/js/controllers/replay/ReplayViewController.js",
-			"settings":
-			{
-				"buffer_size": 13506,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "todo.md",
-			"settings":
-			{
-				"buffer_size": 253,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "static/index.html",
-			"settings":
-			{
-				"buffer_size": 5237,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "static/js/test.txt",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "static/js/config/fightcards/sept2014/wcs_2014_s2_r8.js",
-			"settings":
-			{
-				"buffer_size": 4650,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "static/js/models/player/PlayerModel.js",
-			"settings":
-			{
-				"buffer_size": 301,
+				"buffer_size": 95,
 				"line_ending": "Unix"
 			}
 		},
@@ -199,39 +143,7 @@
 			"file": "static/js/controllers/fightcard/FightCardViewController.js",
 			"settings":
 			{
-				"buffer_size": 5191,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "README.md",
-			"settings":
-			{
-				"buffer_size": 931,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "static/js/controllers/match/MatchViewController.js",
-			"settings":
-			{
-				"buffer_size": 738,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "static/js/directives/match/MatchDirective.js",
-			"settings":
-			{
-				"buffer_size": 290,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "static/partials/match.html",
-			"settings":
-			{
-				"buffer_size": 356,
+				"buffer_size": 4408,
 				"line_ending": "Unix"
 			}
 		},
@@ -239,23 +151,23 @@
 			"file": "static/js/controllers/player/PlayerViewController.js",
 			"settings":
 			{
-				"buffer_size": 1914,
+				"buffer_size": 1973,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "static/js/controllers/TemplateViewController.js",
+			"file": "static/partials/player.html",
 			"settings":
 			{
-				"buffer_size": 629,
+				"buffer_size": 213,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "static/js/directives/player/PlayerDirective.js",
+			"file": "/Users/bflowers/Projects/headwinds/metamatch/data/zerg/zergEvents.txt",
 			"settings":
 			{
-				"buffer_size": 293,
+				"buffer_size": 308998,
 				"line_ending": "Unix"
 			}
 		}
@@ -296,40 +208,63 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt"
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/images",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/images/progamers",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/config",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/config/fightcards",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/config/fightcards/sept2014",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/fightcard",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/player",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/stylesheets",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/fightcard",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/starcraft"
 	],
 	"file_history":
 	[
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/starcraft/starcraft.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/starcraft/_sc_progamers.scss",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/fightcard.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/replay.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/replay.py",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/metamatch/data/zerg/zergEvents.txt",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/replay/ReplayViewController.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/todo.md",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/index.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/test.txt",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/config/fightcards/sept2014/wcs_2014_s2_r8.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/models/player/PlayerModel.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/fightcard/FightCardViewController.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/README.md",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/match/MatchViewController.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/match/MatchDirective.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/match.html",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/player/PlayerViewController.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/TemplateViewController.js",
+		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/player/PlayerDirective.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/sept2014/sample.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/config.rb",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/match.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/replay/ReplayDirective.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/index.html",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/starcraft/starcraft.scss",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/starcraft/_sc_variables.scss",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/common.scss",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/starcraft/_sc_zerg_units.scss",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/starcraft/_starcraft.scss",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/replay/ReplayViewController.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/fightcard/FightCardViewController.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/todo.md",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/models/player/PlayerModel.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/player/PlayerViewController.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/fightcard.html",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/directives/player/PlayerDirective.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/player.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/controllers/versus/VersusViewController.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/versus.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/_page.scss",
 		"/Users/bflowers/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/handlers/replay.py",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/graphics.md",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/fightcard/fightcard.scss",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/partials/replay.html",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/stylesheets/metamatch.css",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/app.js",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/js/utils/NumberUtilFactory.js",
-		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/README.md",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/versus/versus.scss",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/replay/_replay.scss",
 		"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles/common/_variables.scss",
@@ -420,14 +355,7 @@
 		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_release.scss",
 		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/models/languages/en/EnglishModel_nr.js",
 		"/Users/bflowers/Dropbox/Brandon/intelliresponse/introspect/builds/web/js/views/MainAppView_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/voices.html",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/app.js",
-		"/Users/bflowers/Desktop/MainAppViewBak_nr.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/js/main.js",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_userslistadmin.scss",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_usersettings.scss",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common_sharing.scss",
-		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/styles/introspect/themes/common/_ir_common.scss"
+		"/Users/bflowers/Projects/Intelliresponse/repo/introspect-web/trunk/web/voices.html"
 	],
 	"find":
 	{
@@ -438,6 +366,8 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"/Users/bflowers/Projects/headwinds/sc2jsonhunt/styles",
+			"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static/styles",
 			"/Users/bflowers/Projects/headwinds/sc2jsonhunt/static",
 			"/Users/bflowers/Projects/headwinds/sc2jsonhunt/",
 			"/Users/bflowers/Projects/headwinds/sc2jsonhunt/js",
@@ -452,6 +382,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"section",
 			"spaqn",
 			"getReplay",
 			"fightcard",
@@ -578,8 +509,7 @@
 			"draw",
 			"vizHeight",
 			"bSourceInquiries",
-			"moveChart",
-			"moveSpider"
+			"moveChart"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -599,145 +529,59 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "static/partials/fightcard.html",
+					"file": "styles/common/_page.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 222,
+						"buffer_size": 976,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								115,
-								138
+								479,
+								479
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "static/partials/replay.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 327,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								57,
-								57
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "handlers/replay.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8345,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6099,
-								6099
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2207.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "static/js/controllers/replay/ReplayViewController.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13506,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2568,
-								2568
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1523.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "todo.md",
-					"semi_transient": false,
+					"buffer": 1,
+					"file": "styles/starcraft/_sc_progamers.scss",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 253,
+						"buffer_size": 95,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								251,
-								251
+								95,
+								95
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -747,134 +591,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "static/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5237,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3753,
-								3753
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 854.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "static/js/test.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "static/js/config/fightcards/sept2014/wcs_2014_s2_r8.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4650,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4602,
-								4602
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1693.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "static/js/models/player/PlayerModel.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 301,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								224,
-								236
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
+					"buffer": 2,
 					"file": "static/js/controllers/fightcard/FightCardViewController.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5191,
+						"buffer_size": 4408,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1219,
-								1219
+								480,
+								480
 							]
 						],
 						"settings":
@@ -883,55 +613,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 185.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "README.md",
+					"buffer": 3,
+					"file": "static/js/controllers/player/PlayerViewController.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 931,
+						"buffer_size": 1973,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								931,
-								931
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "static/js/controllers/match/MatchViewController.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 738,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								112,
-								124
+								802,
+								853
 							]
 						],
 						"settings":
@@ -940,57 +642,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 267.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
-					"file": "static/js/directives/match/MatchDirective.js",
+					"buffer": 4,
+					"file": "static/partials/player.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 290,
+						"buffer_size": 213,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								223,
-								270
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "static/partials/match.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 356,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								33,
-								43
+								44,
+								44
 							]
 						],
 						"settings":
@@ -1001,95 +673,35 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
-					"file": "static/js/controllers/player/PlayerViewController.js",
+					"buffer": 5,
+					"file": "/Users/bflowers/Projects/headwinds/metamatch/data/zerg/zergEvents.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1914,
+						"buffer_size": 308998,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								809,
-								809
+								477,
+								486
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 189.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "static/js/controllers/TemplateViewController.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 629,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								190,
-								190
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 10053.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "static/js/directives/player/PlayerDirective.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 293,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								186,
-								186
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

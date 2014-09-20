@@ -7,38 +7,10 @@ angular.module('metamatch.controllers').controller('FightCardViewController',
 		$scope.bShowApp = true; 
 		$scope.selectedMatch = null;
 
-		$scope.fightcard = {
-			what: "this is the fight card"
-		}
 		///////////////////////////////////////////////////////////////////////////////
 
 		/*
-
-		var fenner = new PlayerModel("Fenner", "images/players/fenner/fennerPortrait.png", 1); 
-		var pet = new PlayerModel("KiseRyota", "images/players/kiseryota/kiseryotaPortrait.png", 2); 
-
-		var bomber = new PlayerModel("Bomber", "images/players/fenner/fennerPortrait.png", 1); 
-		var mc = new PlayerModel("MC", "images/players/kiseryota/kiseryotaPortrait.png", 2); 
-
-		var scarlett = new PlayerModel("Scarlett", "images/players/fenner/fennerPortrait.png", 1); 
-		var snute = new PlayerModel("Snute", "images/players/kiseryota/kiseryotaPortrait.png", 2); 
-
-		var players = [ fenner, pet ];
-
-		var match0 = {
-			player1: fenner,
-			player2: pet
-		}
-
-		var match1 = {
-			player1: bomber,
-			player2: mc
-		}
-
-		var match2 = {
-			player1: scarlett,
-			player2: snute
-		}
+		see config/fightcards/sept2014/sample.js 
 		*/
 
 		///////////////////////////////////////////////////////////////////////////////

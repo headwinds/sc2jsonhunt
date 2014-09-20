@@ -6533,7 +6533,7 @@ a, a:hover {
 
 /* line 32, ../../styles/common/_page.scss */
 section {
-  padding: 10px; }
+  padding: 5px; }
 
 /* line 36, ../../styles/common/_page.scss */
 #replays {
@@ -6770,3 +6770,15 @@ h4 {
 /* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .units-zergling {
   background-position: 0 -720px; }
+
+/* line 50, progamers/*.png */
+.progamers-sprite, .progamers-Fenner, .progamers-KiseRyota {
+  background: url('/static/images/progamers-sdc26358624.png') no-repeat; }
+
+/* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.progamers-Fenner {
+  background-position: 0 0; }
+
+/* line 60, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.progamers-KiseRyota {
+  background-position: 0 -100px; }
